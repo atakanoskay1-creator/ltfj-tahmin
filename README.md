@@ -4,7 +4,34 @@ LTFJ (İstanbul Sabiha Gökçen) için METAR/SPECI ve ek meteorolojik veriler ku
 
 ## Durum
 
-Proje tanımı hazırlanmıştır. Henüz veri indirilmemiş, model eğitilmemiş ve başarı ölçülmemiştir.
+2025 yılı LTFJ arşivi indirilmiş ve denetlenmiştir. METAR çözümleme, geçmişe dayalı özellik çıkarımı ve üç saatlik hedef etiketleme çalışmaktadır. Henüz model eğitilmemiş ve tahmin başarısı ölçülmemiştir.
+
+İlk denetim: **17.513 gözlem, 188 eşik altı gözlem, 32 kesintisiz düşük tavan dizisi ve 161 pozitif tahmin zamanı**. Pozitif tahmin zamanları bağımsız hava olayları değildir. Ayrıntılar: [2025 veri raporu](reports/2025-summary.md).
+
+## Çalıştırma
+
+Python 3.10 veya üstü yeterlidir; ek paket kurulumu gerekmez. Komutlar depo kökünde çalıştırılır:
+
+```sh
+python -m ltfj.pipeline fetch --start 2025-01-01 --end 2026-01-01 --output data/raw/LTFJ_2025.csv
+python -m ltfj.pipeline prepare --input data/raw/LTFJ_2025.csv --output data/processed/2025 --report reports/2025-audit.json
+python -m unittest discover -s tests -v
+```
+
+Başlangıç dahil, bitiş hariçtir; saatler UTC'dir. İndirici mevcut ham dosyayı değiştirmez. Yeniden hazırlama, CSV yanındaki `.manifest.json` dosyasını ve SHA-256 doğrulamasını gerektirir. Aynı kaynağı tekrar indirmek için farklı bir çıktı adı kullanın. `prepare` türetilmiş çıktıları yeniden üretir.
+
+- `data/raw/`: Ham CSV ve kaynak URL'si, indirme zamanı, tarih aralığı, dosya özeti içeren manifest; Git'e yüklenmez.
+- `data/processed/2025/features.csv`: Yalnızca tahmin anına kadar olan gözlemlerden özellikler.
+- `data/processed/2025/labels.csv`: Hedef, hedef penceresinin sonu ve etiket durumu. Eğitimde yalnızca hedefi 0 veya 1 olan satırlar kullanılır; boş hedefler 0'a çevrilmez.
+- `reports/2025-audit.json`: Aylık sayımlar, boşluklar, eksikler ve kullanılan protokol; Git'te saklanır.
+
+`features.csv` ve `labels.csv`, `time` alanı üzerinden bire bir birleştirilir. `label_status` ve `target_end` model girdisi değildir. Sayısal tavanın boş olması açık gökyüzünü veya bilinmeyen ölçümü temsil edebilir; `ceiling_state` korunmalıdır. Rüzgâr yönündeki boşluk değişken yönü, gust alanındaki boşluk raporlanmamış hamleyi de içerebilir.
+
+## İlk veri protokolü
+
+Tahmin zamanları UTC `:00/:30`; son gözlemin en fazla 35 dakika eski olmasına izin verilir. Üç saatlik gelecek pencerede pozitif gözlem varsa olay etiketi verilir. Negatif etiket için gelecekte belirsiz tavan bulunmaması, pencere sınırları dahil gözlem aralıklarının en fazla 35 dakika olması ve arşivin tüm hedef penceresini kapsaması gerekir. Bu 35 dakikalık sınır, örnekteki 30 dakikalık rutin sıklığa göre seçilmiş ilk sürüm kuralıdır; meteorolojik bir garanti değildir.
+
+Ham METAR'daki TEMPO/BECMG/NOSIG ve RMK bölümleri gözlemden ayrılır. Aynı zamanın farklı sürümleri varsa geliş sırası bilinmediği için belirsiz sayılır. Arşivde alım/yayım zamanı bulunmadığından bu veri seti **gözlem zamanına dayalı araştırma sürümüdür**; gerçek zamanlı erişilebilirlik doğrulanmış değildir. İlk gerçek zamanlı testten önce rapor gecikmeleri ve düzeltmeler ele alınmalıdır.
 
 ## Tahmin hedefi
 
@@ -45,9 +72,11 @@ ERA5 gibi yeniden analiz verileri keşif için kullanılabilir; tahmin anında e
 
 ## Sonraki somut adım
 
-Tarihsel METAR kaynağının LTFJ kapsamını ve kullanım koşullarını doğrulamak; örnek veri üzerinde kod çözme, tekrar kayıt, eksik kayıt ve rapor sıklığı denetimini yapmak. Ardından veri işleme ve ilk referans model uygulanacaktır.
+Birden fazla yılın verisini aynı protokolle denetlemek, SPECI kapsamını karşılaştırmalı doğrulamak ve kronolojik eğitim/doğrulama/test dönemlerini belirlemek. Ardından olay sıklığı referansı ve lojistik regresyon modeli kurulacaktır. 2025'in son üç ayında pozitif olay bulunmadığından bu yılın son bölümünü tek başına test kümesi yapmak uygun bir ilk başarı değerlendirmesi sağlamaz. Çevre istasyonlar ve sayısal hava tahmini girdileri sonraki aşamada eklenecektir.
 
 ## Kaynaklar
 
 - [AWC METAR veri açıklaması](https://aviationweather.gov/help/data/)
 - [ECMWF ERA5 açıklaması](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5)
+- [Iowa Environmental Mesonet veri kaynağı](https://mesonet.agron.iastate.edu/request/download.phtml?network=TR__ASOS)
+- [IEM veri kullanım koşulları](https://mesonet.agron.iastate.edu/disclaimer.php)

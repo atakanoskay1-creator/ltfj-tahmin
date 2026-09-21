@@ -1,0 +1,182 @@
+{
+  "source": {
+    "source_url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LTFJ&data=metar&sts=2025-01-01T00%3A00%3A00Z&ets=2026-01-01T00%3A00%3A00Z&tz=Etc%2FUTC&format=onlycomma&latlon=no&elev=no&missing=M&direct=no&report_type=3%2C4",
+    "station": "LTFJ",
+    "start": "2025-01-01T00:00:00Z",
+    "end_exclusive": "2026-01-01T00:00:00Z",
+    "retrieved_at": "2026-09-21T09:28:43.566202Z",
+    "rows": 17513,
+    "sha256": "085ebb250545f93fa5ce99b3bb60b82d1cf72404432ea1924ac226a1d11abbfa",
+    "source_terms": "https://mesonet.agron.iastate.edu/disclaimer.php"
+  },
+  "input_sha256": "085ebb250545f93fa5ce99b3bb60b82d1cf72404432ea1924ac226a1d11abbfa",
+  "counts": {
+    "input_rows": 17513,
+    "unique_timestamps": 17513
+  },
+  "first_observation": "2025-01-01T00:20:00Z",
+  "last_observation": "2025-12-31T23:50:00Z",
+  "gap_minutes": {
+    "median": 30.0,
+    "maximum": 90.0,
+    "over_35": 5
+  },
+  "observation_minute_counts": {
+    "20": 8756,
+    "50": 8757
+  },
+  "ceiling_states": {
+    "no_ceiling_reported": 11613,
+    "measured": 5900
+  },
+  "below_500_observations": 188,
+  "contiguous_low_runs": 32,
+  "explicit_speci_prefix_rows": 0,
+  "label_counts": {
+    "missing_current": 8,
+    "no_observed_event": 17132,
+    "event": 161,
+    "already_below_threshold": 188,
+    "coverage_gap": 25,
+    "incomplete_horizon": 6
+  },
+  "feature_missing_counts": {
+    "time": 0,
+    "observation_time": 8,
+    "observation_age_minutes": 8,
+    "hour_utc": 0,
+    "month": 0,
+    "ceiling_ft": 11620,
+    "ceiling_state": 8,
+    "below_500": 8,
+    "temperature_c": 8,
+    "dewpoint_c": 8,
+    "spread_c": 8,
+    "wind_direction_deg": 1259,
+    "wind_speed_kt": 18,
+    "wind_gust_kt": 17391,
+    "visibility_m": 9,
+    "visibility_lower_bound": 8,
+    "qnh_hpa": 8,
+    "weather": 8,
+    "corrected": 8,
+    "ceiling_change_1h_ft": 12041,
+    "spread_change_1h_c": 16
+  },
+  "monthly": {
+    "2025-01": {
+      "observations": 1488,
+      "below_500_observations": 33,
+      "unknown_ceiling_observations": 0,
+      "label_missing_current": 1,
+      "label_no_observed_event": 1441,
+      "label_event": 13,
+      "label_already_below_threshold": 33
+    },
+    "2025-02": {
+      "observations": 1344,
+      "below_500_observations": 19,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1276,
+      "label_event": 49,
+      "label_already_below_threshold": 19
+    },
+    "2025-03": {
+      "observations": 1487,
+      "below_500_observations": 21,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1448,
+      "label_event": 12,
+      "label_already_below_threshold": 21,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1
+    },
+    "2025-04": {
+      "observations": 1439,
+      "below_500_observations": 95,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1305,
+      "label_event": 33,
+      "label_already_below_threshold": 95,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1
+    },
+    "2025-05": {
+      "observations": 1488,
+      "below_500_observations": 1,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1481,
+      "label_event": 6,
+      "label_already_below_threshold": 1
+    },
+    "2025-06": {
+      "observations": 1440,
+      "below_500_observations": 5,
+      "unknown_ceiling_observations": 0,
+      "label_event": 12,
+      "label_already_below_threshold": 5,
+      "label_no_observed_event": 1423
+    },
+    "2025-07": {
+      "observations": 1488,
+      "below_500_observations": 11,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1453,
+      "label_event": 24,
+      "label_already_below_threshold": 11
+    },
+    "2025-08": {
+      "observations": 1488,
+      "below_500_observations": 2,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1480,
+      "label_event": 6,
+      "label_already_below_threshold": 2
+    },
+    "2025-09": {
+      "observations": 1435,
+      "below_500_observations": 1,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1415,
+      "label_coverage_gap": 13,
+      "label_missing_current": 5,
+      "label_event": 6,
+      "label_already_below_threshold": 1
+    },
+    "2025-10": {
+      "observations": 1488,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1488
+    },
+    "2025-11": {
+      "observations": 1440,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1440
+    },
+    "2025-12": {
+      "observations": 1488,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1482,
+      "label_incomplete_horizon": 6
+    }
+  },
+  "protocol": {
+    "version": 1,
+    "horizon_minutes": 180,
+    "threshold_ft_exclusive": 500,
+    "grid_minutes": 30,
+    "max_gap_minutes": 35,
+    "max_age_minutes": 35,
+    "receipt_times_available": false
+  },
+  "limitations": [
+    "Observation-time research dataset; receipt times unavailable.",
+    "Corrections may have arrived later than observation time.",
+    "Events between reports are not observable.",
+    "Request includes specials, but their archive completeness is unverified.",
+    "No model has been trained or evaluated."
+  ]
+}
