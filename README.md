@@ -6,7 +6,9 @@ LTFJ (İstanbul Sabiha Gökçen) için METAR/SPECI ve ek meteorolojik veriler ku
 
 2025 yılı LTFJ arşivi indirilmiş ve denetlenmiştir. METAR çözümleme, geçmişe dayalı özellik çıkarımı ve üç saatlik hedef etiketleme çalışmaktadır. Henüz model eğitilmemiş ve tahmin başarısı ölçülmemiştir.
 
-İlk denetim: **17.513 gözlem, 188 eşik altı gözlem, 32 kesintisiz düşük tavan dizisi ve 161 pozitif tahmin zamanı**. Pozitif tahmin zamanları bağımsız hava olayları değildir. Ayrıntılar: [2025 veri raporu](reports/2025-summary.md).
+İlk IEM denetimi: **17.513 gözlem, 188 eşik altı gözlem, 32 kesintisiz düşük tavan dizisi ve 161 pozitif tahmin zamanı**. Pozitif tahmin zamanları bağımsız hava olayları değildir. Ayrıntılar: [2025 veri raporu](reports/2025-summary.md).
+
+**Sonraki ayrıntılı incelemede SPECI eksikliği doğrulandı:** NOAA'nın 2025 dosyasında IEM'de bulunmayan 446 SPECI ve 33 ek eşik altı gözlem bulundu. Yedi negatif tahmin zamanı bu ek gözlemlerle pozitif oluyor. Bu nedenle mevcut etiketler IEM-only ön sürümdür; nihai eğitimden önce arşiv birleştirmesi gerekir. Ayrıca 2020–2024 indirildi; toplam 104.186 IEM raporu denetlendi. [Veri yeterliliği kararı ve kaynak karşılaştırması](reports/data-adequacy.md).
 
 ## Çalıştırma
 

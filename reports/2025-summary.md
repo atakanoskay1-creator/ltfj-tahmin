@@ -2,6 +2,8 @@
 
 Bu rapor indirilen verinin ve etiketlerin denetimidir; model başarısı veya güncel hava tahmini değildir. Makine tarafından üretilen ayrıntılar [2025-audit.json](2025-audit.json) dosyasındadır.
 
+**Güncelleme:** Bu ilk rapor yalnızca IEM arşivini kapsar. Sonraki NOAA karşılaştırması 446 eksik SPECI ve değişen hedef etiketleri ortaya çıkardı. Güncel yeterlilik kararı için [ayrıntılı incelemeye](data-adequacy.md) bakın; aşağıdaki sayılar IEM-only ön sürüme aittir.
+
 ## Kaynak ve kapsam
 
 Iowa State University Iowa Environmental Mesonet (IEM), `TR__ASOS / LTFJ`. İstasyon metadatası arşiv başlangıcını 18 Kasım 2003 olarak gösterir; bu bilgi tüm yılların eksiksiz olduğunu kanıtlamaz. Bu aşamada yalnızca 2025 indirildi ve denetlendi.

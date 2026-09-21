@@ -1,0 +1,597 @@
+{
+  "source": {
+    "source_url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LTFJ&data=metar&sts=2020-01-01T00%3A00%3A00Z&ets=2025-01-01T00%3A00%3A00Z&tz=Etc%2FUTC&format=onlycomma&latlon=no&elev=no&missing=M&direct=no&report_type=3%2C4",
+    "station": "LTFJ",
+    "start": "2020-01-01T00:00:00Z",
+    "end_exclusive": "2025-01-01T00:00:00Z",
+    "retrieved_at": "2026-09-21T09:36:14.943660Z",
+    "rows": 86673,
+    "sha256": "2d0f16d2116446000521876632f4a0e04f7bcfdcceec417c43f4f4202069124a",
+    "source_terms": "https://mesonet.agron.iastate.edu/disclaimer.php"
+  },
+  "input_sha256": "2d0f16d2116446000521876632f4a0e04f7bcfdcceec417c43f4f4202069124a",
+  "counts": {
+    "input_rows": 86673,
+    "unique_timestamps": 86673
+  },
+  "first_observation": "2020-01-01T00:20:00Z",
+  "last_observation": "2024-12-31T23:50:00Z",
+  "gap_minutes": {
+    "median": 30.0,
+    "maximum": 28830.0,
+    "over_35": 35
+  },
+  "observation_minute_counts": {
+    "20": 43334,
+    "50": 43334,
+    "0": 1,
+    "4": 1,
+    "57": 1,
+    "56": 1,
+    "1": 1
+  },
+  "ceiling_states": {
+    "measured": 32783,
+    "no_ceiling_reported": 53886,
+    "unknown": 4
+  },
+  "below_500_observations": 896,
+  "contiguous_low_runs": 137,
+  "explicit_speci_prefix_rows": 0,
+  "label_counts": {
+    "missing_current": 1029,
+    "no_observed_event": 84815,
+    "coverage_gap": 189,
+    "event": 737,
+    "already_below_threshold": 896,
+    "unknown_future": 20,
+    "unknown_current": 4,
+    "incomplete_horizon": 6
+  },
+  "feature_missing_counts": {
+    "time": 0,
+    "observation_time": 1029,
+    "observation_age_minutes": 1029,
+    "hour_utc": 0,
+    "month": 0,
+    "ceiling_ft": 54916,
+    "ceiling_state": 1029,
+    "below_500": 1033,
+    "temperature_c": 1031,
+    "dewpoint_c": 1031,
+    "spread_c": 1031,
+    "wind_direction_deg": 5963,
+    "wind_speed_kt": 1031,
+    "wind_gust_kt": 87029,
+    "visibility_m": 1032,
+    "visibility_lower_bound": 1029,
+    "qnh_hpa": 1030,
+    "weather": 1029,
+    "corrected": 1029,
+    "ceiling_change_1h_ft": 57079,
+    "spread_change_1h_c": 1081
+  },
+  "monthly": {
+    "2020-01": {
+      "observations": 1488,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_missing_current": 1,
+      "label_no_observed_event": 1487
+    },
+    "2020-02": {
+      "observations": 1388,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1370,
+      "label_coverage_gap": 18,
+      "label_missing_current": 4
+    },
+    "2020-03": {
+      "observations": 1485,
+      "below_500_observations": 8,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1446,
+      "label_coverage_gap": 18,
+      "label_missing_current": 3,
+      "label_event": 13,
+      "label_already_below_threshold": 8
+    },
+    "2020-04": {
+      "observations": 473,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 454,
+      "label_coverage_gap": 19,
+      "label_missing_current": 966,
+      "label_unknown_future": 1
+    },
+    "2020-05": {
+      "observations": 1488,
+      "below_500_observations": 16,
+      "unknown_ceiling_observations": 0,
+      "label_missing_current": 1,
+      "label_no_observed_event": 1459,
+      "label_event": 12,
+      "label_already_below_threshold": 16
+    },
+    "2020-06": {
+      "observations": 1439,
+      "below_500_observations": 5,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1422,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1,
+      "label_event": 6,
+      "label_already_below_threshold": 5
+    },
+    "2020-07": {
+      "observations": 1488,
+      "below_500_observations": 17,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1447,
+      "label_event": 24,
+      "label_already_below_threshold": 17
+    },
+    "2020-08": {
+      "observations": 1488,
+      "below_500_observations": 4,
+      "unknown_ceiling_observations": 1,
+      "label_no_observed_event": 1471,
+      "label_unknown_future": 6,
+      "label_unknown_current": 1,
+      "label_event": 6,
+      "label_already_below_threshold": 4
+    },
+    "2020-09": {
+      "observations": 1439,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1433,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1
+    },
+    "2020-10": {
+      "observations": 1486,
+      "below_500_observations": 18,
+      "unknown_ceiling_observations": 1,
+      "label_no_observed_event": 1429,
+      "label_unknown_future": 6,
+      "label_unknown_current": 1,
+      "label_coverage_gap": 12,
+      "label_missing_current": 2,
+      "label_event": 20,
+      "label_already_below_threshold": 18
+    },
+    "2020-11": {
+      "observations": 1440,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1440
+    },
+    "2020-12": {
+      "observations": 1488,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1488
+    },
+    "2021-01": {
+      "observations": 1488,
+      "below_500_observations": 32,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1450,
+      "label_event": 6,
+      "label_already_below_threshold": 32
+    },
+    "2021-02": {
+      "observations": 1344,
+      "below_500_observations": 39,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1279,
+      "label_event": 26,
+      "label_already_below_threshold": 39
+    },
+    "2021-03": {
+      "observations": 1480,
+      "below_500_observations": 6,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1450,
+      "label_coverage_gap": 18,
+      "label_missing_current": 8,
+      "label_event": 6,
+      "label_already_below_threshold": 6
+    },
+    "2021-04": {
+      "observations": 1440,
+      "below_500_observations": 30,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1397,
+      "label_event": 13,
+      "label_already_below_threshold": 30
+    },
+    "2021-05": {
+      "observations": 1488,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1488
+    },
+    "2021-06": {
+      "observations": 1440,
+      "below_500_observations": 16,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1394,
+      "label_event": 30,
+      "label_already_below_threshold": 16
+    },
+    "2021-07": {
+      "observations": 1488,
+      "below_500_observations": 14,
+      "unknown_ceiling_observations": 0,
+      "label_event": 24,
+      "label_already_below_threshold": 14,
+      "label_no_observed_event": 1450
+    },
+    "2021-08": {
+      "observations": 1488,
+      "below_500_observations": 6,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1470,
+      "label_event": 12,
+      "label_already_below_threshold": 6
+    },
+    "2021-09": {
+      "observations": 1439,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1433,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1
+    },
+    "2021-10": {
+      "observations": 1485,
+      "below_500_observations": 10,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1463,
+      "label_coverage_gap": 6,
+      "label_missing_current": 3,
+      "label_event": 6,
+      "label_already_below_threshold": 10
+    },
+    "2021-11": {
+      "observations": 1440,
+      "below_500_observations": 80,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1320,
+      "label_event": 40,
+      "label_already_below_threshold": 80
+    },
+    "2021-12": {
+      "observations": 1488,
+      "below_500_observations": 13,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1469,
+      "label_event": 6,
+      "label_already_below_threshold": 13
+    },
+    "2022-01": {
+      "observations": 1488,
+      "below_500_observations": 48,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1402,
+      "label_event": 38,
+      "label_already_below_threshold": 48
+    },
+    "2022-02": {
+      "observations": 1344,
+      "below_500_observations": 32,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1306,
+      "label_event": 6,
+      "label_already_below_threshold": 32
+    },
+    "2022-03": {
+      "observations": 1484,
+      "below_500_observations": 2,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1470,
+      "label_coverage_gap": 6,
+      "label_missing_current": 4,
+      "label_event": 6,
+      "label_already_below_threshold": 2
+    },
+    "2022-04": {
+      "observations": 1440,
+      "below_500_observations": 30,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1382,
+      "label_event": 29,
+      "label_already_below_threshold": 29
+    },
+    "2022-05": {
+      "observations": 1488,
+      "below_500_observations": 22,
+      "unknown_ceiling_observations": 0,
+      "label_already_below_threshold": 23,
+      "label_no_observed_event": 1445,
+      "label_event": 20
+    },
+    "2022-06": {
+      "observations": 1439,
+      "below_500_observations": 3,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1420,
+      "label_event": 10,
+      "label_already_below_threshold": 3,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1
+    },
+    "2022-07": {
+      "observations": 1487,
+      "below_500_observations": 14,
+      "unknown_ceiling_observations": 2,
+      "label_event": 20,
+      "label_already_below_threshold": 14,
+      "label_no_observed_event": 1444,
+      "label_unknown_future": 6,
+      "label_unknown_current": 2,
+      "label_coverage_gap": 1,
+      "label_missing_current": 1
+    },
+    "2022-08": {
+      "observations": 1488,
+      "below_500_observations": 5,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1471,
+      "label_event": 12,
+      "label_already_below_threshold": 5
+    },
+    "2022-09": {
+      "observations": 1440,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1440
+    },
+    "2022-10": {
+      "observations": 1493,
+      "below_500_observations": 4,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1473,
+      "label_event": 11,
+      "label_already_below_threshold": 4
+    },
+    "2022-11": {
+      "observations": 1440,
+      "below_500_observations": 5,
+      "unknown_ceiling_observations": 0,
+      "label_event": 12,
+      "label_already_below_threshold": 5,
+      "label_no_observed_event": 1423
+    },
+    "2022-12": {
+      "observations": 1488,
+      "below_500_observations": 9,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1473,
+      "label_event": 6,
+      "label_already_below_threshold": 9
+    },
+    "2023-01": {
+      "observations": 1488,
+      "below_500_observations": 51,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1406,
+      "label_event": 31,
+      "label_already_below_threshold": 51
+    },
+    "2023-02": {
+      "observations": 1344,
+      "below_500_observations": 16,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1306,
+      "label_event": 22,
+      "label_already_below_threshold": 16
+    },
+    "2023-03": {
+      "observations": 1486,
+      "below_500_observations": 76,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1371,
+      "label_event": 33,
+      "label_already_below_threshold": 76,
+      "label_coverage_gap": 6,
+      "label_missing_current": 2
+    },
+    "2023-04": {
+      "observations": 1440,
+      "below_500_observations": 18,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1410,
+      "label_event": 12,
+      "label_already_below_threshold": 18
+    },
+    "2023-05": {
+      "observations": 1488,
+      "below_500_observations": 31,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1415,
+      "label_event": 42,
+      "label_already_below_threshold": 31
+    },
+    "2023-06": {
+      "observations": 1438,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1432,
+      "label_coverage_gap": 6,
+      "label_missing_current": 2
+    },
+    "2023-07": {
+      "observations": 1488,
+      "below_500_observations": 5,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1477,
+      "label_event": 6,
+      "label_already_below_threshold": 5
+    },
+    "2023-08": {
+      "observations": 1487,
+      "below_500_observations": 1,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1474,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1,
+      "label_event": 6,
+      "label_already_below_threshold": 1
+    },
+    "2023-09": {
+      "observations": 1440,
+      "below_500_observations": 1,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1433,
+      "label_event": 6,
+      "label_already_below_threshold": 1
+    },
+    "2023-10": {
+      "observations": 1488,
+      "below_500_observations": 5,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1470,
+      "label_event": 13,
+      "label_already_below_threshold": 5
+    },
+    "2023-11": {
+      "observations": 1440,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1440
+    },
+    "2023-12": {
+      "observations": 1488,
+      "below_500_observations": 0,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1488
+    },
+    "2024-01": {
+      "observations": 1488,
+      "below_500_observations": 4,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1478,
+      "label_event": 6,
+      "label_already_below_threshold": 4
+    },
+    "2024-02": {
+      "observations": 1392,
+      "below_500_observations": 57,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1315,
+      "label_event": 20,
+      "label_already_below_threshold": 57
+    },
+    "2024-03": {
+      "observations": 1488,
+      "below_500_observations": 46,
+      "unknown_ceiling_observations": 0,
+      "label_event": 22,
+      "label_already_below_threshold": 46,
+      "label_no_observed_event": 1420
+    },
+    "2024-04": {
+      "observations": 1440,
+      "below_500_observations": 33,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1378,
+      "label_event": 30,
+      "label_already_below_threshold": 32
+    },
+    "2024-05": {
+      "observations": 1488,
+      "below_500_observations": 20,
+      "unknown_ceiling_observations": 0,
+      "label_already_below_threshold": 21,
+      "label_no_observed_event": 1461,
+      "label_event": 6
+    },
+    "2024-06": {
+      "observations": 1439,
+      "below_500_observations": 1,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1426,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1,
+      "label_event": 6,
+      "label_already_below_threshold": 1
+    },
+    "2024-07": {
+      "observations": 1488,
+      "below_500_observations": 5,
+      "unknown_ceiling_observations": 0,
+      "label_event": 12,
+      "label_already_below_threshold": 5,
+      "label_no_observed_event": 1471
+    },
+    "2024-08": {
+      "observations": 1488,
+      "below_500_observations": 3,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1479,
+      "label_event": 6,
+      "label_already_below_threshold": 3
+    },
+    "2024-09": {
+      "observations": 1439,
+      "below_500_observations": 20,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1399,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1,
+      "label_event": 14,
+      "label_already_below_threshold": 20
+    },
+    "2024-10": {
+      "observations": 1487,
+      "below_500_observations": 8,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1461,
+      "label_coverage_gap": 6,
+      "label_missing_current": 1,
+      "label_event": 12,
+      "label_already_below_threshold": 8
+    },
+    "2024-11": {
+      "observations": 1440,
+      "below_500_observations": 1,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1433,
+      "label_event": 6,
+      "label_already_below_threshold": 1
+    },
+    "2024-12": {
+      "observations": 1464,
+      "below_500_observations": 6,
+      "unknown_ceiling_observations": 0,
+      "label_no_observed_event": 1414,
+      "label_coverage_gap": 31,
+      "label_missing_current": 24,
+      "label_event": 6,
+      "label_already_below_threshold": 6,
+      "label_unknown_future": 1,
+      "label_incomplete_horizon": 6
+    }
+  },
+  "protocol": {
+    "version": 1,
+    "horizon_minutes": 180,
+    "threshold_ft_exclusive": 500,
+    "grid_minutes": 30,
+    "max_gap_minutes": 35,
+    "max_age_minutes": 35,
+    "receipt_times_available": false
+  },
+  "limitations": [
+    "Observation-time research dataset; receipt times unavailable.",
+    "Corrections may have arrived later than observation time.",
+    "Events between reports are not observable.",
+    "Request includes specials, but their archive completeness is unverified.",
+    "No model has been trained or evaluated."
+  ]
+}

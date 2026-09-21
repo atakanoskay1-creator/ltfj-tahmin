@@ -1,0 +1,2245 @@
+{
+  "sources": [
+    {
+      "source_url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LTFJ&data=metar&sts=2020-01-01T00%3A00%3A00Z&ets=2025-01-01T00%3A00%3A00Z&tz=Etc%2FUTC&format=onlycomma&latlon=no&elev=no&missing=M&direct=no&report_type=3%2C4",
+      "station": "LTFJ",
+      "start": "2020-01-01T00:00:00Z",
+      "end_exclusive": "2025-01-01T00:00:00Z",
+      "retrieved_at": "2026-09-21T09:36:14.943660Z",
+      "rows": 86673,
+      "sha256": "2d0f16d2116446000521876632f4a0e04f7bcfdcceec417c43f4f4202069124a",
+      "source_terms": "https://mesonet.agron.iastate.edu/disclaimer.php"
+    },
+    {
+      "source_url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LTFJ&data=metar&sts=2025-01-01T00%3A00%3A00Z&ets=2026-01-01T00%3A00%3A00Z&tz=Etc%2FUTC&format=onlycomma&latlon=no&elev=no&missing=M&direct=no&report_type=3%2C4",
+      "station": "LTFJ",
+      "start": "2025-01-01T00:00:00Z",
+      "end_exclusive": "2026-01-01T00:00:00Z",
+      "retrieved_at": "2026-09-21T09:28:43.566202Z",
+      "rows": 17513,
+      "sha256": "085ebb250545f93fa5ce99b3bb60b82d1cf72404432ea1924ac226a1d11abbfa",
+      "source_terms": "https://mesonet.agron.iastate.edu/disclaimer.php"
+    }
+  ],
+  "combined_counts": {
+    "input_rows": 104186,
+    "unique_timestamps": 104186
+  },
+  "years": {
+    "2020": {
+      "observations": 16590,
+      "expected_half_hour_slots": 17568,
+      "missing_routine_slots": 978,
+      "off_grid_reports": 0,
+      "low_observations": 68,
+      "low_days": 14,
+      "low_runs": 16,
+      "clusters_by_dry_gap_hours": {
+        "6": 13,
+        "24": 12
+      },
+      "single_report_runs": 3,
+      "median_run_observed_span_minutes": 60.0,
+      "largest_run_observations": 14,
+      "ceiling_histogram_up_to_1500": {
+        "100": 3,
+        "200": 20,
+        "300": 22,
+        "400": 23,
+        "500": 15,
+        "600": 101,
+        "700": 98,
+        "800": 65,
+        "900": 120,
+        "1000": 18,
+        "1100": 61,
+        "1200": 20,
+        "1300": 32,
+        "1400": 1,
+        "1500": 16
+      },
+      "ceiling_states": {
+        "measured": 6282,
+        "no_ceiling_reported": 10306,
+        "unknown": 2
+      },
+      "feature_null_counts": {
+        "temperature_c": 2,
+        "dewpoint_c": 2,
+        "wind_speed_kt": 0,
+        "visibility_m": 1,
+        "qnh_hpa": 1
+      },
+      "impossible_spread_rows": 0,
+      "label_counts": {
+        "missing_current": 979,
+        "no_observed_event": 16340,
+        "coverage_gap": 79,
+        "event": 81,
+        "already_below_threshold": 68,
+        "unknown_future": 13,
+        "unknown_current": 2,
+        "incomplete_horizon": 6
+      },
+      "current_ceiling_bins": {
+        "1000-2900": {
+          "origins": 1314,
+          "positives": 2
+        },
+        "3000+": {
+          "origins": 4445,
+          "positives": 6
+        },
+        "no_ceiling_reported": {
+          "origins": 10263,
+          "positives": 46
+        },
+        "500-900": {
+          "origins": 399,
+          "positives": 27
+        }
+      },
+      "monthly": {
+        "2020-01": {
+          "observations": 1488,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2020-02": {
+          "observations": 1388,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2020-03": {
+          "observations": 1485,
+          "low_observations": 8,
+          "low_runs": 3,
+          "positive_origins": 13
+        },
+        "2020-04": {
+          "observations": 473,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2020-05": {
+          "observations": 1488,
+          "low_observations": 16,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2020-06": {
+          "observations": 1439,
+          "low_observations": 5,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2020-07": {
+          "observations": 1488,
+          "low_observations": 17,
+          "low_runs": 4,
+          "positive_origins": 24
+        },
+        "2020-08": {
+          "observations": 1488,
+          "low_observations": 4,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2020-09": {
+          "observations": 1439,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2020-10": {
+          "observations": 1486,
+          "low_observations": 18,
+          "low_runs": 5,
+          "positive_origins": 20
+        },
+        "2020-11": {
+          "observations": 1440,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2020-12": {
+          "observations": 1488,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        }
+      },
+      "gaps": [
+        {
+          "start": "2020-02-02T01:20:00Z",
+          "end": "2020-02-02T02:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-02-08T00:50:00Z",
+          "end": "2020-02-08T02:20:00Z",
+          "minutes": 90.0
+        },
+        {
+          "start": "2020-02-27T16:50:00Z",
+          "end": "2020-02-27T17:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-03-02T17:20:00Z",
+          "end": "2020-03-02T18:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-03-04T17:20:00Z",
+          "end": "2020-03-04T18:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-03-05T17:20:00Z",
+          "end": "2020-03-05T18:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-04-02T21:20:00Z",
+          "end": "2020-04-02T22:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-04-02T22:20:00Z",
+          "end": "2020-04-02T23:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-04-02T23:20:00Z",
+          "end": "2020-04-03T01:20:00Z",
+          "minutes": 120.0
+        },
+        {
+          "start": "2020-04-06T14:50:00Z",
+          "end": "2020-04-06T16:20:00Z",
+          "minutes": 90.0
+        },
+        {
+          "start": "2020-04-10T23:50:00Z",
+          "end": "2020-05-01T00:20:00Z",
+          "minutes": 28830.0
+        },
+        {
+          "start": "2020-06-03T14:50:00Z",
+          "end": "2020-06-03T15:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-09-28T05:50:00Z",
+          "end": "2020-09-28T06:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-10-08T16:50:00Z",
+          "end": "2020-10-08T17:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2020-10-21T02:50:00Z",
+          "end": "2020-10-21T03:50:00Z",
+          "minutes": 60.0
+        }
+      ],
+      "episodes": [
+        {
+          "start": "2020-03-13T04:20:00Z",
+          "end": "2020-03-13T04:20:00Z",
+          "count": 1,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2020-03-13T05:20:00Z",
+          "end": "2020-03-13T05:50:00Z",
+          "count": 2,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2020-03-23T05:50:00Z",
+          "end": "2020-03-23T07:50:00Z",
+          "count": 5,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2020-05-13T22:50:00Z",
+          "end": "2020-05-14T05:20:00Z",
+          "count": 14,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2020-05-26T02:50:00Z",
+          "end": "2020-05-26T03:20:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2020-06-16T02:20:00Z",
+          "end": "2020-06-16T04:20:00Z",
+          "count": 5,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2020-07-02T00:20:00Z",
+          "end": "2020-07-02T03:20:00Z",
+          "count": 7,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2020-07-05T03:50:00Z",
+          "end": "2020-07-05T03:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2020-07-28T01:20:00Z",
+          "end": "2020-07-28T04:20:00Z",
+          "count": 7,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2020-07-30T02:20:00Z",
+          "end": "2020-07-30T02:50:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2020-08-23T03:20:00Z",
+          "end": "2020-08-23T04:50:00Z",
+          "count": 4,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2020-10-23T05:50:00Z",
+          "end": "2020-10-23T05:50:00Z",
+          "count": 1,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2020-10-23T23:20:00Z",
+          "end": "2020-10-23T23:50:00Z",
+          "count": 2,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2020-10-24T00:50:00Z",
+          "end": "2020-10-24T04:50:00Z",
+          "count": 9,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2020-10-24T05:50:00Z",
+          "end": "2020-10-24T06:50:00Z",
+          "count": 3,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2020-10-27T05:20:00Z",
+          "end": "2020-10-27T06:20:00Z",
+          "count": 3,
+          "minimum_ft": 300
+        }
+      ]
+    },
+    "2021": {
+      "observations": 17508,
+      "expected_half_hour_slots": 17520,
+      "missing_routine_slots": 12,
+      "off_grid_reports": 0,
+      "low_observations": 246,
+      "low_days": 28,
+      "low_runs": 31,
+      "clusters_by_dry_gap_hours": {
+        "6": 26,
+        "24": 20
+      },
+      "single_report_runs": 5,
+      "median_run_observed_span_minutes": 90.0,
+      "largest_run_observations": 32,
+      "ceiling_histogram_up_to_1500": {
+        "100": 25,
+        "200": 64,
+        "300": 32,
+        "400": 125,
+        "500": 31,
+        "600": 74,
+        "700": 70,
+        "800": 30,
+        "900": 65,
+        "1000": 4,
+        "1100": 50,
+        "1200": 16,
+        "1300": 39,
+        "1400": 8,
+        "1500": 40
+      },
+      "ceiling_states": {
+        "measured": 7058,
+        "no_ceiling_reported": 10450
+      },
+      "feature_null_counts": {
+        "temperature_c": 0,
+        "dewpoint_c": 0,
+        "wind_speed_kt": 2,
+        "visibility_m": 0,
+        "qnh_hpa": 0
+      },
+      "impossible_spread_rows": 0,
+      "label_counts": {
+        "missing_current": 13,
+        "no_observed_event": 17056,
+        "event": 169,
+        "already_below_threshold": 246,
+        "coverage_gap": 30,
+        "incomplete_horizon": 6
+      },
+      "current_ceiling_bins": {
+        "3000+": {
+          "origins": 4993,
+          "positives": 38
+        },
+        "no_ceiling_reported": {
+          "origins": 10421,
+          "positives": 77
+        },
+        "1000-2900": {
+          "origins": 1541,
+          "positives": 7
+        },
+        "500-900": {
+          "origins": 270,
+          "positives": 47
+        }
+      },
+      "monthly": {
+        "2021-01": {
+          "observations": 1488,
+          "low_observations": 32,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2021-02": {
+          "observations": 1344,
+          "low_observations": 39,
+          "low_runs": 5,
+          "positive_origins": 26
+        },
+        "2021-03": {
+          "observations": 1480,
+          "low_observations": 6,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2021-04": {
+          "observations": 1440,
+          "low_observations": 30,
+          "low_runs": 3,
+          "positive_origins": 13
+        },
+        "2021-05": {
+          "observations": 1488,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2021-06": {
+          "observations": 1440,
+          "low_observations": 16,
+          "low_runs": 5,
+          "positive_origins": 30
+        },
+        "2021-07": {
+          "observations": 1488,
+          "low_observations": 14,
+          "low_runs": 4,
+          "positive_origins": 24
+        },
+        "2021-08": {
+          "observations": 1488,
+          "low_observations": 6,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2021-09": {
+          "observations": 1439,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2021-10": {
+          "observations": 1485,
+          "low_observations": 10,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2021-11": {
+          "observations": 1440,
+          "low_observations": 80,
+          "low_runs": 8,
+          "positive_origins": 40
+        },
+        "2021-12": {
+          "observations": 1488,
+          "low_observations": 13,
+          "low_runs": 1,
+          "positive_origins": 6
+        }
+      },
+      "gaps": [
+        {
+          "start": "2021-03-12T04:50:00Z",
+          "end": "2021-03-12T05:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2021-03-20T06:20:00Z",
+          "end": "2021-03-20T07:50:00Z",
+          "minutes": 90.0
+        },
+        {
+          "start": "2021-03-30T04:20:00Z",
+          "end": "2021-03-30T07:20:00Z",
+          "minutes": 180.0
+        },
+        {
+          "start": "2021-09-07T14:20:00Z",
+          "end": "2021-09-07T15:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2021-10-04T16:20:00Z",
+          "end": "2021-10-04T18:20:00Z",
+          "minutes": 120.0
+        }
+      ],
+      "episodes": [
+        {
+          "start": "2021-01-16T16:50:00Z",
+          "end": "2021-01-17T08:20:00Z",
+          "count": 32,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2021-02-14T13:50:00Z",
+          "end": "2021-02-15T04:50:00Z",
+          "count": 31,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-02-16T07:20:00Z",
+          "end": "2021-02-16T08:20:00Z",
+          "count": 3,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2021-02-17T03:20:00Z",
+          "end": "2021-02-17T03:20:00Z",
+          "count": 1,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-02-24T01:20:00Z",
+          "end": "2021-02-24T01:20:00Z",
+          "count": 1,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-02-24T02:50:00Z",
+          "end": "2021-02-24T03:50:00Z",
+          "count": 3,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-03-25T06:50:00Z",
+          "end": "2021-03-25T09:20:00Z",
+          "count": 6,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-04-18T00:20:00Z",
+          "end": "2021-04-18T05:50:00Z",
+          "count": 12,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2021-04-18T21:50:00Z",
+          "end": "2021-04-19T01:20:00Z",
+          "count": 8,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-04-19T02:20:00Z",
+          "end": "2021-04-19T06:50:00Z",
+          "count": 10,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-06-10T01:50:00Z",
+          "end": "2021-06-10T04:20:00Z",
+          "count": 6,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-06-11T02:50:00Z",
+          "end": "2021-06-11T02:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-06-16T07:20:00Z",
+          "end": "2021-06-16T08:20:00Z",
+          "count": 3,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-06-26T01:50:00Z",
+          "end": "2021-06-26T03:20:00Z",
+          "count": 4,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-06-28T02:50:00Z",
+          "end": "2021-06-28T03:20:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2021-07-01T02:50:00Z",
+          "end": "2021-07-01T02:50:00Z",
+          "count": 1,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2021-07-12T01:50:00Z",
+          "end": "2021-07-12T02:50:00Z",
+          "count": 3,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2021-07-15T02:20:00Z",
+          "end": "2021-07-15T02:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-07-28T00:50:00Z",
+          "end": "2021-07-28T04:50:00Z",
+          "count": 9,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-08-04T03:20:00Z",
+          "end": "2021-08-04T04:20:00Z",
+          "count": 3,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-08-29T02:20:00Z",
+          "end": "2021-08-29T03:20:00Z",
+          "count": 3,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2021-10-12T01:20:00Z",
+          "end": "2021-10-12T05:50:00Z",
+          "count": 10,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-11-06T00:20:00Z",
+          "end": "2021-11-06T03:50:00Z",
+          "count": 8,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2021-11-06T04:50:00Z",
+          "end": "2021-11-06T09:20:00Z",
+          "count": 10,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2021-11-06T19:20:00Z",
+          "end": "2021-11-06T20:20:00Z",
+          "count": 3,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2021-11-07T02:20:00Z",
+          "end": "2021-11-07T02:50:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-11-07T20:50:00Z",
+          "end": "2021-11-08T07:20:00Z",
+          "count": 22,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-11-08T17:50:00Z",
+          "end": "2021-11-09T04:50:00Z",
+          "count": 23,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2021-11-09T06:50:00Z",
+          "end": "2021-11-09T07:20:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2021-11-15T02:20:00Z",
+          "end": "2021-11-15T06:50:00Z",
+          "count": 10,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2021-12-30T16:20:00Z",
+          "end": "2021-12-30T22:20:00Z",
+          "count": 13,
+          "minimum_ft": 400
+        }
+      ]
+    },
+    "2022": {
+      "observations": 17519,
+      "expected_half_hour_slots": 17520,
+      "missing_routine_slots": 6,
+      "off_grid_reports": 5,
+      "low_observations": 174,
+      "low_days": 29,
+      "low_runs": 32,
+      "clusters_by_dry_gap_hours": {
+        "6": 25,
+        "24": 22
+      },
+      "single_report_runs": 6,
+      "median_run_observed_span_minutes": 60.0,
+      "largest_run_observations": 32,
+      "ceiling_histogram_up_to_1500": {
+        "100": 17,
+        "200": 55,
+        "300": 37,
+        "400": 65,
+        "500": 43,
+        "600": 72,
+        "700": 75,
+        "800": 98,
+        "900": 164,
+        "1000": 6,
+        "1100": 73,
+        "1200": 9,
+        "1300": 36,
+        "1400": 7,
+        "1500": 18
+      },
+      "ceiling_states": {
+        "no_ceiling_reported": 11209,
+        "measured": 6308,
+        "unknown": 2
+      },
+      "feature_null_counts": {
+        "temperature_c": 0,
+        "dewpoint_c": 0,
+        "wind_speed_kt": 0,
+        "visibility_m": 2,
+        "qnh_hpa": 0
+      },
+      "impossible_spread_rows": 0,
+      "label_counts": {
+        "missing_current": 7,
+        "no_observed_event": 17142,
+        "event": 170,
+        "already_below_threshold": 174,
+        "coverage_gap": 13,
+        "unknown_future": 6,
+        "unknown_current": 2,
+        "incomplete_horizon": 6
+      },
+      "current_ceiling_bins": {
+        "no_ceiling_reported": {
+          "origins": 11190,
+          "positives": 90
+        },
+        "1000-2900": {
+          "origins": 1478,
+          "positives": 25
+        },
+        "3000+": {
+          "origins": 4192,
+          "positives": 32
+        },
+        "500-900": {
+          "origins": 452,
+          "positives": 23
+        }
+      },
+      "monthly": {
+        "2022-01": {
+          "observations": 1488,
+          "low_observations": 48,
+          "low_runs": 7,
+          "positive_origins": 38
+        },
+        "2022-02": {
+          "observations": 1344,
+          "low_observations": 32,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2022-03": {
+          "observations": 1484,
+          "low_observations": 2,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2022-04": {
+          "observations": 1440,
+          "low_observations": 30,
+          "low_runs": 5,
+          "positive_origins": 29
+        },
+        "2022-05": {
+          "observations": 1488,
+          "low_observations": 22,
+          "low_runs": 5,
+          "positive_origins": 20
+        },
+        "2022-06": {
+          "observations": 1439,
+          "low_observations": 3,
+          "low_runs": 1,
+          "positive_origins": 10
+        },
+        "2022-07": {
+          "observations": 1487,
+          "low_observations": 14,
+          "low_runs": 4,
+          "positive_origins": 20
+        },
+        "2022-08": {
+          "observations": 1488,
+          "low_observations": 5,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2022-09": {
+          "observations": 1440,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2022-10": {
+          "observations": 1493,
+          "low_observations": 4,
+          "low_runs": 3,
+          "positive_origins": 11
+        },
+        "2022-11": {
+          "observations": 1440,
+          "low_observations": 5,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2022-12": {
+          "observations": 1488,
+          "low_observations": 9,
+          "low_runs": 1,
+          "positive_origins": 6
+        }
+      },
+      "gaps": [
+        {
+          "start": "2022-03-02T18:50:00Z",
+          "end": "2022-03-02T21:20:00Z",
+          "minutes": 150.0
+        },
+        {
+          "start": "2022-06-29T11:50:00Z",
+          "end": "2022-06-29T12:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2022-07-05T00:50:00Z",
+          "end": "2022-07-05T01:50:00Z",
+          "minutes": 60.0
+        }
+      ],
+      "episodes": [
+        {
+          "start": "2022-01-07T22:50:00Z",
+          "end": "2022-01-08T03:50:00Z",
+          "count": 11,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-01-08T21:20:00Z",
+          "end": "2022-01-09T07:50:00Z",
+          "count": 22,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2022-01-13T09:20:00Z",
+          "end": "2022-01-13T09:50:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-01-22T06:20:00Z",
+          "end": "2022-01-22T08:50:00Z",
+          "count": 6,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-01-23T18:20:00Z",
+          "end": "2022-01-23T18:50:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-01-23T22:20:00Z",
+          "end": "2022-01-23T22:50:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-01-24T00:20:00Z",
+          "end": "2022-01-24T01:20:00Z",
+          "count": 3,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-02-23T06:20:00Z",
+          "end": "2022-02-23T21:50:00Z",
+          "count": 32,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2022-03-13T02:50:00Z",
+          "end": "2022-03-13T03:20:00Z",
+          "count": 2,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2022-04-05T22:20:00Z",
+          "end": "2022-04-06T01:20:00Z",
+          "count": 7,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2022-04-18T01:20:00Z",
+          "end": "2022-04-18T05:50:00Z",
+          "count": 10,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-04-18T17:20:00Z",
+          "end": "2022-04-18T17:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-04-30T15:50:00Z",
+          "end": "2022-04-30T15:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-04-30T18:50:00Z",
+          "end": "2022-05-01T02:20:00Z",
+          "count": 16,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2022-05-04T21:50:00Z",
+          "end": "2022-05-04T23:50:00Z",
+          "count": 5,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2022-05-05T00:50:00Z",
+          "end": "2022-05-05T01:50:00Z",
+          "count": 3,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2022-05-05T02:50:00Z",
+          "end": "2022-05-05T03:50:00Z",
+          "count": 3,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2022-05-08T03:20:00Z",
+          "end": "2022-05-08T04:20:00Z",
+          "count": 3,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2022-05-10T02:50:00Z",
+          "end": "2022-05-10T03:50:00Z",
+          "count": 3,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2022-06-08T03:20:00Z",
+          "end": "2022-06-08T04:20:00Z",
+          "count": 3,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2022-07-01T00:50:00Z",
+          "end": "2022-07-01T04:20:00Z",
+          "count": 8,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2022-07-02T01:50:00Z",
+          "end": "2022-07-02T02:20:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-07-07T00:20:00Z",
+          "end": "2022-07-07T00:20:00Z",
+          "count": 1,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2022-07-22T02:50:00Z",
+          "end": "2022-07-22T03:50:00Z",
+          "count": 3,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2022-08-13T03:20:00Z",
+          "end": "2022-08-13T04:20:00Z",
+          "count": 3,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2022-08-19T02:50:00Z",
+          "end": "2022-08-19T03:20:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2022-10-27T01:20:00Z",
+          "end": "2022-10-27T01:50:00Z",
+          "count": 2,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2022-10-27T03:50:00Z",
+          "end": "2022-10-27T03:50:00Z",
+          "count": 1,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2022-10-27T05:20:00Z",
+          "end": "2022-10-27T05:20:00Z",
+          "count": 1,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2022-11-01T02:50:00Z",
+          "end": "2022-11-01T04:20:00Z",
+          "count": 4,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2022-11-04T02:50:00Z",
+          "end": "2022-11-04T02:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2022-12-02T00:20:00Z",
+          "end": "2022-12-02T04:20:00Z",
+          "count": 9,
+          "minimum_ft": 100
+        }
+      ]
+    },
+    "2023": {
+      "observations": 17515,
+      "expected_half_hour_slots": 17520,
+      "missing_routine_slots": 5,
+      "off_grid_reports": 0,
+      "low_observations": 204,
+      "low_days": 28,
+      "low_runs": 33,
+      "clusters_by_dry_gap_hours": {
+        "6": 25,
+        "24": 18
+      },
+      "single_report_runs": 6,
+      "median_run_observed_span_minutes": 120.0,
+      "largest_run_observations": 21,
+      "ceiling_histogram_up_to_1500": {
+        "100": 29,
+        "200": 31,
+        "300": 47,
+        "400": 97,
+        "500": 46,
+        "600": 197,
+        "700": 160,
+        "800": 109,
+        "900": 187,
+        "1000": 33,
+        "1100": 69,
+        "1200": 70,
+        "1300": 96,
+        "1400": 32,
+        "1500": 39
+      },
+      "ceiling_states": {
+        "no_ceiling_reported": 10511,
+        "measured": 7004
+      },
+      "feature_null_counts": {
+        "temperature_c": 0,
+        "dewpoint_c": 0,
+        "wind_speed_kt": 0,
+        "visibility_m": 0,
+        "qnh_hpa": 0
+      },
+      "impossible_spread_rows": 0,
+      "label_counts": {
+        "missing_current": 6,
+        "no_observed_event": 17115,
+        "event": 171,
+        "already_below_threshold": 204,
+        "coverage_gap": 18,
+        "incomplete_horizon": 6
+      },
+      "current_ceiling_bins": {
+        "no_ceiling_reported": {
+          "origins": 10492,
+          "positives": 82
+        },
+        "500-900": {
+          "origins": 699,
+          "positives": 31
+        },
+        "1000-2900": {
+          "origins": 2077,
+          "positives": 17
+        },
+        "3000+": {
+          "origins": 4018,
+          "positives": 41
+        }
+      },
+      "monthly": {
+        "2023-01": {
+          "observations": 1488,
+          "low_observations": 51,
+          "low_runs": 6,
+          "positive_origins": 31
+        },
+        "2023-02": {
+          "observations": 1344,
+          "low_observations": 16,
+          "low_runs": 5,
+          "positive_origins": 22
+        },
+        "2023-03": {
+          "observations": 1486,
+          "low_observations": 76,
+          "low_runs": 7,
+          "positive_origins": 33
+        },
+        "2023-04": {
+          "observations": 1440,
+          "low_observations": 18,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2023-05": {
+          "observations": 1488,
+          "low_observations": 31,
+          "low_runs": 7,
+          "positive_origins": 42
+        },
+        "2023-06": {
+          "observations": 1438,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2023-07": {
+          "observations": 1488,
+          "low_observations": 5,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2023-08": {
+          "observations": 1487,
+          "low_observations": 1,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2023-09": {
+          "observations": 1440,
+          "low_observations": 1,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2023-10": {
+          "observations": 1488,
+          "low_observations": 5,
+          "low_runs": 3,
+          "positive_origins": 13
+        },
+        "2023-11": {
+          "observations": 1440,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2023-12": {
+          "observations": 1488,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        }
+      },
+      "gaps": [
+        {
+          "start": "2023-03-29T12:50:00Z",
+          "end": "2023-03-29T14:20:00Z",
+          "minutes": 90.0
+        },
+        {
+          "start": "2023-06-06T06:50:00Z",
+          "end": "2023-06-06T08:20:00Z",
+          "minutes": 90.0
+        },
+        {
+          "start": "2023-08-19T20:50:00Z",
+          "end": "2023-08-19T21:50:00Z",
+          "minutes": 60.0
+        }
+      ],
+      "episodes": [
+        {
+          "start": "2023-01-02T02:50:00Z",
+          "end": "2023-01-02T08:20:00Z",
+          "count": 12,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2023-01-02T23:20:00Z",
+          "end": "2023-01-03T05:20:00Z",
+          "count": 13,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2023-01-12T16:50:00Z",
+          "end": "2023-01-12T18:50:00Z",
+          "count": 5,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-01-12T23:50:00Z",
+          "end": "2023-01-13T02:20:00Z",
+          "count": 6,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-01-13T03:20:00Z",
+          "end": "2023-01-13T08:20:00Z",
+          "count": 11,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-01-22T23:20:00Z",
+          "end": "2023-01-23T00:50:00Z",
+          "count": 4,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-02-07T10:20:00Z",
+          "end": "2023-02-07T10:50:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-02-07T11:50:00Z",
+          "end": "2023-02-07T14:20:00Z",
+          "count": 6,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-02-08T07:20:00Z",
+          "end": "2023-02-08T07:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2023-02-08T09:20:00Z",
+          "end": "2023-02-08T09:50:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-02-28T16:50:00Z",
+          "end": "2023-02-28T18:50:00Z",
+          "count": 5,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-03-01T03:20:00Z",
+          "end": "2023-03-01T09:20:00Z",
+          "count": 13,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-03-01T20:20:00Z",
+          "end": "2023-03-01T22:50:00Z",
+          "count": 6,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-03-01T23:50:00Z",
+          "end": "2023-03-02T04:20:00Z",
+          "count": 10,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2023-03-16T17:20:00Z",
+          "end": "2023-03-16T18:50:00Z",
+          "count": 4,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2023-03-16T20:20:00Z",
+          "end": "2023-03-16T20:50:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2023-03-19T00:50:00Z",
+          "end": "2023-03-19T10:20:00Z",
+          "count": 20,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-03-19T15:50:00Z",
+          "end": "2023-03-20T01:50:00Z",
+          "count": 21,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2023-04-18T01:20:00Z",
+          "end": "2023-04-18T06:20:00Z",
+          "count": 11,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-04-19T01:20:00Z",
+          "end": "2023-04-19T04:20:00Z",
+          "count": 7,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2023-05-04T22:20:00Z",
+          "end": "2023-05-05T04:20:00Z",
+          "count": 13,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-05-18T07:20:00Z",
+          "end": "2023-05-18T09:50:00Z",
+          "count": 6,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2023-05-19T03:50:00Z",
+          "end": "2023-05-19T04:20:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2023-05-21T00:50:00Z",
+          "end": "2023-05-21T00:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2023-05-21T20:50:00Z",
+          "end": "2023-05-21T20:50:00Z",
+          "count": 1,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-05-25T02:50:00Z",
+          "end": "2023-05-25T04:20:00Z",
+          "count": 4,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-05-27T00:50:00Z",
+          "end": "2023-05-27T02:20:00Z",
+          "count": 4,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-07-04T01:20:00Z",
+          "end": "2023-07-04T03:20:00Z",
+          "count": 5,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-08-23T02:20:00Z",
+          "end": "2023-08-23T02:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2023-09-28T21:50:00Z",
+          "end": "2023-09-28T21:50:00Z",
+          "count": 1,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-10-19T05:20:00Z",
+          "end": "2023-10-19T05:50:00Z",
+          "count": 2,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2023-10-25T01:50:00Z",
+          "end": "2023-10-25T01:50:00Z",
+          "count": 1,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2023-10-25T02:50:00Z",
+          "end": "2023-10-25T03:20:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        }
+      ]
+    },
+    "2024": {
+      "observations": 17541,
+      "expected_half_hour_slots": 17568,
+      "missing_routine_slots": 27,
+      "off_grid_reports": 0,
+      "low_observations": 204,
+      "low_days": 28,
+      "low_runs": 25,
+      "clusters_by_dry_gap_hours": {
+        "6": 24,
+        "24": 17
+      },
+      "single_report_runs": 5,
+      "median_run_observed_span_minutes": 150.0,
+      "largest_run_observations": 22,
+      "ceiling_histogram_up_to_1500": {
+        "100": 14,
+        "200": 77,
+        "300": 49,
+        "400": 64,
+        "500": 47,
+        "600": 114,
+        "700": 166,
+        "800": 99,
+        "900": 121,
+        "1000": 45,
+        "1100": 42,
+        "1200": 77,
+        "1300": 40,
+        "1400": 8,
+        "1500": 20
+      },
+      "ceiling_states": {
+        "no_ceiling_reported": 11410,
+        "measured": 6131
+      },
+      "feature_null_counts": {
+        "temperature_c": 0,
+        "dewpoint_c": 0,
+        "wind_speed_kt": 0,
+        "visibility_m": 0,
+        "qnh_hpa": 0
+      },
+      "impossible_spread_rows": 0,
+      "label_counts": {
+        "missing_current": 28,
+        "no_observed_event": 17134,
+        "event": 146,
+        "already_below_threshold": 204,
+        "coverage_gap": 49,
+        "unknown_future": 1,
+        "incomplete_horizon": 6
+      },
+      "current_ceiling_bins": {
+        "no_ceiling_reported": {
+          "origins": 11379,
+          "positives": 92
+        },
+        "3000+": {
+          "origins": 3563,
+          "positives": 14
+        },
+        "1000-2900": {
+          "origins": 1797,
+          "positives": 21
+        },
+        "500-900": {
+          "origins": 541,
+          "positives": 19
+        }
+      },
+      "monthly": {
+        "2024-01": {
+          "observations": 1488,
+          "low_observations": 4,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2024-02": {
+          "observations": 1392,
+          "low_observations": 57,
+          "low_runs": 3,
+          "positive_origins": 20
+        },
+        "2024-03": {
+          "observations": 1488,
+          "low_observations": 46,
+          "low_runs": 4,
+          "positive_origins": 22
+        },
+        "2024-04": {
+          "observations": 1440,
+          "low_observations": 33,
+          "low_runs": 5,
+          "positive_origins": 30
+        },
+        "2024-05": {
+          "observations": 1488,
+          "low_observations": 20,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2024-06": {
+          "observations": 1439,
+          "low_observations": 1,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2024-07": {
+          "observations": 1488,
+          "low_observations": 5,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2024-08": {
+          "observations": 1488,
+          "low_observations": 3,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2024-09": {
+          "observations": 1439,
+          "low_observations": 20,
+          "low_runs": 3,
+          "positive_origins": 14
+        },
+        "2024-10": {
+          "observations": 1487,
+          "low_observations": 8,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2024-11": {
+          "observations": 1440,
+          "low_observations": 1,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2024-12": {
+          "observations": 1464,
+          "low_observations": 6,
+          "low_runs": 1,
+          "positive_origins": 6
+        }
+      },
+      "gaps": [
+        {
+          "start": "2024-06-03T23:50:00Z",
+          "end": "2024-06-04T00:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2024-09-03T10:20:00Z",
+          "end": "2024-09-03T11:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2024-10-01T08:50:00Z",
+          "end": "2024-10-01T09:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2024-12-15T09:20:00Z",
+          "end": "2024-12-15T10:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2024-12-15T10:50:00Z",
+          "end": "2024-12-15T11:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2024-12-15T14:20:00Z",
+          "end": "2024-12-15T15:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2024-12-25T14:50:00Z",
+          "end": "2024-12-25T17:50:00Z",
+          "minutes": 180.0
+        },
+        {
+          "start": "2024-12-25T20:20:00Z",
+          "end": "2024-12-26T03:50:00Z",
+          "minutes": 450.0
+        },
+        {
+          "start": "2024-12-26T11:20:00Z",
+          "end": "2024-12-26T12:50:00Z",
+          "minutes": 90.0
+        }
+      ],
+      "episodes": [
+        {
+          "start": "2024-01-03T02:20:00Z",
+          "end": "2024-01-03T03:50:00Z",
+          "count": 4,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2024-02-26T17:50:00Z",
+          "end": "2024-02-27T04:20:00Z",
+          "count": 22,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2024-02-28T01:20:00Z",
+          "end": "2024-02-28T07:20:00Z",
+          "count": 13,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-02-28T20:50:00Z",
+          "end": "2024-02-29T07:20:00Z",
+          "count": 22,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2024-03-01T01:50:00Z",
+          "end": "2024-03-01T08:50:00Z",
+          "count": 15,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-03-01T19:20:00Z",
+          "end": "2024-03-02T05:50:00Z",
+          "count": 22,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-03-02T21:20:00Z",
+          "end": "2024-03-03T00:50:00Z",
+          "count": 8,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2024-03-06T04:20:00Z",
+          "end": "2024-03-06T04:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2024-04-11T23:50:00Z",
+          "end": "2024-04-12T03:50:00Z",
+          "count": 9,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-04-12T21:50:00Z",
+          "end": "2024-04-13T04:20:00Z",
+          "count": 14,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-04-27T00:50:00Z",
+          "end": "2024-04-27T01:20:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2024-04-28T20:20:00Z",
+          "end": "2024-04-28T22:20:00Z",
+          "count": 5,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2024-04-30T22:50:00Z",
+          "end": "2024-05-01T06:20:00Z",
+          "count": 16,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2024-05-09T02:50:00Z",
+          "end": "2024-05-09T05:50:00Z",
+          "count": 7,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2024-06-20T01:20:00Z",
+          "end": "2024-06-20T01:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2024-07-01T02:50:00Z",
+          "end": "2024-07-01T02:50:00Z",
+          "count": 1,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2024-07-20T02:50:00Z",
+          "end": "2024-07-20T04:20:00Z",
+          "count": 4,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-08-24T03:20:00Z",
+          "end": "2024-08-24T04:20:00Z",
+          "count": 3,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2024-09-27T23:50:00Z",
+          "end": "2024-09-28T04:20:00Z",
+          "count": 10,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2024-09-28T21:20:00Z",
+          "end": "2024-09-29T01:20:00Z",
+          "count": 9,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-09-29T02:50:00Z",
+          "end": "2024-09-29T02:50:00Z",
+          "count": 1,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-10-16T04:20:00Z",
+          "end": "2024-10-16T04:50:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2024-10-28T02:50:00Z",
+          "end": "2024-10-28T05:20:00Z",
+          "count": 6,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2024-11-02T23:20:00Z",
+          "end": "2024-11-02T23:20:00Z",
+          "count": 1,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2024-12-25T05:50:00Z",
+          "end": "2024-12-25T08:20:00Z",
+          "count": 6,
+          "minimum_ft": 200
+        }
+      ]
+    },
+    "2025": {
+      "observations": 17513,
+      "expected_half_hour_slots": 17520,
+      "missing_routine_slots": 7,
+      "off_grid_reports": 0,
+      "low_observations": 188,
+      "low_days": 27,
+      "low_runs": 32,
+      "clusters_by_dry_gap_hours": {
+        "6": 22,
+        "24": 18
+      },
+      "single_report_runs": 13,
+      "median_run_observed_span_minutes": 45.0,
+      "largest_run_observations": 25,
+      "ceiling_histogram_up_to_1500": {
+        "100": 1,
+        "200": 37,
+        "300": 83,
+        "400": 67,
+        "500": 16,
+        "600": 53,
+        "700": 93,
+        "800": 98,
+        "900": 117,
+        "1000": 11,
+        "1100": 45,
+        "1200": 52,
+        "1300": 33,
+        "1400": 19,
+        "1500": 22
+      },
+      "ceiling_states": {
+        "no_ceiling_reported": 11613,
+        "measured": 5900
+      },
+      "feature_null_counts": {
+        "temperature_c": 0,
+        "dewpoint_c": 0,
+        "wind_speed_kt": 10,
+        "visibility_m": 1,
+        "qnh_hpa": 0
+      },
+      "impossible_spread_rows": 0,
+      "label_counts": {
+        "missing_current": 8,
+        "no_observed_event": 17132,
+        "event": 161,
+        "already_below_threshold": 188,
+        "coverage_gap": 25,
+        "incomplete_horizon": 6
+      },
+      "current_ceiling_bins": {
+        "no_ceiling_reported": {
+          "origins": 11589,
+          "positives": 80
+        },
+        "3000+": {
+          "origins": 3702,
+          "positives": 17
+        },
+        "1000-2900": {
+          "origins": 1625,
+          "positives": 45
+        },
+        "500-900": {
+          "origins": 377,
+          "positives": 19
+        }
+      },
+      "monthly": {
+        "2025-01": {
+          "observations": 1488,
+          "low_observations": 33,
+          "low_runs": 3,
+          "positive_origins": 13
+        },
+        "2025-02": {
+          "observations": 1344,
+          "low_observations": 19,
+          "low_runs": 10,
+          "positive_origins": 49
+        },
+        "2025-03": {
+          "observations": 1487,
+          "low_observations": 21,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2025-04": {
+          "observations": 1439,
+          "low_observations": 95,
+          "low_runs": 8,
+          "positive_origins": 33
+        },
+        "2025-05": {
+          "observations": 1488,
+          "low_observations": 1,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2025-06": {
+          "observations": 1440,
+          "low_observations": 5,
+          "low_runs": 2,
+          "positive_origins": 12
+        },
+        "2025-07": {
+          "observations": 1488,
+          "low_observations": 11,
+          "low_runs": 4,
+          "positive_origins": 24
+        },
+        "2025-08": {
+          "observations": 1488,
+          "low_observations": 2,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2025-09": {
+          "observations": 1435,
+          "low_observations": 1,
+          "low_runs": 1,
+          "positive_origins": 6
+        },
+        "2025-10": {
+          "observations": 1488,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2025-11": {
+          "observations": 1440,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        },
+        "2025-12": {
+          "observations": 1488,
+          "low_observations": 0,
+          "low_runs": 0,
+          "positive_origins": 0
+        }
+      },
+      "gaps": [
+        {
+          "start": "2025-03-28T19:50:00Z",
+          "end": "2025-03-28T20:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2025-04-19T22:20:00Z",
+          "end": "2025-04-19T23:20:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2025-09-11T21:50:00Z",
+          "end": "2025-09-11T22:50:00Z",
+          "minutes": 60.0
+        },
+        {
+          "start": "2025-09-24T02:20:00Z",
+          "end": "2025-09-24T03:50:00Z",
+          "minutes": 90.0
+        },
+        {
+          "start": "2025-09-24T03:50:00Z",
+          "end": "2025-09-24T05:20:00Z",
+          "minutes": 90.0
+        }
+      ],
+      "episodes": [
+        {
+          "start": "2025-01-11T21:50:00Z",
+          "end": "2025-01-12T09:50:00Z",
+          "count": 25,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-01-26T23:20:00Z",
+          "end": "2025-01-27T00:50:00Z",
+          "count": 4,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-01-27T01:50:00Z",
+          "end": "2025-01-27T03:20:00Z",
+          "count": 4,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-02-16T15:20:00Z",
+          "end": "2025-02-16T15:50:00Z",
+          "count": 2,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-02-19T16:20:00Z",
+          "end": "2025-02-19T18:20:00Z",
+          "count": 5,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-02-20T08:50:00Z",
+          "end": "2025-02-20T08:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-02-20T10:20:00Z",
+          "end": "2025-02-20T10:20:00Z",
+          "count": 1,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-02-20T13:50:00Z",
+          "end": "2025-02-20T13:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-02-21T01:50:00Z",
+          "end": "2025-02-21T03:50:00Z",
+          "count": 5,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-02-21T09:50:00Z",
+          "end": "2025-02-21T09:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-02-21T10:50:00Z",
+          "end": "2025-02-21T10:50:00Z",
+          "count": 1,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-02-21T13:20:00Z",
+          "end": "2025-02-21T13:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-02-21T16:50:00Z",
+          "end": "2025-02-21T16:50:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-03-08T01:20:00Z",
+          "end": "2025-03-08T04:20:00Z",
+          "count": 7,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-03-30T20:50:00Z",
+          "end": "2025-03-31T03:20:00Z",
+          "count": 14,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-04-01T19:50:00Z",
+          "end": "2025-04-02T07:20:00Z",
+          "count": 24,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-04-02T15:50:00Z",
+          "end": "2025-04-02T21:50:00Z",
+          "count": 13,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-04-04T21:20:00Z",
+          "end": "2025-04-05T05:50:00Z",
+          "count": 18,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2025-04-05T06:50:00Z",
+          "end": "2025-04-05T06:50:00Z",
+          "count": 1,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-04-17T21:50:00Z",
+          "end": "2025-04-18T06:20:00Z",
+          "count": 18,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2025-04-18T20:20:00Z",
+          "end": "2025-04-18T23:50:00Z",
+          "count": 8,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2025-04-19T00:50:00Z",
+          "end": "2025-04-19T05:20:00Z",
+          "count": 10,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2025-04-19T06:20:00Z",
+          "end": "2025-04-19T07:20:00Z",
+          "count": 3,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-05-30T04:20:00Z",
+          "end": "2025-05-30T04:20:00Z",
+          "count": 1,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-06-01T02:50:00Z",
+          "end": "2025-06-01T03:20:00Z",
+          "count": 2,
+          "minimum_ft": 200
+        },
+        {
+          "start": "2025-06-11T22:50:00Z",
+          "end": "2025-06-11T23:50:00Z",
+          "count": 3,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-07-07T02:20:00Z",
+          "end": "2025-07-07T02:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-07-08T04:20:00Z",
+          "end": "2025-07-08T04:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        },
+        {
+          "start": "2025-07-14T00:20:00Z",
+          "end": "2025-07-14T03:50:00Z",
+          "count": 8,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-07-17T04:20:00Z",
+          "end": "2025-07-17T04:20:00Z",
+          "count": 1,
+          "minimum_ft": 100
+        },
+        {
+          "start": "2025-08-30T00:50:00Z",
+          "end": "2025-08-30T01:20:00Z",
+          "count": 2,
+          "minimum_ft": 300
+        },
+        {
+          "start": "2025-09-29T08:20:00Z",
+          "end": "2025-09-29T08:20:00Z",
+          "count": 1,
+          "minimum_ft": 400
+        }
+      ]
+    }
+  },
+  "noaa_comparison": {
+    "source_url": "https://www.ncei.noaa.gov/data/global-hourly/access/2025/17063099999.csv",
+    "sha256": "c72a67c2ade875d90c2e7acbb38a28b551c61920a3792174421fa5e3e9e229b1",
+    "rows": 13490,
+    "report_types": {
+      "FM-12": 1854,
+      "FM-15": 11190,
+      "FM-16": 446
+    },
+    "first_aviation_report": "2025-01-01T00:20:00Z",
+    "last_aviation_report": "2025-08-24T21:20:00Z",
+    "unique_aviation_times": 11636,
+    "noaa_low_times": 211,
+    "iem_times_absent_from_noaa_in_overlap": 131,
+    "counts": {
+      "matched_raw_ceiling_status": 11190,
+      "matched_numeric_cig": 3545,
+      "noaa_aviation_times_missing_from_iem": 446,
+      "additional_low_observations": 33,
+      "numeric_cig_disagreement_over_1_1m": 93
+    },
+    "missing_from_iem_by_type": {
+      "FM-16": 446
+    },
+    "raw_ceiling_differences": [
+      {
+        "time": "2025-02-12T07:50:00Z",
+        "iem_ft": 2000,
+        "noaa_raw_ft": 900
+      }
+    ],
+    "cig_difference_examples": [
+      {
+        "time": "2025-01-23T09:20:00Z",
+        "noaa_cig_m": 1067,
+        "raw_ceiling_ft": 9000,
+        "raw": "MET094METAR LTFJ 230920Z 28005KT 240V320 4300 BR SCT009 SCT035 BKN090 10/08 Q1021 BECMG TL1000 6000="
+      },
+      {
+        "time": "2025-01-23T09:50:00Z",
+        "noaa_cig_m": 1067,
+        "raw_ceiling_ft": 9000,
+        "raw": "MET094METAR LTFJ 230950Z 25006KT 210V290 4900 BR SCT009 SCT035 BKN090 12/08 Q1021 BECMG TL1020 6000="
+      },
+      {
+        "time": "2025-01-23T10:20:00Z",
+        "noaa_cig_m": 1067,
+        "raw_ceiling_ft": 9000,
+        "raw": "MET136METAR LTFJ 231020Z 24006KT 4500 BR SCT010 SCT035 BKN090 11/07 Q1020 BECMG 6000 RMK RWY24R 26005KT RWY06R 21005KT 190V250 RWY24L 21005KT="
+      },
+      {
+        "time": "2025-01-23T10:50:00Z",
+        "noaa_cig_m": 1067,
+        "raw_ceiling_ft": 9000,
+        "raw": "MET079METAR LTFJ 231050Z 25007KT 230V290 7000 SCT012 SCT035 BKN090 12/07 Q1020 NOSIG="
+      },
+      {
+        "time": "2025-01-23T11:20:00Z",
+        "noaa_cig_m": 1067,
+        "raw_ceiling_ft": 9000,
+        "raw": "MET136METAR LTFJ 231120Z 24008KT 210V280 9999 FEW015 SCT035 BKN090 13/07 Q1020 NOSIG RMK RWY24R 25006KT RWY06R 23007KT RWY24L 22006KT 200V260="
+      }
+    ],
+    "augmentation_sensitivity": {
+      "added_reports": 446,
+      "added_low_reports": 33,
+      "merged_low_runs": 35,
+      "merged_label_counts": {
+        "missing_current": 6,
+        "no_observed_event": 17138,
+        "event": 169,
+        "already_below_threshold": 188,
+        "coverage_gap": 13,
+        "incomplete_horizon": 6
+      },
+      "label_status_changes": {
+        "already_below_threshold -> event": 1,
+        "no_observed_event -> event": 7,
+        "no_observed_event -> already_below_threshold": 2,
+        "coverage_gap -> no_observed_event": 12,
+        "missing_current -> no_observed_event": 2,
+        "already_below_threshold -> no_observed_event": 1
+      },
+      "fixed_current_negative_to_positive_origins": [
+        "2025-02-21T04:30:00Z",
+        "2025-05-26T10:30:00Z",
+        "2025-05-26T11:00:00Z",
+        "2025-05-26T11:30:00Z",
+        "2025-05-26T12:00:00Z",
+        "2025-05-26T12:30:00Z",
+        "2025-05-26T13:00:00Z"
+      ]
+    },
+    "note": "Different archive, partly shared upstream observations; not independent measurement."
+  },
+  "notes": [
+    "Yearly label windows are censored at each year boundary.",
+    "Run/cluster counts are descriptive, not proven independent events.",
+    "Observed run span excludes uncertain onset/termination between reports."
+  ]
+}
