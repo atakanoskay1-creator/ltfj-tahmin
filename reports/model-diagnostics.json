@@ -1,0 +1,425 @@
+{
+  "fixed_thresholds": {
+    "test_2025": {
+      "0.025": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00950310752041348,
+        "log_loss": 0.044569767901918335,
+        "average_precision": 0.10336756343439783,
+        "roc_auc": 0.8701972555015247,
+        "mean_probability": 0.00934261947214193,
+        "threshold": 0.025,
+        "tp": 90,
+        "fp": 1119,
+        "fn": 81,
+        "tn": 16036,
+        "recall": 0.5263157894736842,
+        "precision": 0.07444168734491315,
+        "false_alarm_ratio": 0.9255583126550868,
+        "false_positive_rate": 0.06522879626930923,
+        "alarm_origin_fraction": 0.06977952210550617
+      },
+      "0.05": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00950310752041348,
+        "log_loss": 0.044569767901918335,
+        "average_precision": 0.10336756343439783,
+        "roc_auc": 0.8701972555015247,
+        "mean_probability": 0.00934261947214193,
+        "threshold": 0.05,
+        "tp": 69,
+        "fp": 536,
+        "fn": 102,
+        "tn": 16619,
+        "recall": 0.40350877192982454,
+        "precision": 0.1140495867768595,
+        "false_alarm_ratio": 0.8859504132231405,
+        "false_positive_rate": 0.03124453512095599,
+        "alarm_origin_fraction": 0.03491861941590673
+      },
+      "0.1": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00950310752041348,
+        "log_loss": 0.044569767901918335,
+        "average_precision": 0.10336756343439783,
+        "roc_auc": 0.8701972555015247,
+        "mean_probability": 0.00934261947214193,
+        "threshold": 0.1,
+        "tp": 37,
+        "fp": 197,
+        "fn": 134,
+        "tn": 16958,
+        "recall": 0.21637426900584794,
+        "precision": 0.1581196581196581,
+        "false_alarm_ratio": 0.8418803418803419,
+        "false_positive_rate": 0.011483532497814048,
+        "alarm_origin_fraction": 0.01350571395590442
+      },
+      "0.2": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00950310752041348,
+        "log_loss": 0.044569767901918335,
+        "average_precision": 0.10336756343439783,
+        "roc_auc": 0.8701972555015247,
+        "mean_probability": 0.00934261947214193,
+        "threshold": 0.2,
+        "tp": 16,
+        "fp": 74,
+        "fn": 155,
+        "tn": 17081,
+        "recall": 0.0935672514619883,
+        "precision": 0.17777777777777778,
+        "false_alarm_ratio": 0.8222222222222222,
+        "false_positive_rate": 0.004313611192072282,
+        "alarm_origin_fraction": 0.005194505367655547
+      }
+    },
+    "test_2026": {
+      "0.025": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.015125948705302202,
+        "log_loss": 0.05798121900760818,
+        "average_precision": 0.23145940994372866,
+        "roc_auc": 0.9526986572206256,
+        "mean_probability": 0.012111726694538206,
+        "threshold": 0.025,
+        "tp": 166,
+        "fp": 890,
+        "fn": 45,
+        "tn": 11213,
+        "recall": 0.7867298578199052,
+        "precision": 0.1571969696969697,
+        "false_alarm_ratio": 0.8428030303030303,
+        "false_positive_rate": 0.07353548706932166,
+        "alarm_origin_fraction": 0.08575605002436251
+      },
+      "0.05": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.015125948705302202,
+        "log_loss": 0.05798121900760818,
+        "average_precision": 0.23145940994372866,
+        "roc_auc": 0.9526986572206256,
+        "mean_probability": 0.012111726694538206,
+        "threshold": 0.05,
+        "tp": 115,
+        "fp": 407,
+        "fn": 96,
+        "tn": 11696,
+        "recall": 0.5450236966824644,
+        "precision": 0.22030651340996169,
+        "false_alarm_ratio": 0.7796934865900383,
+        "false_positive_rate": 0.03362802610922912,
+        "alarm_origin_fraction": 0.04239077472795193
+      },
+      "0.1": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.015125948705302202,
+        "log_loss": 0.05798121900760818,
+        "average_precision": 0.23145940994372866,
+        "roc_auc": 0.9526986572206256,
+        "mean_probability": 0.012111726694538206,
+        "threshold": 0.1,
+        "tp": 74,
+        "fp": 182,
+        "fn": 137,
+        "tn": 11921,
+        "recall": 0.35071090047393366,
+        "precision": 0.2890625,
+        "false_alarm_ratio": 0.7109375,
+        "false_positive_rate": 0.015037593984962405,
+        "alarm_origin_fraction": 0.020789345460451518
+      },
+      "0.2": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.015125948705302202,
+        "log_loss": 0.05798121900760818,
+        "average_precision": 0.23145940994372866,
+        "roc_auc": 0.9526986572206256,
+        "mean_probability": 0.012111726694538206,
+        "threshold": 0.2,
+        "tp": 41,
+        "fp": 80,
+        "fn": 170,
+        "tn": 12023,
+        "recall": 0.1943127962085308,
+        "precision": 0.33884297520661155,
+        "false_alarm_ratio": 0.6611570247933884,
+        "false_positive_rate": 0.006609931421961497,
+        "alarm_origin_fraction": 0.009826214065291538
+      }
+    }
+  },
+  "reliability": {
+    "test_2025": [
+      {
+        "lower": 0,
+        "upper": 0.005,
+        "n": 11790,
+        "mean_probability": 0.0012366328306698926,
+        "observed_rate": 0.0019508057675996608
+      },
+      {
+        "lower": 0.005,
+        "upper": 0.01,
+        "n": 2276,
+        "mean_probability": 0.0072255433023819,
+        "observed_rate": 0.007029876977152899
+      },
+      {
+        "lower": 0.01,
+        "upper": 0.025,
+        "n": 2051,
+        "mean_probability": 0.01510746614951985,
+        "observed_rate": 0.020477815699658702
+      },
+      {
+        "lower": 0.025,
+        "upper": 0.05,
+        "n": 604,
+        "mean_probability": 0.035021592446556594,
+        "observed_rate": 0.0347682119205298
+      },
+      {
+        "lower": 0.05,
+        "upper": 0.1,
+        "n": 371,
+        "mean_probability": 0.0694762008834335,
+        "observed_rate": 0.0862533692722372
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "n": 144,
+        "mean_probability": 0.13680758674633328,
+        "observed_rate": 0.14583333333333334
+      },
+      {
+        "lower": 0.2,
+        "upper": 1.0001,
+        "n": 90,
+        "mean_probability": 0.3692285490544515,
+        "observed_rate": 0.17777777777777778
+      }
+    ],
+    "test_2026": [
+      {
+        "lower": 0,
+        "upper": 0.005,
+        "n": 7892,
+        "mean_probability": 0.0011095434732205575,
+        "observed_rate": 0.0
+      },
+      {
+        "lower": 0.005,
+        "upper": 0.01,
+        "n": 1598,
+        "mean_probability": 0.007252335604301239,
+        "observed_rate": 0.0025031289111389237
+      },
+      {
+        "lower": 0.01,
+        "upper": 0.025,
+        "n": 1768,
+        "mean_probability": 0.015425154223493494,
+        "observed_rate": 0.02319004524886878
+      },
+      {
+        "lower": 0.025,
+        "upper": 0.05,
+        "n": 534,
+        "mean_probability": 0.03473715704291809,
+        "observed_rate": 0.09550561797752809
+      },
+      {
+        "lower": 0.05,
+        "upper": 0.1,
+        "n": 266,
+        "mean_probability": 0.06827915693141537,
+        "observed_rate": 0.15413533834586465
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "n": 135,
+        "mean_probability": 0.14398535463724446,
+        "observed_rate": 0.24444444444444444
+      },
+      {
+        "lower": 0.2,
+        "upper": 1.0001,
+        "n": 121,
+        "mean_probability": 0.3750120659700348,
+        "observed_rate": 0.33884297520661155
+      }
+    ]
+  },
+  "latency": {
+    "2025_delay_0": {
+      "scheduled_origins": 17520,
+      "scored_origins": 17332,
+      "coverage_fraction": 0.9892694063926941,
+      "metrics": {
+        "n": 17332,
+        "positives": 172,
+        "prevalence": 0.009923840295407339,
+        "brier": 0.009480538101147844,
+        "log_loss": 0.04414985042427717,
+        "average_precision": 0.11089181569932519,
+        "roc_auc": 0.8759984685856779,
+        "mean_probability": 0.00941539705734625,
+        "threshold": 0.025036603205657367,
+        "tp": 92,
+        "fp": 1120,
+        "fn": 80,
+        "tn": 16040,
+        "recall": 0.5348837209302325,
+        "precision": 0.07590759075907591,
+        "false_alarm_ratio": 0.9240924092409241,
+        "false_positive_rate": 0.06526806526806526,
+        "alarm_origin_fraction": 0.06992845603507962
+      }
+    },
+    "2026_delay_0": {
+      "scheduled_origins": 12624,
+      "scored_origins": 12314,
+      "coverage_fraction": 0.9754435994930292,
+      "metrics": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.015103471933191105,
+        "log_loss": 0.057942992932512226,
+        "average_precision": 0.2324967640599339,
+        "roc_auc": 0.9524194581030985,
+        "mean_probability": 0.01218588662112832,
+        "threshold": 0.025036603205657367,
+        "tp": 166,
+        "fp": 887,
+        "fn": 45,
+        "tn": 11216,
+        "recall": 0.7867298578199052,
+        "precision": 0.157644824311491,
+        "false_alarm_ratio": 0.842355175688509,
+        "false_positive_rate": 0.0732876146409981,
+        "alarm_origin_fraction": 0.08551242488224785
+      }
+    },
+    "2025_delay_10": {
+      "scheduled_origins": 17520,
+      "scored_origins": 17332,
+      "coverage_fraction": 0.9892694063926941,
+      "metrics": {
+        "n": 17332,
+        "positives": 171,
+        "prevalence": 0.009866143549503808,
+        "brier": 0.009499822456390769,
+        "log_loss": 0.04455557661811134,
+        "average_precision": 0.1033662386229211,
+        "roc_auc": 0.8702037906568375,
+        "mean_probability": 0.009340620769797857,
+        "threshold": 0.025036603205657367,
+        "tp": 90,
+        "fp": 1117,
+        "fn": 81,
+        "tn": 16044,
+        "recall": 0.5263157894736842,
+        "precision": 0.07456503728251865,
+        "false_alarm_ratio": 0.9254349627174814,
+        "false_positive_rate": 0.06508944700192297,
+        "alarm_origin_fraction": 0.06963997230556197
+      }
+    },
+    "2026_delay_10": {
+      "scheduled_origins": 12624,
+      "scored_origins": 12314,
+      "coverage_fraction": 0.9754435994930292,
+      "metrics": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.015125948705302202,
+        "log_loss": 0.05798121900760818,
+        "average_precision": 0.23145940994372866,
+        "roc_auc": 0.9526986572206256,
+        "mean_probability": 0.012111726694538206,
+        "threshold": 0.025036603205657367,
+        "tp": 166,
+        "fp": 887,
+        "fn": 45,
+        "tn": 11216,
+        "recall": 0.7867298578199052,
+        "precision": 0.157644824311491,
+        "false_alarm_ratio": 0.842355175688509,
+        "false_positive_rate": 0.0732876146409981,
+        "alarm_origin_fraction": 0.08551242488224785
+      }
+    },
+    "2025_delay_20": {
+      "scheduled_origins": 17520,
+      "scored_origins": 351,
+      "coverage_fraction": 0.020034246575342467,
+      "metrics": {
+        "n": 351,
+        "positives": 17,
+        "prevalence": 0.04843304843304843,
+        "brier": 0.04475084709650547,
+        "log_loss": 0.2304781522860667,
+        "average_precision": 0.2735255714963924,
+        "roc_auc": 0.7985206058471293,
+        "mean_probability": 0.007759981261310746,
+        "threshold": 0.025036603205657367,
+        "tp": 6,
+        "fp": 20,
+        "fn": 11,
+        "tn": 314,
+        "recall": 0.35294117647058826,
+        "precision": 0.23076923076923078,
+        "false_alarm_ratio": 0.7692307692307693,
+        "false_positive_rate": 0.059880239520958084,
+        "alarm_origin_fraction": 0.07407407407407407
+      }
+    },
+    "2026_delay_20": {
+      "scheduled_origins": 12624,
+      "scored_origins": 307,
+      "coverage_fraction": 0.024318757921419517,
+      "metrics": {
+        "n": 307,
+        "positives": 22,
+        "prevalence": 0.07166123778501629,
+        "brier": 0.06638638879218345,
+        "log_loss": 0.2644823309139278,
+        "average_precision": 0.40525120542428633,
+        "roc_auc": 0.9312599681020735,
+        "mean_probability": 0.009472291939536847,
+        "threshold": 0.025036603205657367,
+        "tp": 11,
+        "fp": 16,
+        "fn": 11,
+        "tn": 269,
+        "recall": 0.5,
+        "precision": 0.4074074074074074,
+        "false_alarm_ratio": 0.5925925925925926,
+        "false_positive_rate": 0.056140350877192984,
+        "alarm_origin_fraction": 0.08794788273615635
+      }
+    }
+  },
+  "latency_note": "Coverage includes already-low/unknown exclusions; differing eligible sets prevent direct skill comparison. No refitting."
+}

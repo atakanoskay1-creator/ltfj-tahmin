@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "target": "Observed LTFJ ceiling strictly below 500 ft AGL within (t, t+3h]",
+  "development_train": ["2021-01-01", "2024-01-01"],
+  "development_validation": ["2024-01-01", "2025-01-01"],
+  "retrospective_test": ["2025-01-01", "2026-01-01"],
+  "temporal_test": ["2026-01-01", "2026-09-21"],
+  "boundary_embargo_hours": 24,
+  "assumed_report_delay_minutes": 10,
+  "regularization_candidates_C": [0.01, 0.1, 1.0],
+  "feature_sets": ["local", "local_and_neighbors"],
+  "selection_metric": "2024 Brier score (all models without class balancing)",
+  "calibration": "Intercept-only probability adjustment on 2024; also retain raw probabilities",
+  "alarm_rule": "On 2024 choose highest precision threshold attaining at least 70 percent origin recall; exploratory",
+  "uncertainty": "Paired 7-day block bootstrap, 500 resamples, seed 20260921",
+  "guardrails": [
+    "Do not tune to 2025 or 2026 outcomes.",
+    "2025 was already inspected for data quality; it is not an untouched final test.",
+    "No receipt timestamps; observation availability remains assumed.",
+    "Report Brier, PR-AUC, calibration, false alarms and event-level detection.",
+    "No deployment or operational validity claim from retrospective evaluation."
+  ]
+}

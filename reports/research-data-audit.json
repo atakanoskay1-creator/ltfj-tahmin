@@ -1,0 +1,226 @@
+{
+  "sources": [
+    {
+      "source_url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LTFJ&data=metar&sts=2020-01-01T00%3A00%3A00Z&ets=2025-01-01T00%3A00%3A00Z&tz=Etc%2FUTC&format=onlycomma&latlon=no&elev=no&missing=M&direct=no&report_type=3%2C4",
+      "station": "LTFJ",
+      "start": "2020-01-01T00:00:00Z",
+      "end_exclusive": "2025-01-01T00:00:00Z",
+      "retrieved_at": "2026-09-21T09:36:14.943660Z",
+      "rows": 86673,
+      "sha256": "2d0f16d2116446000521876632f4a0e04f7bcfdcceec417c43f4f4202069124a",
+      "source_terms": "https://mesonet.agron.iastate.edu/disclaimer.php"
+    },
+    {
+      "source_url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LTFJ&data=metar&sts=2025-01-01T00%3A00%3A00Z&ets=2026-01-01T00%3A00%3A00Z&tz=Etc%2FUTC&format=onlycomma&latlon=no&elev=no&missing=M&direct=no&report_type=3%2C4",
+      "station": "LTFJ",
+      "start": "2025-01-01T00:00:00Z",
+      "end_exclusive": "2026-01-01T00:00:00Z",
+      "retrieved_at": "2026-09-21T09:28:43.566202Z",
+      "rows": 17513,
+      "sha256": "085ebb250545f93fa5ce99b3bb60b82d1cf72404432ea1924ac226a1d11abbfa",
+      "source_terms": "https://mesonet.agron.iastate.edu/disclaimer.php"
+    },
+    {
+      "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LTFJ&data=metar&sts=2026-01-01T00%3A00%3A00Z&ets=2026-09-21T00%3A00%3A00Z&tz=Etc%2FUTC&format=onlycomma&latlon=no&elev=no&missing=M&direct=no&report_type=3%2C4",
+      "sha256": "30e2fc99fe09d87dac6d550455c6dbb51240f987fb9674c1c2c44476f1b18082",
+      "bytes": 1499166,
+      "retrieved_at": "2026-09-21T09:52:12.094073Z"
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/access/by-year/2021/psv/GHCNh_TUI0000LTFJ_2021.psv",
+      "sha256": "599d042d32d2676860732a6066b6cc40dca74f32d192ff9ba337aba2685b0b30",
+      "bytes": 16006611,
+      "retrieved_at": "2026-09-21T09:52:01.131722Z"
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/access/by-year/2022/psv/GHCNh_TUI0000LTFJ_2022.psv",
+      "sha256": "83734f8c8f4f62ad1cba257aee9a04155684e8068abc4cd3f1ec1e6a665991c8",
+      "bytes": 15983784,
+      "retrieved_at": "2026-09-21T09:52:03.219022Z"
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/access/by-year/2023/psv/GHCNh_TUI0000LTFJ_2023.psv",
+      "sha256": "5e7f251233e44b226be68dae9b1c6ffd1d5c9d3d9ed6ce00ca02ce267dbe8e3d",
+      "bytes": 15829328,
+      "retrieved_at": "2026-09-21T09:52:05.304260Z"
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/access/by-year/2024/psv/GHCNh_TUI0000LTFJ_2024.psv",
+      "sha256": "ef2ad7993cd0a6d30c16f9ffbf99ec37c7b340b9924536dff6e96f5832409739",
+      "bytes": 16153915,
+      "retrieved_at": "2026-09-21T09:52:07.373001Z"
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/access/by-year/2025/psv/GHCNh_TUI0000LTFJ_2025.psv",
+      "sha256": "c095153f468b317e95196ba15484c6a911fff7ee9c2db10df9a71515a7093770",
+      "bytes": 16023137,
+      "retrieved_at": "2026-09-21T09:49:15.951532Z",
+      "note": "Provenance registered for previously downloaded file."
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/access/by-year/2026/psv/GHCNh_TUI0000LTFJ_2026.psv",
+      "sha256": "5a06915136d9b5a5c1f4d0951f1ece5bee4bea2943117bb5b1928f8374dc8a72",
+      "bytes": 11032628,
+      "retrieved_at": "2026-09-21T09:52:09.263028Z"
+    }
+  ],
+  "ghcnh_counts": {
+    "2021": {
+      "all_rows": 20944,
+      "no_raw_metar": 2902,
+      "raw_metar": 18042,
+      "explicit_speci": 635,
+      "source_fm16": 635
+    },
+    "2022": {
+      "all_rows": 21107,
+      "no_raw_metar": 2896,
+      "raw_metar": 18211,
+      "explicit_speci": 795,
+      "source_fm16": 795
+    },
+    "2023": {
+      "all_rows": 20943,
+      "no_raw_metar": 2883,
+      "raw_metar": 18060,
+      "explicit_speci": 694,
+      "source_fm16": 694
+    },
+    "2024": {
+      "all_rows": 20863,
+      "no_raw_metar": 2883,
+      "raw_metar": 17980,
+      "explicit_speci": 587,
+      "source_fm16": 587
+    },
+    "2025": {
+      "all_rows": 20740,
+      "no_raw_metar": 2865,
+      "raw_metar": 17875,
+      "explicit_speci": 649,
+      "source_fm16": 649
+    },
+    "2026": {
+      "all_rows": 15118,
+      "no_raw_metar": 2041,
+      "raw_metar": 13077,
+      "explicit_speci": 214,
+      "source_fm16": 4743
+    }
+  },
+  "conflicting_fields": {
+    "weather": 45,
+    "corrected": 270,
+    "visibility_m": 13,
+    "visibility_lower_bound": 9,
+    "ceiling_ft": 9,
+    "ceiling_state": 8,
+    "qnh_hpa": 3,
+    "below_500": 2,
+    "wind_direction_deg": 7,
+    "wind_speed_kt": 5
+  },
+  "neighbors": {
+    "source": {
+      "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=LTBA%2CLTFM%2CLTBQ%2CLTBR&data=metar&sts=2021-01-01T00%3A00%3A00Z&ets=2026-09-21T00%3A00%3A00Z&tz=Etc%2FUTC&format=onlycomma&latlon=no&elev=no&missing=M&direct=no&report_type=3%2C4",
+      "sha256": "aeec304d787cd6ffdf197b15e8225fb510b472e51095ac674247ed75060e3f13",
+      "bytes": 35996742,
+      "retrieved_at": "2026-09-21T09:53:08.326355Z"
+    },
+    "counts": {
+      "LTBA": 101357,
+      "LTFM": 100198,
+      "LTBQ": 54564,
+      "LTBR": 100190
+    }
+  },
+  "assumed_delay_minutes": 10,
+  "end_exclusive": "2026-09-21T00:00:00Z",
+  "note": "Receipt times unknown. Delay is an explicit assumption, not verified availability.",
+  "observation_counts_by_year": {
+    "2021": 18154,
+    "2022": 18314,
+    "2023": 18212,
+    "2024": 18128,
+    "2025": 18167,
+    "2026": 13178
+  },
+  "sources_by_year": {
+    "2021": {
+      "GHCNh+IEM": 17396,
+      "GHCNh": 646,
+      "IEM": 112
+    },
+    "2022": {
+      "GHCNh+IEM": 17416,
+      "GHCNh": 795,
+      "IEM": 103
+    },
+    "2023": {
+      "GHCNh+IEM": 17363,
+      "GHCNh": 697,
+      "IEM": 152
+    },
+    "2024": {
+      "GHCNh+IEM": 17393,
+      "GHCNh": 587,
+      "IEM": 148
+    },
+    "2025": {
+      "GHCNh+IEM": 17221,
+      "GHCNh": 654,
+      "IEM": 292
+    },
+    "2026": {
+      "GHCNh+IEM": 12519,
+      "GHCNh": 558,
+      "IEM": 101
+    }
+  },
+  "labels_by_year": {
+    "2021": {
+      "missing_current": 2,
+      "no_observed_event": 17095,
+      "event": 171,
+      "already_below_threshold": 246,
+      "coverage_gap": 6
+    },
+    "2022": {
+      "no_observed_event": 17164,
+      "event": 170,
+      "already_below_threshold": 174,
+      "unknown_current": 4,
+      "unknown_future": 6,
+      "coverage_gap": 1,
+      "missing_current": 1
+    },
+    "2023": {
+      "no_observed_event": 17134,
+      "event": 174,
+      "already_below_threshold": 204,
+      "coverage_gap": 6,
+      "missing_current": 2
+    },
+    "2024": {
+      "no_observed_event": 17132,
+      "event": 155,
+      "already_below_threshold": 204,
+      "coverage_gap": 49,
+      "missing_current": 27,
+      "unknown_future": 1
+    },
+    "2025": {
+      "no_observed_event": 17161,
+      "event": 171,
+      "already_below_threshold": 188
+    },
+    "2026": {
+      "no_observed_event": 12103,
+      "event": 211,
+      "already_below_threshold": 271,
+      "coverage_gap": 29,
+      "missing_current": 4,
+      "incomplete_horizon": 6
+    }
+  }
+}

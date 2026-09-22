@@ -4,20 +4,47 @@ LTFJ (İstanbul Sabiha Gökçen) için METAR/SPECI ve ek meteorolojik veriler ku
 
 ## Durum
 
-2025 yılı LTFJ arşivi indirilmiş ve denetlenmiştir. METAR çözümleme, geçmişe dayalı özellik çıkarımı ve üç saatlik hedef etiketleme çalışmaktadır. Henüz model eğitilmemiş ve tahmin başarısı ölçülmemiştir.
+**İlk istatistiksel araştırma modeli eğitildi ve zaman sıralı testlerle değerlendirildi.** 2021–2026 LTFJ METAR/SPECI arşivleri ve dört çevre istasyon kullanılır. Model üç saat içinde 500 ft AGL altı tavan olasılığını üretir. Yanlış alarm yükü yüksek olduğu için otomatik operasyonel alarm olarak kullanıma hazır sayılmaz. [Model sonuçları ve sınırları](reports/model-card.md).
+
+### Modeli çalıştırma
+
+Model eğitimi için Python 3.12 ve [requirements-model.txt](requirements-model.txt) kullanılır:
+
+```sh
+python -m pip install -r requirements-model.txt
+python -m ltfj.pipeline fetch --start 2020-01-01 --end 2025-01-01 --output data/raw/LTFJ_2020_2024.csv
+python -m ltfj.pipeline fetch --start 2025-01-01 --end 2026-01-01 --output data/raw/LTFJ_2025.csv
+python -m ltfj.sources
+python -m ltfj.research_data
+python -m ltfj.model
+python -m ltfj.diagnostics
+python -m unittest discover -s tests -v
+```
+
+İlk iki ham dosya mevcutsa tekrar indirme komutlarını atlayın; indirici mevcut dosyayı değiştirmez. `sources` doğrulanmış önbelleği yeniden kullanır. Tarih kesimi araştırma protokolünde 21 Eylül 2026 00:00 UTC olarak sabittir; daha yeni tarih kullanmak yeni deney protokolü gerektirir.
+
+Hazırlanmış geçmiş bir zaman için, ek paket kurmadan:
+
+```sh
+python -m ltfj.predict --at 2026-09-20T12:00:00Z
+```
+
+Bu komut [kayıtlı katsayılarla](reports/model-parameters.json) yerel `features.csv` satırını değerlendirir; canlı hava tahmini indirmez. Güncel gözlem yoksa veya tavan zaten eşik altındaysa ayrı durum döndürür. Model eğitimi, özellik hazırlığı ve analiz kodu ile sonuçlar Git'te; büyük ham/türetilmiş veri dosyaları yereldedir.
+
+### Önceki veri incelemeleri
 
 İlk IEM denetimi: **17.513 gözlem, 188 eşik altı gözlem, 32 kesintisiz düşük tavan dizisi ve 161 pozitif tahmin zamanı**. Pozitif tahmin zamanları bağımsız hava olayları değildir. Ayrıntılar: [2025 veri raporu](reports/2025-summary.md).
 
-**Sonraki ayrıntılı incelemede SPECI eksikliği doğrulandı:** NOAA'nın 2025 dosyasında IEM'de bulunmayan 446 SPECI ve 33 ek eşik altı gözlem bulundu. Yedi negatif tahmin zamanı bu ek gözlemlerle pozitif oluyor. Bu nedenle mevcut etiketler IEM-only ön sürümdür; nihai eğitimden önce arşiv birleştirmesi gerekir. Ayrıca 2020–2024 indirildi; toplam 104.186 IEM raporu denetlendi. [Veri yeterliliği kararı ve kaynak karşılaştırması](reports/data-adequacy.md).
+**Ayrıntılı incelemede SPECI eksikliği doğrulandı:** NOAA'nın eski 2025 ISD dosyasında IEM'de bulunmayan 446 SPECI ve 33 ek eşik altı gözlem bulundu. Yedi negatif tahmin zamanı bu ek gözlemlerle pozitif oluyor. Bu ilk etiketler IEM-only ön sürüm olarak korunur. Model için daha sonra tam yıl GHCNh ham raporlarıyla birleşik veri hazırlandı. Ayrıca 2020–2024 indirildi; ilk yeterlilik incelemesinde toplam 104.186 IEM raporu denetlendi. [Veri yeterliliği kararı ve kaynak karşılaştırması](reports/data-adequacy.md).
 
-## Çalıştırma
+## İlk veri hazırlığını çalıştırma
 
-Python 3.10 veya üstü yeterlidir; ek paket kurulumu gerekmez. Komutlar depo kökünde çalıştırılır:
+Yalnızca ilk veri hazırlama komutları için Python 3.10 veya üstü yeterlidir; ek paket kurulumu gerekmez. Komutlar depo kökünde çalıştırılır:
 
 ```sh
 python -m ltfj.pipeline fetch --start 2025-01-01 --end 2026-01-01 --output data/raw/LTFJ_2025.csv
 python -m ltfj.pipeline prepare --input data/raw/LTFJ_2025.csv --output data/processed/2025 --report reports/2025-audit.json
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -p test_pipeline.py -v
 ```
 
 Başlangıç dahil, bitiş hariçtir; saatler UTC'dir. İndirici mevcut ham dosyayı değiştirmez. Yeniden hazırlama, CSV yanındaki `.manifest.json` dosyasını ve SHA-256 doğrulamasını gerektirir. Aynı kaynağı tekrar indirmek için farklı bir çıktı adı kullanın. `prepare` türetilmiş çıktıları yeniden üretir.
@@ -74,7 +101,7 @@ ERA5 gibi yeniden analiz verileri keşif için kullanılabilir; tahmin anında e
 
 ## Sonraki somut adım
 
-Birden fazla yılın verisini aynı protokolle denetlemek, SPECI kapsamını karşılaştırmalı doğrulamak ve kronolojik eğitim/doğrulama/test dönemlerini belirlemek. Ardından olay sıklığı referansı ve lojistik regresyon modeli kurulacaktır. 2025'in son üç ayında pozitif olay bulunmadığından bu yılın son bölümünü tek başına test kümesi yapmak uygun bir ilk başarı değerlendirmesi sağlamaz. Çevre istasyonlar ve sayısal hava tahmini girdileri sonraki aşamada eklenecektir.
+Çok yıllı arşiv birleştirmesi, çevre istasyonlar, lojistik model ve zaman sıralı değerlendirme tamamlandı. Sonraki araştırma öncelikleri gerçek rapor alım zamanları, eğitim dönemini kapsayan arşivlenmiş sayısal tahminler ve yeni ileriye dönük değerlendirmedir. Deney sonuçlarına göre alınan karar [model raporunda](reports/model-card.md) açıklanmıştır.
 
 ## Kaynaklar
 

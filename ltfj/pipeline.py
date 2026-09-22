@@ -121,7 +121,7 @@ def target(current, future, t, archive_end):
     return 0, "no_observed_event"
 
 
-def build_rows(observations, start, end):
+def build_rows(observations, start, end, delay_minutes=0):
     times = [o["time"] for o in observations]
     # Fixed half-hour UTC grid independent of SPECI occurrence.
     t = start.replace(minute=(start.minute // 30) * 30, second=0, microsecond=0)
@@ -129,9 +129,10 @@ def build_rows(observations, start, end):
         t += STEP
     features, labels = [], []
     while t < end:
-        i = bisect_right(times, t)
+        cutoff = t - timedelta(minutes=delay_minutes)
+        i = bisect_right(times, cutoff)
         current = observations[i - 1] if i else None
-        future = observations[i:bisect_right(times, t + HORIZON)]
+        future = observations[bisect_right(times, t):bisect_right(times, t + HORIZON)]
         y, reason = target(current, future, t, end)
         labels.append(dict(time=iso(t), target_end=iso(t + HORIZON),
                            below_500_within_3h=y, label_status=reason))
@@ -145,7 +146,7 @@ def build_rows(observations, start, end):
         if usable:
             record.update(observation_time=iso(current["time"]),
                           observation_age_minutes=(t-current["time"]).total_seconds()/60)
-            j = bisect_right(times, t - timedelta(hours=1))
+            j = bisect_right(times, cutoff - timedelta(hours=1))
             lagged = observations[j - 1] if j else None
             if lagged and t - timedelta(hours=1) - lagged["time"] <= MAX_AGE:
                 for source, dest in [("ceiling_ft", "ceiling_change_1h_ft"),
