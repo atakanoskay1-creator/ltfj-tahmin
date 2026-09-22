@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "purpose": "Compare nonlinear and reduced models without selecting on reused 2025/2026 outcomes",
+  "selection_folds": [["2021-01-01", "2022-01-01", "2023-01-01"], ["2021-01-01", "2023-01-01", "2024-01-01"]],
+  "selection": "Lowest pooled out-of-time Brier score over 2022 and 2023",
+  "candidates": ["logistic_local", "logistic_neighbors", "logistic_reduced", "spline_reduced", "boost_local", "boost_neighbors"],
+  "final_train": ["2021-01-01", "2024-01-01"],
+  "calibration": ["2024-01-01", "2025-01-01"],
+  "boundary_embargo_hours": 24,
+  "alarm_recall_goal": 0.7,
+  "replay": [["2025-01-01", "2026-01-01"], ["2026-01-01", "2026-09-21"]],
+  "limitations": "2024 was used in v1 selection; 2025 and 2026 have already been seen. All replay comparisons are retrospective, not new independent validation. No automated replacement of v1.",
+  "fixed_hyperparameters": "Logistic C=0.01; spline 4 quantile knots degree 2, C=0.01; boosting 150 iterations, learning_rate=0.05, max_leaf_nodes=7, min_samples_leaf=100, l2_regularization=10, early_stopping=false; no class balancing"
+}

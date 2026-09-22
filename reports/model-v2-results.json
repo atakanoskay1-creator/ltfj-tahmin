@@ -1,0 +1,621 @@
+{
+  "frozen": {
+    "protocol": {
+      "version": 2,
+      "purpose": "Compare nonlinear and reduced models without selecting on reused 2025/2026 outcomes",
+      "selection_folds": [
+        [
+          "2021-01-01",
+          "2022-01-01",
+          "2023-01-01"
+        ],
+        [
+          "2021-01-01",
+          "2023-01-01",
+          "2024-01-01"
+        ]
+      ],
+      "selection": "Lowest pooled out-of-time Brier score over 2022 and 2023",
+      "candidates": [
+        "logistic_local",
+        "logistic_neighbors",
+        "logistic_reduced",
+        "spline_reduced",
+        "boost_local",
+        "boost_neighbors"
+      ],
+      "final_train": [
+        "2021-01-01",
+        "2024-01-01"
+      ],
+      "calibration": [
+        "2024-01-01",
+        "2025-01-01"
+      ],
+      "boundary_embargo_hours": 24,
+      "alarm_recall_goal": 0.7,
+      "replay": [
+        [
+          "2025-01-01",
+          "2026-01-01"
+        ],
+        [
+          "2026-01-01",
+          "2026-09-21"
+        ]
+      ],
+      "limitations": "2024 was used in v1 selection; 2025 and 2026 have already been seen. All replay comparisons are retrospective, not new independent validation. No automated replacement of v1.",
+      "fixed_hyperparameters": "Logistic C=0.01; spline 4 quantile knots degree 2, C=0.01; boosting 150 iterations, learning_rate=0.05, max_leaf_nodes=7, min_samples_leaf=100, l2_regularization=10, early_stopping=false; no class balancing"
+    },
+    "selected": "boost_local",
+    "columns": [
+      "log_ceiling",
+      "no_ceiling",
+      "spread_c",
+      "temperature_c",
+      "log_visibility",
+      "wind_u",
+      "wind_v",
+      "wind_speed_kt",
+      "qnh_hpa",
+      "fog_mist",
+      "rain",
+      "hour_sin",
+      "hour_cos",
+      "year_sin",
+      "year_cos",
+      "ceiling_change_1h_ft",
+      "pressure_change_1h",
+      "pressure_change_3h",
+      "spread_change_1h",
+      "spread_change_3h",
+      "visibility_change_1h",
+      "visibility_change_3h",
+      "recent_low_fraction"
+    ],
+    "offset": 0.8399057251639088,
+    "threshold": 0.02728559414841884,
+    "candidates": [
+      {
+        "name": "logistic_local",
+        "folds": [
+          {
+            "year": "2022",
+            "n": 17280,
+            "positives": 170,
+            "prevalence": 0.009837962962962963,
+            "brier": 0.010148744775939028,
+            "log_loss": 0.04461116337579257,
+            "average_precision": 0.10882209613702014,
+            "roc_auc": 0.899474335613848,
+            "mean_probability": 0.01152634037482189
+          },
+          {
+            "year": "2023",
+            "n": 17254,
+            "positives": 174,
+            "prevalence": 0.010084618059580388,
+            "brier": 0.009345406642269296,
+            "log_loss": 0.04364183127309606,
+            "average_precision": 0.13145265390369257,
+            "roc_auc": 0.8933786912164526,
+            "mean_probability": 0.01054339156461641
+          }
+        ],
+        "pooled": {
+          "n": 34534,
+          "positives": 344,
+          "prevalence": 0.00996119766027683,
+          "brier": 0.009747378118200636,
+          "log_loss": 0.04412686222041162,
+          "average_precision": 0.1051608816788235,
+          "roc_auc": 0.8969265459096567,
+          "mean_probability": 0.01103523599156813
+        }
+      },
+      {
+        "name": "logistic_neighbors",
+        "folds": [
+          {
+            "year": "2022",
+            "n": 17280,
+            "positives": 170,
+            "prevalence": 0.009837962962962963,
+            "brier": 0.009548838925588813,
+            "log_loss": 0.04291967078429193,
+            "average_precision": 0.1081933514939155,
+            "roc_auc": 0.9011462165228451,
+            "mean_probability": 0.00989143697264131
+          },
+          {
+            "year": "2023",
+            "n": 17254,
+            "positives": 174,
+            "prevalence": 0.010084618059580388,
+            "brier": 0.009013362844535102,
+            "log_loss": 0.0394758309842196,
+            "average_precision": 0.19151900772226046,
+            "roc_auc": 0.9304903900508762,
+            "mean_probability": 0.012505183344246624
+          }
+        ],
+        "pooled": {
+          "n": 34534,
+          "positives": 344,
+          "prevalence": 0.00996119766027683,
+          "brier": 0.009281302460004151,
+          "log_loss": 0.041199047285408276,
+          "average_precision": 0.14048696041424197,
+          "roc_auc": 0.9146118306046239,
+          "mean_probability": 0.011197326238167403
+        }
+      },
+      {
+        "name": "logistic_reduced",
+        "folds": [
+          {
+            "year": "2022",
+            "n": 17280,
+            "positives": 170,
+            "prevalence": 0.009837962962962963,
+            "brier": 0.010598310426435421,
+            "log_loss": 0.046491969863598125,
+            "average_precision": 0.09627242617041812,
+            "roc_auc": 0.8926228211915976,
+            "mean_probability": 0.011546236074106606
+          },
+          {
+            "year": "2023",
+            "n": 17254,
+            "positives": 174,
+            "prevalence": 0.010084618059580388,
+            "brier": 0.009417335176986126,
+            "log_loss": 0.04447725847595001,
+            "average_precision": 0.12238871592927929,
+            "roc_auc": 0.885048049745619,
+            "mean_probability": 0.010133075651369427
+          }
+        ],
+        "pooled": {
+          "n": 34534,
+          "positives": 344,
+          "prevalence": 0.00996119766027683,
+          "brier": 0.01000826736875319,
+          "log_loss": 0.04548537258895631,
+          "average_precision": 0.09468539182896317,
+          "roc_auc": 0.8892837222906194,
+          "mean_probability": 0.010840187833708527
+        }
+      },
+      {
+        "name": "spline_reduced",
+        "folds": [
+          {
+            "year": "2022",
+            "n": 17280,
+            "positives": 170,
+            "prevalence": 0.009837962962962963,
+            "brier": 0.009454056255106712,
+            "log_loss": 0.04043202458878204,
+            "average_precision": 0.1332844577384779,
+            "roc_auc": 0.9129683363701997,
+            "mean_probability": 0.011266446345607672
+          },
+          {
+            "year": "2023",
+            "n": 17254,
+            "positives": 174,
+            "prevalence": 0.010084618059580388,
+            "brier": 0.00918030884578635,
+            "log_loss": 0.04144649695311601,
+            "average_precision": 0.15935651904722375,
+            "roc_auc": 0.9125084120703114,
+            "mean_probability": 0.010621089838461467
+          }
+        ],
+        "pooled": {
+          "n": 34534,
+          "positives": 344,
+          "prevalence": 0.00996119766027683,
+          "brier": 0.009317285600088076,
+          "log_loss": 0.040938878882354125,
+          "average_precision": 0.13192156104742533,
+          "roc_auc": 0.9120326220777188,
+          "mean_probability": 0.010944011030431307
+        }
+      },
+      {
+        "name": "boost_local",
+        "folds": [
+          {
+            "year": "2022",
+            "n": 17280,
+            "positives": 170,
+            "prevalence": 0.009837962962962963,
+            "brier": 0.009183527887815639,
+            "log_loss": 0.04124438447579917,
+            "average_precision": 0.13239889112835668,
+            "roc_auc": 0.9203733626706089,
+            "mean_probability": 0.007962450898295424
+          },
+          {
+            "year": "2023",
+            "n": 17254,
+            "positives": 174,
+            "prevalence": 0.010084618059580388,
+            "brier": 0.009306095606106282,
+            "log_loss": 0.04150377838791177,
+            "average_precision": 0.17508392986442572,
+            "roc_auc": 0.9135239171983095,
+            "mean_probability": 0.010155258519800812
+          }
+        ],
+        "pooled": {
+          "n": 34534,
+          "positives": 344,
+          "prevalence": 0.00996119766027683,
+          "brier": 0.009244765607494413,
+          "log_loss": 0.04137398378545317,
+          "average_precision": 0.1468351724795175,
+          "roc_auc": 0.9163332301706606,
+          "mean_probability": 0.0090580292472111
+        }
+      },
+      {
+        "name": "boost_neighbors",
+        "folds": [
+          {
+            "year": "2022",
+            "n": 17280,
+            "positives": 170,
+            "prevalence": 0.009837962962962963,
+            "brier": 0.009664278270867053,
+            "log_loss": 0.04212648816978447,
+            "average_precision": 0.12220633255763343,
+            "roc_auc": 0.9304973011998487,
+            "mean_probability": 0.006273486961810396
+          },
+          {
+            "year": "2023",
+            "n": 17254,
+            "positives": 174,
+            "prevalence": 0.010084618059580388,
+            "brier": 0.00886717292619397,
+            "log_loss": 0.037551465526725974,
+            "average_precision": 0.2144995716542246,
+            "roc_auc": 0.9403834894613583,
+            "mean_probability": 0.009454584681989592
+          }
+        ],
+        "pooled": {
+          "n": 34534,
+          "positives": 344,
+          "prevalence": 0.00996119766027683,
+          "brier": 0.009266025661352099,
+          "log_loss": 0.03984069907256632,
+          "average_precision": 0.14816294272258124,
+          "roc_auc": 0.9337851234891202,
+          "mean_probability": 0.00786283832753611
+        }
+      }
+    ],
+    "hashes": {
+      "research-protocol-v2.json": "957d534f433720a85507af3b5fc32df2f689f4ef6c63b949ec1cb6eb555dfc5f",
+      "data\\processed\\research\\features.csv": "0398f48525c2ae6fe0c06202a49a9d15eee7f45c29e554a56d7402dd2abcbcae",
+      "data\\processed\\research\\labels.csv": "b682d4500213be7b339489bf071d2ce5bca1b28f56f6b4f8ae6e7f9b0e537d3e"
+    }
+  },
+  "results": {
+    "2024": {
+      "v2": {
+        "n": 17233,
+        "positives": 155,
+        "prevalence": 0.008994371264434515,
+        "brier": 0.007927141964041715,
+        "log_loss": 0.03444696421394873,
+        "average_precision": 0.19100815954375655,
+        "roc_auc": 0.9386076786206741,
+        "mean_probability": 0.008994371264434505,
+        "threshold": 0.02728559414841884,
+        "tp": 110,
+        "fp": 967,
+        "fn": 45,
+        "tn": 16111,
+        "recall": 0.7096774193548387,
+        "precision": 0.1021355617455896,
+        "false_alarm_ratio": 0.8978644382544104,
+        "false_positive_rate": 0.05662255533434828,
+        "alarm_origin_fraction": 0.06249637323739337
+      },
+      "v2_raw": {
+        "n": 17233,
+        "positives": 155,
+        "prevalence": 0.008994371264434515,
+        "brier": 0.008200582843955126,
+        "log_loss": 0.03669705862769336,
+        "average_precision": 0.19100815954375655,
+        "roc_auc": 0.9386076786206741,
+        "mean_probability": 0.004199393904886596
+      },
+      "v1": {
+        "n": 17233,
+        "positives": 155,
+        "prevalence": 0.008994371264434515,
+        "brier": 0.008083970281546372,
+        "log_loss": 0.034873922719838746,
+        "average_precision": 0.18233998471038465,
+        "roc_auc": 0.9500825434722657,
+        "mean_probability": 0.008994371264434515,
+        "threshold": 0.025036603205657367,
+        "tp": 109,
+        "fp": 1019,
+        "fn": 46,
+        "tn": 16059,
+        "recall": 0.7032258064516129,
+        "precision": 0.09663120567375887,
+        "false_alarm_ratio": 0.9033687943262412,
+        "false_positive_rate": 0.05966740836163485,
+        "alarm_origin_fraction": 0.06545581152440086
+      },
+      "uncertainty_vs_v1": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 53,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.010333737741954063,
+            0.05246994619274718
+          ],
+          "average_precision": [
+            0.09428581553279539,
+            0.3251618925804502
+          ],
+          "recall": [
+            0.5900915750915751,
+            0.8300864361702127
+          ],
+          "precision": [
+            0.05752077969011158,
+            0.15849826806268336
+          ]
+        }
+      },
+      "events": {
+        "observed_low_runs": 28,
+        "runs_with_eligible_origin": 28,
+        "detected_runs": 27,
+        "recall": 0.9642857142857143,
+        "median_first_alarm_lead_minutes": 145.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    },
+    "2025": {
+      "v2": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00929103285350171,
+        "log_loss": 0.042693780558233856,
+        "average_precision": 0.12581281956969326,
+        "roc_auc": 0.8972602739726028,
+        "mean_probability": 0.009239053597467534,
+        "threshold": 0.02728559414841884,
+        "tp": 93,
+        "fp": 905,
+        "fn": 78,
+        "tn": 16250,
+        "recall": 0.543859649122807,
+        "precision": 0.09318637274549098,
+        "false_alarm_ratio": 0.906813627254509,
+        "false_positive_rate": 0.05275429903818129,
+        "alarm_origin_fraction": 0.057601292854669285
+      },
+      "v2_raw": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00928978493712305,
+        "log_loss": 0.04549839893784353,
+        "average_precision": 0.12581281956969326,
+        "roc_auc": 0.8972602739726028,
+        "mean_probability": 0.004377278116338734
+      },
+      "v1": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00950310752041348,
+        "log_loss": 0.044569767901918335,
+        "average_precision": 0.10336756343439783,
+        "roc_auc": 0.8701972555015247,
+        "mean_probability": 0.00934261947214193,
+        "threshold": 0.025036603205657367,
+        "tp": 90,
+        "fp": 1117,
+        "fn": 81,
+        "tn": 16038,
+        "recall": 0.5263157894736842,
+        "precision": 0.07456503728251865,
+        "false_alarm_ratio": 0.9254349627174814,
+        "false_positive_rate": 0.06511221218303702,
+        "alarm_origin_fraction": 0.06966408865289161
+      },
+      "uncertainty_vs_v1": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 53,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.08297302603448012,
+            0.10307766611013085
+          ],
+          "average_precision": [
+            0.05336770152169797,
+            0.22331271271170378
+          ],
+          "recall": [
+            0.35165247555976037,
+            0.6609705159705159
+          ],
+          "precision": [
+            0.04303714817593288,
+            0.15388976675865754
+          ]
+        }
+      },
+      "events": {
+        "observed_low_runs": 36,
+        "runs_with_eligible_origin": 36,
+        "detected_runs": 30,
+        "recall": 0.8333333333333334,
+        "median_first_alarm_lead_minutes": 159.5,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    },
+    "2026": {
+      "v2": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.014716398181648046,
+        "log_loss": 0.05752757759665737,
+        "average_precision": 0.26324050439742336,
+        "roc_auc": 0.9459888719768277,
+        "mean_probability": 0.010696282739871601,
+        "threshold": 0.02728559414841884,
+        "tp": 155,
+        "fp": 774,
+        "fn": 56,
+        "tn": 11329,
+        "recall": 0.7345971563981043,
+        "precision": 0.1668460710441335,
+        "false_alarm_ratio": 0.8331539289558665,
+        "false_positive_rate": 0.06395108650747748,
+        "alarm_origin_fraction": 0.07544258567484165
+      },
+      "v2_raw": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.015572735315269684,
+        "log_loss": 0.06557582124704929,
+        "average_precision": 0.26324050439742336,
+        "roc_auc": 0.9459888719768277,
+        "mean_probability": 0.005051780403246073
+      },
+      "v1": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.015125948705302202,
+        "log_loss": 0.05798121900760818,
+        "average_precision": 0.23145940994372866,
+        "roc_auc": 0.9526986572206256,
+        "mean_probability": 0.012111726694538206,
+        "threshold": 0.025036603205657367,
+        "tp": 166,
+        "fp": 887,
+        "fn": 45,
+        "tn": 11216,
+        "recall": 0.7867298578199052,
+        "precision": 0.157644824311491,
+        "false_alarm_ratio": 0.842355175688509,
+        "false_positive_rate": 0.0732876146409981,
+        "alarm_origin_fraction": 0.08551242488224785
+      },
+      "uncertainty_vs_v1": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 38,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.02077200964762553,
+            0.0930752433074353
+          ],
+          "average_precision": [
+            0.1671868923059422,
+            0.3892784626465043
+          ],
+          "recall": [
+            0.6426979224049736,
+            0.8196242163633467
+          ],
+          "precision": [
+            0.10119821766061811,
+            0.24079711272812168
+          ]
+        }
+      },
+      "events": {
+        "observed_low_runs": 39,
+        "runs_with_eligible_origin": 39,
+        "detected_runs": 37,
+        "recall": 0.9487179487179487,
+        "median_first_alarm_lead_minutes": 166.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    }
+  },
+  "development_errors": {
+    "no_numeric_ceiling": {
+      "n": 11355,
+      "positives": 94,
+      "prevalence": 0.008278291501541172,
+      "brier": 0.0070310889190975355,
+      "log_loss": 0.030269503567840698,
+      "average_precision": 0.23918185837341477,
+      "roc_auc": 0.9480767741045635,
+      "mean_probability": 0.007384539377337032,
+      "threshold": 0.02728559414841884,
+      "tp": 65,
+      "fp": 477,
+      "fn": 29,
+      "tn": 10784,
+      "recall": 0.6914893617021277,
+      "precision": 0.11992619926199262,
+      "false_alarm_ratio": 0.8800738007380073,
+      "false_positive_rate": 0.04235858271911908,
+      "alarm_origin_fraction": 0.047732276530162925
+    },
+    "ceiling_500_999": {
+      "n": 541,
+      "positives": 24,
+      "prevalence": 0.04436229205175601,
+      "brier": 0.043676089400312916,
+      "log_loss": 0.18265937272679192,
+      "average_precision": 0.11485992333361182,
+      "roc_auc": 0.6686814958091554,
+      "mean_probability": 0.04828052540650333,
+      "threshold": 0.02728559414841884,
+      "tp": 15,
+      "fp": 221,
+      "fn": 9,
+      "tn": 296,
+      "recall": 0.625,
+      "precision": 0.0635593220338983,
+      "false_alarm_ratio": 0.9364406779661016,
+      "false_positive_rate": 0.4274661508704062,
+      "alarm_origin_fraction": 0.43622920517560076
+    },
+    "ceiling_at_least_1000": {
+      "n": 5337,
+      "positives": 37,
+      "prevalence": 0.006932733745549934,
+      "brier": 0.006209791722767295,
+      "log_loss": 0.028310961334261378,
+      "average_precision": 0.18910114726250332,
+      "roc_auc": 0.9522361040285569,
+      "mean_probability": 0.008437097831257179,
+      "threshold": 0.02728559414841884,
+      "tp": 30,
+      "fp": 269,
+      "fn": 7,
+      "tn": 5031,
+      "recall": 0.8108108108108109,
+      "precision": 0.10033444816053512,
+      "false_alarm_ratio": 0.8996655518394648,
+      "false_positive_rate": 0.05075471698113208,
+      "alarm_origin_fraction": 0.05602398351133596
+    }
+  }
+}

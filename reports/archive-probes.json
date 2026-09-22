@@ -1,0 +1,191 @@
+{
+  "note": "Point samples only; does not establish continuous coverage or historical publication latency.",
+  "probes": [
+    {
+      "cycle": "2021010100",
+      "status": "failed",
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+      "error": "HTTP Error 400: ",
+      "detail": "IllegalArgumentException: illegal member name =Relative_humidity_isobaric"
+    },
+    {
+      "cycle": "2021010100",
+      "variable": "Temperature_isobaric",
+      "status": "single_variable_sample_downloaded",
+      "rows": [
+        {
+          "time": "2021-01-01T06:00:00Z",
+          "station": "GridPointRequestedAt[40.900N_29.300E]",
+          "latitude[unit=\"degrees_north\"]": "41.000",
+          "longitude[unit=\"degrees_east\"]": "29.250",
+          "Temperature_isobaric[unit=\"K\"]": "282.3509"
+        }
+      ],
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f006.grib2?var=Temperature_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "d94ca9f894317776b83453f74a3225a97d29be12163ad9d5af4e9b41664f0fc0",
+        "bytes": 188,
+        "retrieved_at": "2026-09-22T01:07:02.077208Z"
+      }
+    },
+    {
+      "cycle": "2021010100",
+      "variable": "Relative_humidity_isobaric",
+      "status": "single_variable_sample_downloaded",
+      "rows": [
+        {
+          "time": "2021-01-01T06:00:00Z",
+          "station": "GridPointRequestedAt[40.900N_29.300E]",
+          "latitude[unit=\"degrees_north\"]": "41.000",
+          "longitude[unit=\"degrees_east\"]": "29.250",
+          "Relative_humidity_isobaric[unit=\"%\"]": "65.1"
+        }
+      ],
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "c8f0b5c3e70a580df700f69366913c69fbcd9ddb30ccf35f9aa64e2729f180e3",
+        "bytes": 190,
+        "retrieved_at": "2026-09-22T01:07:03.666227Z"
+      }
+    },
+    {
+      "cycle": "2021010100",
+      "variable": "u-component_of_wind_isobaric",
+      "status": "single_variable_sample_downloaded",
+      "rows": [
+        {
+          "time": "2021-01-01T06:00:00Z",
+          "station": "GridPointRequestedAt[40.900N_29.300E]",
+          "latitude[unit=\"degrees_north\"]": "41.000",
+          "longitude[unit=\"degrees_east\"]": "29.250",
+          "u-component_of_wind_isobaric[unit=\"m/s\"]": "4.6996484"
+        }
+      ],
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f006.grib2?var=u-component_of_wind_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "6ca55e00a943c07eb93d14f728b38729313247c08d53fb824fc5b48b5e560c20",
+        "bytes": 199,
+        "retrieved_at": "2026-09-22T01:07:04.329480Z"
+      }
+    },
+    {
+      "cycle": "2021010100",
+      "variable": "v-component_of_wind_isobaric",
+      "status": "single_variable_sample_downloaded",
+      "rows": [
+        {
+          "time": "2021-01-01T06:00:00Z",
+          "station": "GridPointRequestedAt[40.900N_29.300E]",
+          "latitude[unit=\"degrees_north\"]": "41.000",
+          "longitude[unit=\"degrees_east\"]": "29.250",
+          "v-component_of_wind_isobaric[unit=\"m/s\"]": "6.4881053"
+        }
+      ],
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f006.grib2?var=v-component_of_wind_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "1f5195ec5e4032c9a242dca5e701be02239f2b06d4ff057541ba6b8464a9aee4",
+        "bytes": 199,
+        "retrieved_at": "2026-09-22T01:07:04.931741Z"
+      }
+    },
+    {
+      "cycle": "2021010100",
+      "variable": "Geopotential_height_isobaric",
+      "status": "single_variable_sample_downloaded",
+      "rows": [
+        {
+          "time": "2021-01-01T06:00:00Z",
+          "station": "GridPointRequestedAt[40.900N_29.300E]",
+          "latitude[unit=\"degrees_north\"]": "41.000",
+          "longitude[unit=\"degrees_east\"]": "29.250",
+          "Geopotential_height_isobaric[unit=\"gpm\"]": "773.47296"
+        }
+      ],
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f006.grib2?var=Geopotential_height_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "4554444f0e637c0dca130e23e47b97b31afa231864650c87231b7a5acc1e99b9",
+        "bytes": 199,
+        "retrieved_at": "2026-09-22T01:07:06.728699Z"
+      }
+    },
+    {
+      "cycle": "2023010100",
+      "status": "sample_downloaded",
+      "rows": [
+        {
+          "time": "2023-01-01T06:00:00Z",
+          "station": "GridPointRequestedAt[40.900N_29.300E]",
+          "latitude[unit=\"degrees_north\"]": "41.000",
+          "longitude[unit=\"degrees_east\"]": "29.250",
+          "Temperature_isobaric[unit=\"K\"]": "279.52286",
+          "Relative_humidity_isobaric[unit=\"%\"]": "58.8",
+          "u-component_of_wind_isobaric[unit=\"m/s\"]": "-4.1027637",
+          "v-component_of_wind_isobaric[unit=\"m/s\"]": "-0.29633301",
+          "Geopotential_height_isobaric[unit=\"gpm\"]": "904.3217"
+        }
+      ],
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230101/gfs.0p25.2023010100.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "5ce1facc73af0551c02a3ed11540e46b78ffa203fdf0d46abb8d190ae72127a2",
+        "bytes": 386,
+        "retrieved_at": "2026-09-22T01:04:28.950234Z"
+      }
+    },
+    {
+      "cycle": "2024010100",
+      "status": "sample_downloaded",
+      "rows": [
+        {
+          "time": "2024-01-01T06:00:00Z",
+          "station": "GridPointRequestedAt[40.900N_29.300E]",
+          "latitude[unit=\"degrees_north\"]": "41.000",
+          "longitude[unit=\"degrees_east\"]": "29.250",
+          "Temperature_isobaric[unit=\"K\"]": "284.0116",
+          "Relative_humidity_isobaric[unit=\"%\"]": "61.6",
+          "u-component_of_wind_isobaric[unit=\"m/s\"]": "3.2070923",
+          "v-component_of_wind_isobaric[unit=\"m/s\"]": "5.2548733",
+          "Geopotential_height_isobaric[unit=\"gpm\"]": "805.3901"
+        }
+      ],
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240101/gfs.0p25.2024010100.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "e0c6d2e120a6667cb579df3c5640539e1dd702ad28648c74967ddab22c49d49d",
+        "bytes": 382,
+        "retrieved_at": "2026-09-22T01:04:30.022231Z"
+      }
+    },
+    {
+      "source": {
+        "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/taf.py?station=LTFJ&sts=2024-01-01T00:00Z&ets=2024-02-01T00:00Z&fmt=csv&tz=UTC",
+        "sha256": "4c7c672058a59167b255da1081790f2a6907338dba059255a89acd3e8a8b1182",
+        "bytes": 150,
+        "retrieved_at": "2026-09-22T01:02:23.994135Z"
+      },
+      "file": "LTFJ_2024_01_probe.csv",
+      "status": "taf_query_completed",
+      "row_count": 0
+    },
+    {
+      "source": {
+        "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/taf.py?station=LTFJ&sts=2021-01-01T00:00Z&ets=2026-09-21T00:00Z&fmt=csv&tz=UTC",
+        "sha256": "4c7c672058a59167b255da1081790f2a6907338dba059255a89acd3e8a8b1182",
+        "bytes": 150,
+        "retrieved_at": "2026-09-22T01:02:57.272542Z"
+      },
+      "file": "LTFJ_2021_2026_probe.csv",
+      "status": "taf_query_completed",
+      "row_count": 0
+    },
+    {
+      "source": {
+        "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/taf.py?station=DSM&sts=2024-01-01T00:00Z&ets=2024-01-02T00:00Z&fmt=csv&tz=UTC",
+        "sha256": "7f94a66be437be830506f3509c68ea869e23f7379b4c02cb5bdcbde78a3c5583",
+        "bytes": 3127,
+        "retrieved_at": "2026-09-22T01:02:57.859543Z"
+      },
+      "file": "DSM_control.csv",
+      "status": "taf_query_completed",
+      "row_count": 19
+    }
+  ]
+}

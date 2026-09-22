@@ -8,6 +8,8 @@ LTFJ (İstanbul Sabiha Gökçen) için METAR/SPECI ve ek meteorolojik veriler ku
 
 ### Modeli çalıştırma
 
+**İkinci deney tamamlandı:** Altı aday, 2022–2023 ileri tarihli doğrulamasıyla karşılaştırıldı. Küçük ağaç modeli bazı ölçütleri iyileştirdi ancak kesin üstünlük göstermedi; ilk model korunuyor. [Karşılaştırma, yanlış alarm yükü ve karar](reports/model-v2-card.md). İlk eğitimden sonra `python -m ltfj.model_v2` ile yeniden üretilebilir.
+
 Model eğitimi için Python 3.12 ve [requirements-model.txt](requirements-model.txt) kullanılır:
 
 ```sh
@@ -32,6 +34,8 @@ python -m ltfj.predict --at 2026-09-20T12:00:00Z
 Bu komut [kayıtlı katsayılarla](reports/model-parameters.json) yerel `features.csv` satırını değerlendirir; canlı hava tahmini indirmez. Güncel gözlem yoksa veya tavan zaten eşik altındaysa ayrı durum döndürür. Model eğitimi, özellik hazırlığı ve analiz kodu ile sonuçlar Git'te; büyük ham/türetilmiş veri dosyaları yereldedir.
 
 ### Önceki veri incelemeleri
+
+**Hata analizi ve ek veri erişimi:** 2024 geliştirme döneminin hata grupları incelendi; GFS tarihsel nokta tahminleri indirildi, IEM TAF sorguları LTFJ için boş döndü. [Bulgular ve ek veri öncelikleri](reports/error-and-data-priorities.md). Tekrar üretim: `python -m ltfj.error_audit` ve ağ erişimiyle `python -m ltfj.archive_probe`.
 
 İlk IEM denetimi: **17.513 gözlem, 188 eşik altı gözlem, 32 kesintisiz düşük tavan dizisi ve 161 pozitif tahmin zamanı**. Pozitif tahmin zamanları bağımsız hava olayları değildir. Ayrıntılar: [2025 veri raporu](reports/2025-summary.md).
 
