@@ -1,0 +1,31 @@
+{
+  "status": "planned_only_not_downloaded",
+  "origins": 100272,
+  "unique_cycle_lead_files": 33424,
+  "first": {
+    "cycle": "2020-12-31T18:00:00Z",
+    "lead_hours": 6,
+    "levels_hpa": "925,850",
+    "variables": "temperature,relative_humidity,u_wind,v_wind,geopotential_height"
+  },
+  "last": {
+    "cycle": "2026-09-20T12:00:00Z",
+    "lead_hours": 15,
+    "levels_hpa": "925,850",
+    "variables": "temperature,relative_humidity,u_wind,v_wind,geopotential_height"
+  },
+  "assumed_publication_delay_hours": 6,
+  "sensitivity_delay_hours": [
+    9,
+    12
+  ],
+  "naive_single_variable_requests": 334240,
+  "decision": "Use a batched subset transport before full acquisition; do not issue the naive request count.",
+  "guardrails": [
+    "No labels consulted when selecting acquisition times.",
+    "Run initialization and archive modification are not historical publication timestamps.",
+    "Six hours is an unverified latency assumption, not a guarantee.",
+    "Retain missing data and compare models on matched origins with coverage reported.",
+    "Do not interpolate observations into forecast fields."
+  ]
+}

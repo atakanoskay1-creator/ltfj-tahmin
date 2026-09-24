@@ -1,0 +1,695 @@
+{
+  "plan": [
+    [
+      "2021011500",
+      925
+    ],
+    [
+      "2021011500",
+      850
+    ],
+    [
+      "2021041500",
+      925
+    ],
+    [
+      "2021041500",
+      850
+    ],
+    [
+      "2021071500",
+      925
+    ],
+    [
+      "2021071500",
+      850
+    ],
+    [
+      "2022011500",
+      925
+    ],
+    [
+      "2022011500",
+      850
+    ],
+    [
+      "2022041500",
+      925
+    ],
+    [
+      "2022041500",
+      850
+    ],
+    [
+      "2022071500",
+      925
+    ],
+    [
+      "2022071500",
+      850
+    ],
+    [
+      "2023011500",
+      925
+    ],
+    [
+      "2023011500",
+      850
+    ],
+    [
+      "2023041500",
+      925
+    ],
+    [
+      "2023041500",
+      850
+    ],
+    [
+      "2023071500",
+      925
+    ],
+    [
+      "2023071500",
+      850
+    ],
+    [
+      "2024011500",
+      925
+    ],
+    [
+      "2024011500",
+      850
+    ],
+    [
+      "2024041500",
+      925
+    ],
+    [
+      "2024041500",
+      850
+    ],
+    [
+      "2024071500",
+      925
+    ],
+    [
+      "2024071500",
+      850
+    ],
+    [
+      "2025011500",
+      925
+    ],
+    [
+      "2025011500",
+      850
+    ],
+    [
+      "2025041500",
+      925
+    ],
+    [
+      "2025041500",
+      850
+    ],
+    [
+      "2025071500",
+      925
+    ],
+    [
+      "2025071500",
+      850
+    ],
+    [
+      "2026011500",
+      925
+    ],
+    [
+      "2026011500",
+      850
+    ],
+    [
+      "2026041500",
+      925
+    ],
+    [
+      "2026041500",
+      850
+    ],
+    [
+      "2026071500",
+      925
+    ],
+    [
+      "2026071500",
+      850
+    ]
+  ],
+  "purpose": "Availability only, not model performance",
+  "selection": "15 January/April/July 00 UTC, 2021–2026, +6h, 925/850 hPa",
+  "limitations": "Sparse samples cannot establish complete coverage. Only RH tested here. Publication latency unknown.",
+  "samples": [
+    {
+      "cycle": "2021011500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 99.1,
+      "valid_time": "2021-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210115/gfs.0p25.2021011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "d99721adb5b62c8a1e1f1e06b3660b8a7fe444b853c6f2159df83a258a38debb",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:42.496326Z"
+      }
+    },
+    {
+      "cycle": "2021011500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 95.2,
+      "valid_time": "2021-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210115/gfs.0p25.2021011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "4e20f4b3716b12530a5379e57450f604e633e74dec3d43babea59020c37b5fbd",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:43.137866Z"
+      }
+    },
+    {
+      "cycle": "2021041500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 81.4,
+      "valid_time": "2021-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210415/gfs.0p25.2021041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "3c5eed4f4d153894d8c94443e26d4460875ca1f5f0aca48275ef429d8fff7003",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:43.839067Z"
+      }
+    },
+    {
+      "cycle": "2021041500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 71.9,
+      "valid_time": "2021-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210415/gfs.0p25.2021041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "714ae7af48adf6ff4ba065b41fa77a75e33f959ff9b1daea3ac45a0c1258be0a",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:51.656981Z"
+      }
+    },
+    {
+      "cycle": "2021071500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 73.2,
+      "valid_time": "2021-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210715/gfs.0p25.2021071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "d4a5c31403d278fbcd71b8ff8939213cf8eda10a30e84d21f2d487f9b7f47d52",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:52.317391Z"
+      }
+    },
+    {
+      "cycle": "2021071500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 49.3,
+      "valid_time": "2021-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210715/gfs.0p25.2021071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "0a892cc774234d17dc1349e40b91333bfba9007c0f34e77cfe5864a26fa6fb50",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:52.942396Z"
+      }
+    },
+    {
+      "cycle": "2022011500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 89.4,
+      "valid_time": "2022-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220115/gfs.0p25.2022011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "f9f6f4738218eaf6781cbb9e381ca64357d75ab7899bf93e874e45f014945c39",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:53.704009Z"
+      }
+    },
+    {
+      "cycle": "2022011500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 59.8,
+      "valid_time": "2022-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220115/gfs.0p25.2022011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "5a4facfd2f480dd9bce2afe9d493ea94a8154f960db25e5920b788f039cbfc5e",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:54.475457Z"
+      }
+    },
+    {
+      "cycle": "2022041500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 60.3,
+      "valid_time": "2022-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220415/gfs.0p25.2022041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "6f47171719ec466c6fb019fec7e052bac00bae1639e35fe19ec1029ed2758b95",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:55.230215Z"
+      }
+    },
+    {
+      "cycle": "2022041500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 69.8,
+      "valid_time": "2022-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220415/gfs.0p25.2022041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "ebb0d80f1f6082bc16479e9dd9a7053e048897fe903e2e9ca6b2b4931da64d75",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:55.847456Z"
+      }
+    },
+    {
+      "cycle": "2022071500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 75.1,
+      "valid_time": "2022-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220715/gfs.0p25.2022071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "c2b2293c1632d959e3ac99f7baabe12096aa7b47d0d91721f5c276883f739310",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:19:56.538325Z"
+      }
+    },
+    {
+      "cycle": "2022071500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 45.2,
+      "valid_time": "2022-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220715/gfs.0p25.2022071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "deac98ae0ad22833045bed50a2b3c059eb7c585de64d28c17ce85fb3f8b8f98e",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:04.435933Z"
+      }
+    },
+    {
+      "cycle": "2023011500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 96.4,
+      "valid_time": "2023-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230115/gfs.0p25.2023011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "60b7f6381515d7adec4224522dfb79c23212907b53ae1bb17c821998faa33465",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:07.389288Z"
+      }
+    },
+    {
+      "cycle": "2023011500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 84.4,
+      "valid_time": "2023-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230115/gfs.0p25.2023011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "0cc5ab3024d6cb96dc7ae4d6b4c732560ee0323659294a8327ab366d28f78d90",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:08.035720Z"
+      }
+    },
+    {
+      "cycle": "2023041500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 22.6,
+      "valid_time": "2023-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230415/gfs.0p25.2023041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "ef9c398d2879fce37c16235f7f76e13a3fc3f3bf5810d655705f9004447fb0f3",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:09.633036Z"
+      }
+    },
+    {
+      "cycle": "2023041500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 30.6,
+      "valid_time": "2023-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230415/gfs.0p25.2023041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "2bdb97a90626d9ffd475447d96a438d03bc580dd473083e03d2e679cbc9a5496",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:10.391290Z"
+      }
+    },
+    {
+      "cycle": "2023071500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 49.6,
+      "valid_time": "2023-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230715/gfs.0p25.2023071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "bc376d57e3dbcfa212d3eaa7681869ef542d87680e5fcafbe23b94802f204568",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:11.180069Z"
+      }
+    },
+    {
+      "cycle": "2023071500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 61.4,
+      "valid_time": "2023-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230715/gfs.0p25.2023071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "9fd5473b6d51684dae63ab350c60f5a6da7b65e9a81b2648b0dbee15840a47b7",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:12.849998Z"
+      }
+    },
+    {
+      "cycle": "2024011500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 57.8,
+      "valid_time": "2024-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240115/gfs.0p25.2024011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "11f16fc5476f35c5ee39fc6bc4dcac68385304f1fba478ff52107f91ada1c119",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:13.514466Z"
+      }
+    },
+    {
+      "cycle": "2024011500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 65.4,
+      "valid_time": "2024-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240115/gfs.0p25.2024011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "c1fe14412d35ab1460f6f333df96999547a3c8ce114ff9426f617ac579a1a7ee",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:14.158509Z"
+      }
+    },
+    {
+      "cycle": "2024041500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 44.1,
+      "valid_time": "2024-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240415/gfs.0p25.2024041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "9ca27ffaeffb782c648f1e512f556ab4a46804c21e3e25442653a72884a8fd87",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:22.150775Z"
+      }
+    },
+    {
+      "cycle": "2024041500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 56.6,
+      "valid_time": "2024-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240415/gfs.0p25.2024041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "10af6f6c1189198ae1724893f0cd4679bbb94f09a58668879bd19e81203dcec8",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:22.935698Z"
+      }
+    },
+    {
+      "cycle": "2024071500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 63.9,
+      "valid_time": "2024-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240715/gfs.0p25.2024071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "50363307e2984266d9b1703f7ce91d457022edef43aac50b0175397df29ed969",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:23.649547Z"
+      }
+    },
+    {
+      "cycle": "2024071500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 35.7,
+      "valid_time": "2024-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240715/gfs.0p25.2024071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "4666a7507b2ccf613aa83d6dd8404b0ded0da68aa1fe145cf29f34d44da61c30",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:31.444643Z"
+      }
+    },
+    {
+      "cycle": "2025011500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 98.5,
+      "valid_time": "2025-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250115/gfs.0p25.2025011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "5a28de6a62ec15a19ae0ba9c46563a7df390649c5b17b287f58fbe2bcfe415f6",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:32.333236Z"
+      }
+    },
+    {
+      "cycle": "2025011500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 98.9,
+      "valid_time": "2025-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250115/gfs.0p25.2025011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "78c347179b43359898295a5c0fb4e99ec45f6ad934b5b9863b39be9a5879f0f9",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:32.965504Z"
+      }
+    },
+    {
+      "cycle": "2025041500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 31.9,
+      "valid_time": "2025-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250415/gfs.0p25.2025041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "dcb7fbc7d282bffbb15c508fc2857dd8a26bef24ddf9fbf50d6276a86ae5b243",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:33.928261Z"
+      }
+    },
+    {
+      "cycle": "2025041500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 17.8,
+      "valid_time": "2025-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250415/gfs.0p25.2025041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "36f69d0a6d4e877c0f845209204c91bc2312ef6180eb68343375b0f97b751d80",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:35.225141Z"
+      }
+    },
+    {
+      "cycle": "2025071500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 76.2,
+      "valid_time": "2025-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250715/gfs.0p25.2025071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "1b18633c3a2356a878905631a41de3d7e49daaf8bb791dc8541e12120fef15c2",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:35.899010Z"
+      }
+    },
+    {
+      "cycle": "2025071500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 46.9,
+      "valid_time": "2025-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250715/gfs.0p25.2025071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "f629f656ecf8daf1c3856569b69b37e0e1686936bfdb1da64878bce77a12701e",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:36.484469Z"
+      }
+    },
+    {
+      "cycle": "2026011500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 73.0,
+      "valid_time": "2026-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260115/gfs.0p25.2026011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "ee786c5a1f969bd9e0af592a23b82f3dfe0b20e68e82d38307291c55ef067a6d",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:37.337992Z"
+      }
+    },
+    {
+      "cycle": "2026011500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 74.5,
+      "valid_time": "2026-01-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260115/gfs.0p25.2026011500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "86de1ce13be0cedee23ba094046564f8daf5c44686f707e5fe6150f337b3878b",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:38.935580Z"
+      }
+    },
+    {
+      "cycle": "2026041500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 44.3,
+      "valid_time": "2026-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260415/gfs.0p25.2026041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "68e604cb8013ece20948b8d979ffc928f95ff321bdffa80f405efdb44431bea8",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:39.664274Z"
+      }
+    },
+    {
+      "cycle": "2026041500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 46.0,
+      "valid_time": "2026-04-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260415/gfs.0p25.2026041500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "c124f1e8a1086fe0eb1ffcbf5541bc9b5546c3374c6af057cfbaf577d5fa09ea",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:43.500543Z"
+      }
+    },
+    {
+      "cycle": "2026071500",
+      "level_hpa": 925,
+      "status": "ok",
+      "humidity_percent": 71.9,
+      "valid_time": "2026-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260715/gfs.0p25.2026071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=92500&time=all&accept=csv",
+        "sha256": "0f5968507b0d63a5764e6d4fd235a98a6b3d53463196379cbc29c66b70c54bfb",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:44.134531Z"
+      }
+    },
+    {
+      "cycle": "2026071500",
+      "level_hpa": 850,
+      "status": "ok",
+      "humidity_percent": 74.8,
+      "valid_time": "2026-07-15T06:00:00Z",
+      "grid_latitude": 41.0,
+      "grid_longitude": 29.25,
+      "source": {
+        "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260715/gfs.0p25.2026071500.f006.grib2?var=Relative_humidity_isobaric&latitude=40.9&longitude=29.3&vertCoord=85000&time=all&accept=csv",
+        "sha256": "5ccb7d0fccfaf2ee4774f490e3541e62dfe9c0c28da61dcf1c0b4c445a3f97ac",
+        "bytes": 190,
+        "retrieved_at": "2026-09-24T11:20:44.743383Z"
+      }
+    }
+  ],
+  "successful": 36,
+  "attempted": 36
+}

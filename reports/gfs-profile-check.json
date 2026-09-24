@@ -1,0 +1,37 @@
+{
+  "status": "rejected",
+  "requested": [
+    "Temperature_isobaric",
+    "Relative_humidity_isobaric",
+    "u-component_of_wind_isobaric",
+    "v-component_of_wind_isobaric",
+    "Geopotential_height_isobaric"
+  ],
+  "returned": [
+    "latitude",
+    "longitude",
+    "stationAltitude",
+    "station_id",
+    "station_description",
+    "profileId",
+    "nobs",
+    "profileTime",
+    "stationIndex",
+    "Geopotential_height_isobaric",
+    "Temperature_isobaric",
+    "time",
+    "altitude"
+  ],
+  "missing": [
+    "Relative_humidity_isobaric",
+    "u-component_of_wind_isobaric",
+    "v-component_of_wind_isobaric"
+  ],
+  "source": {
+    "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210115/gfs.0p25.2021011500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&latitude=40.9&longitude=29.3&time=all&accept=netcdf",
+    "sha256": "7b58bf369766b5b713352f89df796e248abb35b88d833ce947f400fae96a89a5",
+    "bytes": 3676,
+    "retrieved_at": "2026-09-24T11:21:09.322572Z"
+  },
+  "decision": "Do not use combined profile transport until all fields, levels and times are validated."
+}

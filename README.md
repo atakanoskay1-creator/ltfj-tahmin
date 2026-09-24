@@ -35,6 +35,8 @@ Bu komut [kayıtlı katsayılarla](reports/model-parameters.json) yerel `feature
 
 ### Önceki veri incelemeleri
 
+**GFS kapsam kontrolü:** Altı yıl ve üç mevsimden 36 nem örneği doğrulandı. Yayımlanma gecikmesi varsayımını uygulayan zaman seçimi ve tam indirme manifesti hazırlandı. Toplu NetCDF yanıtının değişken atladığı tespit edilip reddedildi. [Kapsam ve kalan iş](reports/gfs-coverage.md).
+
 **Hata analizi ve ek veri erişimi:** 2024 geliştirme döneminin hata grupları incelendi; GFS tarihsel nokta tahminleri indirildi, IEM TAF sorguları LTFJ için boş döndü. [Bulgular ve ek veri öncelikleri](reports/error-and-data-priorities.md). Tekrar üretim: `python -m ltfj.error_audit` ve ağ erişimiyle `python -m ltfj.archive_probe`.
 
 İlk IEM denetimi: **17.513 gözlem, 188 eşik altı gözlem, 32 kesintisiz düşük tavan dizisi ve 161 pozitif tahmin zamanı**. Pozitif tahmin zamanları bağımsız hava olayları değildir. Ayrıntılar: [2025 veri raporu](reports/2025-summary.md).
