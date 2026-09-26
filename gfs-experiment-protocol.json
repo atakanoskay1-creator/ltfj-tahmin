@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "status": "planned; not trained",
+  "target": "Observed LTFJ ceiling strictly below 500 ft AGL within (t,t+3h], currently not below threshold",
+  "development_train": ["2021-01-01", "2024-01-01"],
+  "calibration": ["2024-01-01", "2025-01-01"],
+  "reused_replay": [["2025-01-01", "2026-01-01"], ["2026-01-01", "2026-09-21"]],
+  "minimum_yearly_eligible_origin_coverage": 0.95,
+  "minimum_yearly_positive_origin_coverage": 0.95,
+  "coverage_years": [2021, 2022, 2023, 2024, 2025, 2026],
+  "assumed_publication_delay_hours": 6,
+  "latency_sensitivity_hours": [9, 12],
+  "comparison": "Fixed v2 local boosting configuration fitted separately with LOCAL and LOCAL+20 GFS inputs, same matched origins; no new hyperparameter search",
+  "calibration_rule": "2024 intercept-only log-odds adjustment; highest precision threshold with at least 70 percent positive-origin recall",
+  "evaluation": "Brier, log loss, average precision, calibration, false alarms, positive-origin recall, event recall; paired 7-day block intervals",
+  "guardrails": [
+    "Coverage gate is an engineering requirement, not evidence of unbiased missingness.",
+    "Report all-origin baseline alongside matched-origin comparison.",
+    "Do not train while coverage gate fails; do not lower the gate merely to obtain results.",
+    "Publication delay remains assumed, not historically verified.",
+    "2025 and 2026 are reused retrospective periods, never label them new independent validation.",
+    "Keep v1 and v2 unchanged and preserve raw archive provenance."
+  ]
+}

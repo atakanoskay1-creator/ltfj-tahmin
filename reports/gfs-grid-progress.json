@@ -1,0 +1,170 @@
+{
+  "scope": "acquisition plan",
+  "start": "2020-12-31",
+  "end": "2026-09-21",
+  "planned": 33424,
+  "validated": 26,
+  "attempted_this_run": 0,
+  "remaining": 33398,
+  "completed_this_run": [],
+  "failures": [],
+  "sources": [
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2020/20201231/gfs.0p25.2020123118.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "b6106040b655f8f10720acdbfbb1d4484070ca834cffe8f40198726caff606d1",
+      "bytes": 6824,
+      "retrieved_at": "2026-09-24T11:24:47.551257Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2020/20201231/gfs.0p25.2020123118.f009.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "0f743b41ec30a87d1c13bec83e91765aaf18446196172741ef0e6c1bf47df55b",
+      "bytes": 6824,
+      "retrieved_at": "2026-09-24T11:25:10.262222Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2020/20201231/gfs.0p25.2020123118.f012.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "ca95d10444b350384fec1110ad9ed795b490c85c3431c7061075c8f2bb9a6c82",
+      "bytes": 6824,
+      "retrieved_at": "2026-09-24T11:25:15.792261Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2020/20201231/gfs.0p25.2020123118.f015.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "91401a3042f2ad1c54009e2175899a38a1b4132cfca97f7120ed1e32129a8b9c",
+      "bytes": 6824,
+      "retrieved_at": "2026-09-24T11:25:27.341104Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "417e3131d9d4acd660da347b279aa60fc89641b64584d7f055448be0b0ddf6f1",
+      "bytes": 6816,
+      "retrieved_at": "2026-09-24T11:25:38.265596Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f009.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "80cb2be7ab1eaf9c4274c46ab3b93061058b5c5fc427c4096b6c036339249485",
+      "bytes": 6816,
+      "retrieved_at": "2026-09-24T11:25:45.021395Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f012.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "4b0638852829f15f9ec02d2573c2113cc832b00d98febec17d0a3b9e5160468c",
+      "bytes": 6816,
+      "retrieved_at": "2026-09-24T11:25:50.239825Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010100.f015.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "efe4a0baa07533055861419043086284e83300d8173815b973f626d4b7ff32e1",
+      "bytes": 6816,
+      "retrieved_at": "2026-09-24T11:25:57.229884Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210115/gfs.0p25.2021011500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "685049b93b570b5803b56d3814b4a1e2694b44b1a5f4f023b4319ce287d7f7fc",
+      "bytes": 6816,
+      "retrieved_at": "2026-09-24T11:23:49.027227Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210415/gfs.0p25.2021041500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "03fc64fc4e839795d85780192e056385fae6a1f438ed2032e0396dc5534605c8",
+      "bytes": 6680,
+      "retrieved_at": "2026-09-24T11:24:03.791074Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210715/gfs.0p25.2021071500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "0aa6dd959e55ddcdd0f5d1b10ad38275b04e496e64b725c7f03247f3fc062465",
+      "bytes": 6680,
+      "retrieved_at": "2026-09-24T11:24:23.372129Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220115/gfs.0p25.2022011500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "0f9067e6942e19726beda98ec5731e501932c25768f7c05db967704daf7e9b18",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:24:53.806157Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220415/gfs.0p25.2022041500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "c659b8fab50195926fe627edd4b7f0c0f47840a38c1631b9d2281db160587677",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:25:05.324365Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2022/20220715/gfs.0p25.2022071500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "ffd9cb96df2f0aae65aed493cd5896232d8e43903b0fbea9dfb7cdb357473a8c",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:25:23.155889Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230115/gfs.0p25.2023011500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "3374b29e8cd505a0aea4229bf6212ad6cc5b67ed0378b52c5f4516867301cfd5",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:25:34.391948Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230415/gfs.0p25.2023041500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "c6fe9328a16ec7a2acaf6b47b393c597d81bd3b9456cdc784205999196ffc100",
+      "bytes": 6680,
+      "retrieved_at": "2026-09-24T11:25:44.809051Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2023/20230715/gfs.0p25.2023071500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "b17b8bdcee3df4325636330d3d621e6fc646efb5f7d5329f9fc7ba23447c5887",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:25:54.621667Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240115/gfs.0p25.2024011500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "cc65b108f6c54c7d7d3ae626bb314d4f7816e2e53da73e9df9fc55f34585cf89",
+      "bytes": 6680,
+      "retrieved_at": "2026-09-24T11:26:00.186620Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240415/gfs.0p25.2024041500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "f572515885723b13a65b2652e88c1b0e3f53f5c3abe4f173bb7005551615e8ab",
+      "bytes": 6680,
+      "retrieved_at": "2026-09-24T11:26:06.972821Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2024/20240715/gfs.0p25.2024071500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "1673d73349fc62b2d7f079dc1268ab4e7fe93a8b7b2f95ab27514c16724f1aae",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:26:12.337578Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250115/gfs.0p25.2025011500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "665c876f66481fe23d041fb8d2f75cd39d70a3616dc4f9cb5424b19adc813a24",
+      "bytes": 6680,
+      "retrieved_at": "2026-09-24T11:26:23.500147Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250415/gfs.0p25.2025041500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "c72ec973dbc0b2aee1e67c69bcfe35157b7f08f0aecefcfc0b7948ae4655d63e",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:26:32.990662Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2025/20250715/gfs.0p25.2025071500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "2bdce61ff7bbee53ed7a9c7aeac76c20762a89b7c774a0e1b391edc8cb82a747",
+      "bytes": 6680,
+      "retrieved_at": "2026-09-24T11:26:42.691760Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260115/gfs.0p25.2026011500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "d179674f790008ed18608e70c2deecca0034edd44450a330c61e0ab065171567",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:26:49.855865Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260415/gfs.0p25.2026041500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "ac77820aff8590c6d83244562c392c22f072fcdbd8a88ac450d0428a2970248e",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:26:59.691197Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2026/20260715/gfs.0p25.2026071500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "2fe7170a17f59742d8b8aef306b1e3ded1c31023127ec38da743d6e9136a43ec",
+      "bytes": 6688,
+      "retrieved_at": "2026-09-24T11:27:06.128765Z"
+    }
+  ],
+  "note": "Validated grid samples; historical publication latency still assumed. No model training here."
+}

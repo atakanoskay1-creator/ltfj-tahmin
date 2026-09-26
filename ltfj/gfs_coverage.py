@@ -21,7 +21,7 @@ def select_cycle(origin, cycles, delay_hours=6, max_age_hours=12):
 
 def forecast_bracket(origin, cycle, horizon_hours=3):
     """Required 3-hourly lead times around the target; no observations interpolated."""
-    if cycle > origin or horizon_hours <= 0:
+    if cycle > origin or horizon_hours < 0:
         raise ValueError("Future cycle or invalid horizon")
     lead = (origin + timedelta(hours=horizon_hours) - cycle).total_seconds()/3600
     low = int(lead//3)*3

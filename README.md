@@ -35,6 +35,8 @@ Bu komut [kayıtlı katsayılarla](reports/model-parameters.json) yerel `feature
 
 ### Önceki veri incelemeleri
 
+**GFS aktarımı düzeltildi:** Tek hücrelik grid altkümesi beş değişkeni koruyor; 925/850 hPa seviyesi ve zaman kontrolleri eklendi. İlk kesintisiz dosyalar indirildi, eksik GFS'yi boş bırakan METAR eşleştirmesi hazırlandı. Tam indirme ve GFS ile model eğitimi henüz tamamlanmadı. [Aktarım sonucu ve çalıştırma komutları](reports/gfs-grid-transfer.md).
+
 **GFS kapsam kontrolü:** Altı yıl ve üç mevsimden 36 nem örneği doğrulandı. Yayımlanma gecikmesi varsayımını uygulayan zaman seçimi ve tam indirme manifesti hazırlandı. Toplu NetCDF yanıtının değişken atladığı tespit edilip reddedildi. [Kapsam ve kalan iş](reports/gfs-coverage.md).
 
 **Hata analizi ve ek veri erişimi:** 2024 geliştirme döneminin hata grupları incelendi; GFS tarihsel nokta tahminleri indirildi, IEM TAF sorguları LTFJ için boş döndü. [Bulgular ve ek veri öncelikleri](reports/error-and-data-priorities.md). Tekrar üretim: `python -m ltfj.error_audit` ve ağ erişimiyle `python -m ltfj.archive_probe`.
