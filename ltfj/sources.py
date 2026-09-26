@@ -14,7 +14,9 @@ from urllib.request import Request, urlopen
 from .pipeline import iso, write_json
 
 
-def download(url, path):
+def download(url, path, *, timeout=180, attempts=3):
+    if timeout <= 0 or attempts < 1:
+        raise ValueError("Invalid download timeout or attempt count")
     metadata = path.with_suffix(path.suffix + ".source.json")
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():
@@ -31,15 +33,15 @@ def download(url, path):
         print(f"Cached {path}", flush=True)
         return
     request = Request(url, headers={"User-Agent": "ltfj-tahmin/0.2 public archive research"})
-    for attempt in range(3):
+    for attempt in range(attempts):
         try:
-            with urlopen(request, timeout=180) as response:
+            with urlopen(request, timeout=timeout) as response:
                 payload = response.read()
             if payload.lstrip().startswith((b"<!DOCTYPE", b"<html")):
                 raise ValueError("Expected data, received HTML")
             break
         except Exception:
-            if attempt == 2:
+            if attempt == attempts-1:
                 raise
             time.sleep(2 ** (attempt + 1))
     temporary = path.with_suffix(path.suffix + ".part")

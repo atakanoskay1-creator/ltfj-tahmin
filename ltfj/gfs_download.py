@@ -4,6 +4,7 @@ import csv
 from datetime import timedelta
 import hashlib
 import json
+import time
 from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urlsplit
 
@@ -91,9 +92,14 @@ def main():
     parser.add_argument("--limit", type=int, default=48, help="Maximum files attempted; 0 audits cache only")
     parser.add_argument("--start", default="2020-12-31")
     parser.add_argument("--end", default="2026-09-21")
+    parser.add_argument("--max-seconds", type=float, default=300,
+                        help="Soft batch duration; an in-flight request may finish afterwards")
+    parser.add_argument("--timeout", type=float, default=30, help="Per-request socket timeout")
     args = parser.parse_args()
     if args.limit < 0:
         parser.error("limit must be non-negative")
+    if args.max_seconds <= 0 or args.timeout <= 0:
+        parser.error("duration and timeout must be positive")
     if args.audit:
         plan = [(f"{year}{month:02d}1500", 6) for year in range(2021, 2027) for month in [1,4,7]]
     else:
@@ -103,6 +109,15 @@ def main():
     root = Path("data/raw/gfs-grid")
     results, failures, completed, provenance = [], [], [], []
     attempts = 0
+    started = time.monotonic()
+    name = "gfs-grid-audit" if args.audit else "gfs-grid-progress"
+    def checkpoint(final=False):
+        write_json(Path(f"reports/{name}.json"), dict(scope="seasonal audit" if args.audit else "acquisition plan",
+            start=args.start, end=args.end, planned=len(plan), validated=len(results),
+            attempted_this_run=attempts, remaining=len(plan)-len(results),
+            completed_this_run=completed, failures=failures, sources=provenance,
+            scan_complete=final, elapsed_seconds=round(time.monotonic()-started, 2),
+            note="Partial acquisition; scan_complete means cache scan finished, not full data acquired. Historical publication latency assumed."))
     for cycle, lead in plan:
         path = root/f"{cycle}_f{lead:03d}.nc"
         output = path.with_suffix(".validated.json")
@@ -113,11 +128,11 @@ def main():
             results.append(saved["values"])
             provenance.append(json.loads(path.with_suffix(".nc.source.json").read_text()))
             continue
-        if attempts >= args.limit:
+        if attempts >= args.limit or time.monotonic()-started >= args.max_seconds:
             continue
         attempts += 1
         try:
-            download(grid_url(cycle, lead), path)
+            download(grid_url(cycle, lead), path, timeout=args.timeout, attempts=2)
             values = decode(path, cycle, lead)
             write_json(output, dict(sha256=hashlib.sha256(path.read_bytes()).hexdigest(), values=values))
             results.append(values); completed.append(path.name)
@@ -125,13 +140,8 @@ def main():
             print("Validated", path.name, flush=True)
         except Exception as exc:
             failures.append(dict(cycle=cycle, lead=lead, error=str(exc)))
-    name = "gfs-grid-audit" if args.audit else "gfs-grid-progress"
-    write_json(Path(f"reports/{name}.json"), dict(scope="seasonal audit" if args.audit else "acquisition plan",
-        start=args.start, end=args.end,
-        planned=len(plan), validated=len(results), attempted_this_run=attempts,
-        remaining=len(plan)-len(results), completed_this_run=completed, failures=failures,
-        sources=provenance,
-        note="Validated grid samples; historical publication latency still assumed. No model training here."))
+        checkpoint()
+    checkpoint(final=True)
     if results:
         write_csv(Path(f"data/processed/research/{name}.csv"), results)
 

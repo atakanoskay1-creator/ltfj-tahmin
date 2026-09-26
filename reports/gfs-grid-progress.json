@@ -3,11 +3,24 @@
   "start": "2020-12-31",
   "end": "2026-09-21",
   "planned": 33424,
-  "validated": 26,
-  "attempted_this_run": 0,
-  "remaining": 33398,
-  "completed_this_run": [],
-  "failures": [],
+  "validated": 30,
+  "attempted_this_run": 3,
+  "remaining": 33394,
+  "completed_this_run": [
+    "2021010112_f006.nc"
+  ],
+  "failures": [
+    {
+      "cycle": "2021010106",
+      "lead": 15,
+      "error": "The read operation timed out"
+    },
+    {
+      "cycle": "2021010112",
+      "lead": 9,
+      "error": "The read operation timed out"
+    }
+  ],
   "sources": [
     {
       "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2020/20201231/gfs.0p25.2020123118.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
@@ -56,6 +69,30 @@
       "sha256": "efe4a0baa07533055861419043086284e83300d8173815b973f626d4b7ff32e1",
       "bytes": 6816,
       "retrieved_at": "2026-09-24T11:25:57.229884Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010106.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "5b0f2d95cd1cfee0f4f8d6f97f6f1aa41fe6ef1112d0b15946c2cf0f5490b652",
+      "bytes": 6824,
+      "retrieved_at": "2026-09-26T15:12:18.524794Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010106.f009.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "c06557c6076d22f579279331f2fc712947015cad74c5485ef1076933910911dd",
+      "bytes": 6824,
+      "retrieved_at": "2026-09-26T15:12:56.120984Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010106.f012.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "e3fd8e01a96a3c84c56936c13f6c0fdd8e50b6191d955a0bc6c80b7ad80958ad",
+      "bytes": 6824,
+      "retrieved_at": "2026-09-26T15:13:44.237848Z"
+    },
+    {
+      "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210101/gfs.0p25.2021010112.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
+      "sha256": "90e95fa4f0ebb652696c89551f8f3c02f10cd16f3866e0bf239daf1aade0acf3",
+      "bytes": 6816,
+      "retrieved_at": "2026-09-26T15:15:13.299042Z"
     },
     {
       "url": "https://tds.gdex.ucar.edu/thredds/ncss/grid/files/g/d084001/2021/20210115/gfs.0p25.2021011500.f006.grib2?var=Temperature_isobaric%2CRelative_humidity_isobaric%2Cu-component_of_wind_isobaric%2Cv-component_of_wind_isobaric%2CGeopotential_height_isobaric&time=all&accept=netcdf&north=41.0&south=41.0&east=29.25&west=29.25",
@@ -166,5 +203,7 @@
       "retrieved_at": "2026-09-24T11:27:06.128765Z"
     }
   ],
-  "note": "Validated grid samples; historical publication latency still assumed. No model training here."
+  "scan_complete": true,
+  "elapsed_seconds": 87.98,
+  "note": "Partial acquisition; scan_complete means cache scan finished, not full data acquired. Historical publication latency assumed."
 }

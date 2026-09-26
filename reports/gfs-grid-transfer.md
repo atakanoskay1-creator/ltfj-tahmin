@@ -25,7 +25,16 @@ python -m ltfj.gfs_download --audit
 python -m ltfj.gfs_download --limit 48
 python -m ltfj.gfs_download --limit 0
 python -m ltfj.gfs_features
+python -m ltfj.gfs_readiness
 python -m unittest discover -s tests -q
 ```
 
 İkinci komut her çalıştırmada en fazla 48 henüz doğrulanmamış dosyayı dener. Üçüncü komut yalnızca önbelleği denetleyip ilerleme raporunu yeniler; ağ isteği yapmaz. Ham dosyalar ve türetilmiş özellikler yerelde; raporlar, kod ve testler Git'tedir. Kalan iş tam kapsamın indirilmesi, eksiklerin denetlenmesi ve aynı zaman bölmeleriyle METAR-only / METAR+GFS karşılaştırmasıdır.
+
+## 26 Eylül: eğitim önkoşulu ve süre sınırı
+
+Önceki oturumda kullanım limitinden dolayı yapılamayan GitHub kaydı tamamlandı. [GFS deney protokolü](../gfs-experiment-protocol.json) yeni hiperparametre taraması olmadan, aynı zamanlardaki yerel METAR ve METAR+GFS modellerini karşılaştırmayı tanımlıyor. Her yıl hem uygun tahmin zamanlarının hem pozitif zamanların en az %95'i kapsanmadan eğitime geçilmeyecek. Bu mühendislik önkoşulu, eksiklerin rastgele olduğunu veya modelin başarılı olacağını kanıtlamaz. [Hazırlık kontrolü](gfs-training-readiness.json) gerçek kapsama göre karar verir.
+
+`gfs_readiness` koşullar sağlanmadığında raporu yazar ve çıkış kodu 2 döndürür. Bu aşamada beklenen sonuç budur; eğitim zinciri bu başarısız kontrolün ardından çalıştırılmamalıdır.
+
+Yavaş arşiv yanıtları için her indirme partisine varsayılan 300 saniyelik yumuşak süre sınırı eklendi. Yeni istek bu sınırdan sonra başlamaz; devam eden istek kendi zaman aşımına kadar sürebilir. GFS indirmeleri istek başına varsayılan 30 saniye ve iki denemeyle sınırlı. Her yeni dosya denemesinden sonra ilerleme raporu kaydedilir. `scan_complete` yalnızca önbellek taramasının bittiğini ifade eder; bütün arşivin indiği anlamına gelmez. İndirme kesilirse doğrulanmış dosyalar korunur.

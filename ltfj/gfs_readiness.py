@@ -62,6 +62,8 @@ def main():
     report = audit(labels, features, protocol)
     write_json(Path("reports/gfs-training-readiness.json"), report)
     print(json.dumps(report, indent=2))
+    if not report["ready"]:
+        raise SystemExit(2)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,61 @@
+{
+  "ready": false,
+  "years": {
+    "2021": {
+      "eligible": 17266,
+      "available": 30,
+      "positives": 171,
+      "available_positives": 0,
+      "coverage": 0.0017375188231205838,
+      "positive_coverage": 0.0,
+      "passes": false
+    },
+    "2022": {
+      "eligible": 17334,
+      "available": 0,
+      "positives": 170,
+      "available_positives": 0,
+      "coverage": 0.0,
+      "positive_coverage": 0.0,
+      "passes": false
+    },
+    "2023": {
+      "eligible": 17308,
+      "available": 0,
+      "positives": 174,
+      "available_positives": 0,
+      "coverage": 0.0,
+      "positive_coverage": 0.0,
+      "passes": false
+    },
+    "2024": {
+      "eligible": 17287,
+      "available": 0,
+      "positives": 155,
+      "available_positives": 0,
+      "coverage": 0.0,
+      "positive_coverage": 0.0,
+      "passes": false
+    },
+    "2025": {
+      "eligible": 17332,
+      "available": 0,
+      "positives": 171,
+      "available_positives": 0,
+      "coverage": 0.0,
+      "positive_coverage": 0.0,
+      "passes": false
+    },
+    "2026": {
+      "eligible": 12314,
+      "available": 0,
+      "positives": 211,
+      "available_positives": 0,
+      "coverage": 0.0,
+      "positive_coverage": 0.0,
+      "passes": false
+    }
+  },
+  "invalid_available_origins": [],
+  "note": "Coverage prerequisite only, not proof of forecast skill or historical availability."
+}
