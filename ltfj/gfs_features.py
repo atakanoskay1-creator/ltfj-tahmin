@@ -4,12 +4,38 @@ import json
 from datetime import timedelta
 from pathlib import Path
 import hashlib
+import math
 
 from .archive_probe import VARIABLES
 from .gfs_coverage import forecast_bracket
 from .pipeline import iso, timestamp, write_csv, write_json
 
 FIELDS = [f"{v}_{level}" for v in VARIABLES for level in [925,850]]
+
+
+def equivalent(a, b):
+    if a.keys() != b.keys():
+        return False
+    return all((math.isclose(x, y, rel_tol=1e-6, abs_tol=1e-4)
+                if isinstance(x, (int, float)) and isinstance(y, (int, float)) else x == y)
+               for x, y in ((a[k], b[k]) for k in a))
+
+
+def load_records():
+    records = {}
+    paths = list(Path("data/raw/gfs-grid").glob("*.validated.json"))
+    paths += list(Path("data/raw/gdex-batch").glob("**/*.nc.validated.json"))
+    for path in paths:
+        raw = Path(str(path).replace(".validated.json", "" if path.name.endswith(".nc.validated.json") else ".nc"))
+        saved = json.loads(path.read_text())
+        if hashlib.sha256(raw.read_bytes()).hexdigest() != saved["sha256"]:
+            raise ValueError("Validated source changed")
+        row = saved["values"]
+        key = (row["cycle"], row["lead_hours"])
+        if key in records and not equivalent(records[key], row):
+            raise ValueError("Conflicting validated forecasts")
+        records[key] = row
+    return records
 
 
 def at_origin(origin, records, delay_hours=6):
@@ -33,13 +59,7 @@ def at_origin(origin, records, delay_hours=6):
 
 
 def main():
-    records = {}
-    for path in Path("data/raw/gfs-grid").glob("*.validated.json"):
-        saved = json.loads(path.read_text())
-        raw = Path(str(path).replace(".validated.json", ".nc"))
-        if hashlib.sha256(raw.read_bytes()).hexdigest() != saved["sha256"]:
-            raise ValueError("Validated source changed")
-        r = saved["values"]; records[(r["cycle"], r["lead_hours"])] = r
+    records = load_records()
     folder = Path("data/processed/research")
     with (folder/"features.csv").open(encoding="utf-8") as handle:
         times = [r["time"] for r in csv.DictReader(handle)]

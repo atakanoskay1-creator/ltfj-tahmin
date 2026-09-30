@@ -35,7 +35,7 @@ Bu komut [kayıtlı katsayılarla](reports/model-parameters.json) yerel `feature
 
 ### Önceki veri incelemeleri
 
-**GFS toplu altküme yolu hazır:** Tek dosyalı arşiv aktarımı zaman aşımı/503 nedeniyle ölçeklenmedi. NCAR GDEX'in sunucu tarafı altküme API'si için yıllık istekler ve güvenli token akışı hazırlandı; ortamda `GDEX_TOKEN` bulunmadığı için istekler henüz gönderilmedi. [Plan ve kalan doğrulamalar](reports/gdex-batch-plan.md).
+**GFS toplu altküme aktarımı sürüyor:** NCAR GDEX sunucu tarafı istekleri gönderildi. İlk 2020 sınır paketi indirildi; dört tahmin dosyasının zaman, konum, seviye, birim ve değişken içeriği doğrulandı. Hata veren yıllık istekleri çeyreklere bölen yeniden deneme ile tamamlanan paketleri güvenli biçimde açıp doğrulayan aktarım kodu eklendi. Büyük ham dosyalar yerelde tutulur. [Plan ve kalan doğrulamalar](reports/gdex-batch-plan.md).
 
 **GFS aktarımı düzeltildi:** Tek hücrelik grid altkümesi beş değişkeni koruyor; 925/850 hPa seviyesi ve zaman kontrolleri eklendi. İlk kesintisiz dosyalar indirildi, eksik GFS'yi boş bırakan METAR eşleştirmesi hazırlandı. Tam indirme ve GFS ile model eğitimi henüz tamamlanmadı. [Aktarım sonucu ve çalıştırma komutları](reports/gfs-grid-transfer.md).
 

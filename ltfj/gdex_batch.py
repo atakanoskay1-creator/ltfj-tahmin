@@ -1,5 +1,6 @@
 """Prepare and operate authenticated NCAR GDEX server-side GFS subset requests."""
 import argparse
+import calendar
 from datetime import datetime, timezone
 import json
 import os
@@ -32,6 +33,23 @@ def controls():
     return {str(year): control(f"{year}01010000",
         "202609201200" if year == 2026 else f"{year}12311800") for year in range(2021, 2027)} | {
         "2020_tail": control("202012311800", "202012311800")}
+
+
+def quarter_controls(year, final=None):
+    """Split a failed annual request without changing successful request IDs."""
+    year = int(year)
+    final = final or datetime(year, 12, 31, 18)
+    result = {}
+    for quarter, month in enumerate([1, 4, 7, 10], 1):
+        start = datetime(year, month, 1, 0)
+        if start > final:
+            break
+        end_month = min(month + 2, final.month)
+        end = datetime(year, end_month, calendar.monthrange(year, end_month)[1], 18)
+        if end > final:
+            end = final
+        result[f"{year}_q{quarter}"] = control(start.strftime("%Y%m%d%H%M"), end.strftime("%Y%m%d%H%M"))
+    return result
 
 
 def api(method, endpoint, token, payload=None):
@@ -92,10 +110,37 @@ def status():
     return state
 
 
+def retry_failed():
+    """Replace failed whole-year requests with smaller idempotent quarterly requests."""
+    secret = token(); state_path = ROOT/"requests.json"
+    state = json.loads(state_path.read_text())
+    failed = []
+    for name, item in list(state.items()):
+        if item.get("status_response", {}).get("status") == "Error" and name.isdigit():
+            failed.append(name)
+    if not failed:
+        return state
+    for year in failed:
+        final = datetime(2026, 9, 20, 12) if year == "2026" else None
+        for name, item in quarter_controls(year, final).items():
+            if name in state:
+                continue
+            response = api("POST", "submit/", secret, item)
+            request_id = response.get("request_id") if isinstance(response, dict) else None
+            if not request_id:
+                raise RuntimeError("GDEX did not return request_id")
+            state[name] = dict(request_id=str(request_id), submitted_at=datetime.now(timezone.utc).isoformat(),
+                               replaces_failed_request=year)
+            write_json(state_path, state)
+    return state
+
+
 def fetch():
     secret = token(); state_path = ROOT/"requests.json"
     state = json.loads(state_path.read_text())
     for name, item in state.items():
+        if item.get("status_response", {}).get("status") != "Completed":
+            continue
         listing = api("GET", f"get_req_files/{item['request_id']}", secret)
         files = listing.get("web_files", []) if isinstance(listing, dict) else []
         item["files"] = []
@@ -113,9 +158,9 @@ def fetch():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["prepare", "submit", "status", "fetch"])
+    parser.add_argument("action", choices=["prepare", "submit", "status", "retry-failed", "fetch"])
     args = parser.parse_args()
-    result = globals()[args.action]()
+    result = retry_failed() if args.action == "retry-failed" else globals()[args.action]()
     print(json.dumps(result, indent=2))
 
 

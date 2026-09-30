@@ -6,18 +6,22 @@ NCAR'ın resmî GDEX API'si `d084001` için sunucu tarafında altküme üretimin
 
 `python -m ltfj.gdex_batch prepare` yedi kontrol isteği üretir: 2020 son koşusu ve 2021–2026 için yıllık parçalar. Her istek yalnızca 41°N, 29,25°E hücresini, gerekli iki seviyeyi, beş alanı ve dört tahmin saatini ister. Böylece on binlerce istemci tarafı sorgu yerine NCAR'ın sunucuda hazırladığı birkaç küçük çıktı hedeflenir. [Makine tarafından okunabilir plan](gdex-batch-plan.json).
 
+Yedi kimlik doğrulamalı istek 30 Eylül 2026'da gönderildi. 2020 sınır isteği tamamlandı ve dört NetCDF dosyası içerik doğrulamasını geçti. 2021 yıllık isteği açıklamasız hata verdi; mevcut istek kimliğini koruyarak dört çeyreklik isteğe bölünecek. Son durum yenilemesinde 2022–2026 istekleri sıradaydı.
+
 ## Kimlik doğrulama sınırı
 
-GDEX, altküme isteği göndermek, durumunu okumak ve çıktı listesini almak için bearer token zorunlu tutuyor. Bu çalışma ortamında `GDEX_TOKEN` tanımlı değil; bu nedenle yedi istek **hazırlandı ama gönderilmedi**. Token ücretsiz GDEX hesabının kullanıcı profilinden alınır. Kod tokenı yalnızca ortam değişkeninden okur; URL, rapor, `.env.example`, Git veya çıktı mesajlarına yazmaz. `.env` dosyaları Git tarafından yok sayılır.
+GDEX, altküme isteği göndermek, durumunu okumak ve çıktı listesini almak için bearer token zorunlu tutuyor. Token ücretsiz GDEX hesabının kullanıcı profilinden alınır. Kod tokenı yalnızca ortam değişkeninden okur; URL, rapor, `.env.example`, Git veya çıktı mesajlarına yazmaz. `.env` dosyaları Git tarafından yok sayılır.
 
 Token ortamda tanımlandıktan sonra akış:
 
 ```sh
 python -m ltfj.gdex_batch submit
 python -m ltfj.gdex_batch status
+python -m ltfj.gdex_batch retry-failed
 python -m ltfj.gdex_batch fetch
+python -m ltfj.gdex_ingest
 ```
 
 `submit` her isteğin kimliğini hemen yerel ve Git dışında kalan `data/raw/gdex-batch/requests.json` dosyasına kaydeder; tekrar çalıştırma aynı yılı yeniden göndermez. `status` işleme durumunu yeniler. `fetch` yalnızca sunucunun tamamladığı dosyaları indirir ve kaynak URL/özet bilgisini saklar.
 
-Toplu çıktı geldiğinde doğrudan eğitime alınmayacak. Değişken, birim, basınç seviyesi, koşu ve geçerlilik zamanı kontrolleri toplu dosya biçimine uyarlanacak; ardından [eğitim kapsam kapısı](gfs-training-readiness.json) tekrar çalıştırılacak. Şu an tek dosyalı önbellekte 33.424 gerekli dosyanın 32'si var ve 2021 uygun zaman kapsamı yaklaşık %0,20; diğer yıllar %0. Model eğitimi için hazır değil.
+Toplu çıktı doğrudan eğitime alınmaz. `gdex_ingest` arşivi güvenli biçimde açar; değişken, birim, basınç seviyesi, koordinat, koşu ve geçerlilik zamanını doğrular. Ardından [eğitim kapsam kapısı](gfs-training-readiness.json) tekrar çalıştırılır. İlk sınır paketi dört dosya ve tek koşu içeriyor; yıllık veri henüz model eğitimi için hazır değil.

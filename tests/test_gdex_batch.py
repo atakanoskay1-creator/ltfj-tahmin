@@ -1,7 +1,7 @@
 import os
 import unittest
 from unittest.mock import patch
-from ltfj.gdex_batch import PARAMETERS, PRODUCTS, control, controls, token
+from ltfj.gdex_batch import PARAMETERS, PRODUCTS, control, controls, quarter_controls, token
 
 
 class BatchTests(unittest.TestCase):
@@ -26,3 +26,9 @@ class BatchTests(unittest.TestCase):
     def test_token_is_read_from_environment_only(self):
         with patch.dict(os.environ, {"GDEX_TOKEN": " secret "}, clear=True):
             self.assertEqual(token(), "secret")
+
+    def test_failed_year_can_be_split_into_non_overlapping_quarters(self):
+        plan = quarter_controls("2021")
+        self.assertEqual(list(plan), ["2021_q1", "2021_q2", "2021_q3", "2021_q4"])
+        self.assertEqual(plan["2021_q1"]["date"], "202101010000/to/202103311800")
+        self.assertEqual(plan["2021_q4"]["date"], "202110010000/to/202112311800")
