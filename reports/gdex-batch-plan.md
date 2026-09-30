@@ -26,7 +26,7 @@ Toplu çıktı geldiğinde doğrudan eğitime alınmayacak. Değişken, birim, b
 
 ## Toplu çıktılar (1 Ekim 2026)
 
-GDEX'ten 2020 son koşusu ve 2022–2026 istekleri geldi; **2021 henüz yok**. Arşivler `data/raw/gdex-batch/<istek>/` altına `.tar` olarak konur ve açılmadan okunur:
+GDEX'ten 2020 son koşusu ve 2021–2026 isteklerinin tamamı geldi. 2021 dört çeyreklik arşiv olarak alındı; aynı klasördeki birden çok arşiv birlikte doğrulanır. Arşivler `data/raw/gdex-batch/<istek>/` altına `.tar` olarak konur ve açılmadan okunur:
 
 ```sh
 python -m ltfj.gdex_ingest
@@ -39,11 +39,11 @@ Toplu dosya biçimi THREDDS'ten farklıdır (`TMP_L100`, `level0` mbar, `ref_dat
 | İstek | Tam koşu | Dosya | Eksik | 00/30 tahmin anı kapsamı (6 sa gecikme) |
 |---|---|---|---|---|
 | 2020_tail | 1/1 | 4/4 | yok | — |
-| 2021 | — | — | **indirilmedi** | %0,07 (yalnızca 1 Ocak 2020 kuyruğu) |
-| 2022 | 1.458/1.460 | 5.834/5.840 | 2022041718; 2022071418 +6/+9 | %99,79 |
+| 2021 | 1.460/1.460 | 5.840/5.840 | yok | %100,00 |
+| 2022 | 1.458/1.460 | 5.834/5.840 | 2022041718; 2022071418 +6/+9 | %99,86 |
 | 2023 | 1.459/1.460 | 5.836/5.840 | 2023122518 | %99,93 |
 | 2024 | 1.460/1.464 | 5.843/5.856 | 2024051918, 2024102112, 2024110612; 2024052806 +15 | %99,77 |
 | 2025 | 1.459/1.460 | 5.839/5.840 | 2025082618 +15 | %99,97 |
 | 2026 | 1.023/1.051 | 4.108/4.204 | 16 Ocak 12Z – 21 Ocak 18Z arası 22 koşu; 6 koşuda bazı saatler | %97,49 |
 
-Ayrıntı: [gdex-ingest.json](gdex-ingest.json). Kapsam sütunu etiketlerden bağımsız tüm 00/30 anlarını sayar; eğitim kapısı yalnızca etiketi 0/1 olan anlara ve pozitif anlara ayrıca bakar, bu yüzden `gfs_readiness` ile yeniden ölçülmelidir. Eksik koşular eksik bırakılır, doldurulmaz. İstek yalnızca +6…+15 saat ürünlerini kapsadığından 9 ve 12 saatlik gecikme duyarlılık senaryoları için +18 ve +21 saat ürünleri de gerekir (2026'da kapsam %56,9 ve %8,1). 2021 arşivi gelmeden eğitim kapısı geçilemez.
+Ayrıntı: [gdex-ingest.json](gdex-ingest.json). Kapsam sütunu etiketlerden bağımsız tüm 00/30 anlarını sayar; eğitim kapısı yalnızca etiketi 0/1 olan anlara ve pozitif anlara ayrıca bakar, bu yüzden `gfs_readiness` ile yeniden ölçülmelidir. Eksik koşular eksik bırakılır, doldurulmaz. İstek yalnızca +6…+15 saat ürünlerini kapsadığından 9 ve 12 saatlik gecikme duyarlılık senaryoları için +18 ve +21 saat ürünleri de gerekir (2026'da kapsam %56,9 ve %8,1). Toplam 33.304 dosya doğrulandı; tüm yıllar etiketlerden bağımsız sayımda %95 eşiğinin üstünde. Kapının resmî sonucu etiketli ve pozitif anlar üzerinden `gfs_readiness` ile verilir; bu çalışma ortamında IEM/NOAA erişimi olmadığından etiketler yeniden üretilemedi ve kapı henüz çalıştırılmadı.

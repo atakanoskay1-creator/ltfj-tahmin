@@ -1,7 +1,35 @@
 {
   "requests": {
     "2021": {
-      "status": "not_downloaded"
+      "status": "validated",
+      "sources": [
+        {
+          "file": "2a3a5bd1-gfs.0p25.2021070100.f006-25.2021093018.f015.grib2.nc.tar",
+          "sha256": "1e8b027625ee361bc636355dfe70488ff3766198ab6f268a5890caff719cc1d4",
+          "bytes": 6789120
+        },
+        {
+          "file": "4221c8e7-gfs.0p25.2021010100.f006-25.2021033118.f015.grib2.nc.tar",
+          "sha256": "e8d971a54391d1b82c84b3704c5a48204254c0b3e1450a130976b65632d339db",
+          "bytes": 6645760
+        },
+        {
+          "file": "a0b5814e-gfs.0p25.2021100100.f006-25.2021123118.f015.grib2.nc.tar",
+          "sha256": "8e19efdb146d0dbcd48d17ba53221cf8ccbc9b8516476de3942dd9083ea7645f",
+          "bytes": 6789120
+        },
+        {
+          "file": "ceea5dab-gfs.0p25.2021040100.f006-25.2021063018.f015.grib2.nc.tar",
+          "sha256": "814c5e55bad5beda51cade59f17a3dc2c7e116c396dc62dbc77afbc0871c8a5d",
+          "bytes": 6717440
+        }
+      ],
+      "expected_cycles": 1460,
+      "complete_cycles": 1460,
+      "files": 5840,
+      "expected_files": 5840,
+      "missing_cycles": [],
+      "missing_leads_by_cycle": {}
     },
     "2022": {
       "status": "validated",

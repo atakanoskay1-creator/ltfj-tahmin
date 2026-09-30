@@ -35,7 +35,7 @@ Bu komut [kayıtlı katsayılarla](reports/model-parameters.json) yerel `feature
 
 ### Önceki veri incelemeleri
 
-**GDEX toplu çıktıları doğrulandı:** 2020 son koşusu ve 2022–2026 arşivleri katı doğrulamadan geçti (27.464 dosya); 2022–2025 tahmin anı kapsamı %99,8 civarında, 2026'da %97,5. 2021 arşivi bekleniyor. [Sonuçlar](reports/gdex-batch-plan.md#toplu-çıktılar-1-ekim-2026).
+**GDEX toplu çıktıları doğrulandı:** 2020 son koşusu ve 2021–2026 arşivlerinin tamamı katı doğrulamadan geçti (33.304 dosya); 2021–2025 tahmin anı kapsamı %99,8 üzerinde, 2026'da %97,5. Etiketli eğitim kapısı (`gfs_readiness`) sırada. [Sonuçlar](reports/gdex-batch-plan.md#toplu-çıktılar-1-ekim-2026).
 
 **GFS toplu altküme yolu hazır:** Tek dosyalı arşiv aktarımı zaman aşımı/503 nedeniyle ölçeklenmedi. NCAR GDEX'in sunucu tarafı altküme API'si için yıllık istekler ve güvenli token akışı hazırlandı; ortamda `GDEX_TOKEN` bulunmadığı için istekler henüz gönderilmedi. [Plan ve kalan doğrulamalar](reports/gdex-batch-plan.md).
 
