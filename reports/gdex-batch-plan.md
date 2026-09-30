@@ -23,3 +23,22 @@ Resmî API belgesine göre istemci düzeltildi: kontrol dosyasında güncel veri
 `submit` her isteğin kimliğini hemen yerel ve Git dışında kalan `data/raw/gdex-batch/requests.json` dosyasına kaydeder; tekrar çalıştırma aynı yılı yeniden göndermez. `status` işleme durumunu yeniler. `fetch` yalnızca sunucunun tamamladığı dosyaları indirir ve kaynak URL/özet bilgisini saklar.
 
 Toplu çıktı geldiğinde doğrudan eğitime alınmayacak. Değişken, birim, basınç seviyesi, koşu ve geçerlilik zamanı kontrolleri toplu dosya biçimine uyarlanacak; ardından [eğitim kapsam kapısı](gfs-training-readiness.json) tekrar çalıştırılacak. Şu an tek dosyalı önbellekte 33.424 gerekli dosyanın 32'si var ve 2021 uygun zaman kapsamı yaklaşık %0,20; diğer yıllar %0. Model eğitimi için hazır değil.
+
+## İlk toplu çıktılar (1 Ekim 2026)
+
+GDEX'ten `2020_tail` ve `2026` istekleri geldi. Arşivler `data/raw/gdex-batch/<istek>/` altına `.tar` olarak konur ve açılmadan okunur:
+
+```sh
+python -m ltfj.gdex_ingest
+python -m ltfj.gfs_features
+python -m ltfj.gfs_readiness
+```
+
+Toplu dosya biçimi THREDDS'ten farklıdır (`TMP_L100`, `level0` mbar, `ref_date_time`, `forecast_hour`); [`gdex_ingest`](../ltfj/gdex_ingest.py) bunun için ayrı bir katı doğrulayıcıdır. Her dosyada değişken kümesi, koşu/geçerlilik zamanı, tahmin saati, ürün adı, 41°N 29,25°E hücresi, 925/850 mbar seviyeleri, birimler, eksik değer ve nem sınırları kontrol edilir; arşiv üyeleri istek aralığı dışındaysa veya tekrar ediyorsa işlem durur. Doğrulanan kayıtlar THREDDS alan adlarına çevrilir; aynı koşu/saat iki kaynakta varsa değerlerin uyuşması zorunludur. `gfs_features` arşiv SHA-256 özetini her çalıştırmada yeniden doğrular.
+
+| İstek | Beklenen koşu | Tam koşu | Dosya | Eksik |
+|---|---|---|---|---|
+| 2020_tail | 1 | 1 | 4/4 | yok |
+| 2026 | 1.051 | 1.023 | 4.108/4.204 | 16 Ocak 12Z – 21 Ocak 18Z arası 22 koşu yok; 6 koşuda bazı tahmin saatleri yok |
+
+Ayrıntı: [gdex-ingest.json](gdex-ingest.json). Eksik koşular eksik bırakılır, doldurulmaz. 2026 için 00/30 tahmin anlarının 6 saat gecikme varsayımıyla %97,4'ü GFS ile eşleşiyor. Ancak istek yalnızca +6…+15 saat ürünlerini kapsadığından 9 ve 12 saatlik gecikme duyarlılık senaryoları sırasıyla %56,9 ve %8,1'de kalıyor; bu senaryolar için +18 ve +21 saat ürünleri de gerekir. Pozitif tahmin anlarının kapsamı etiketlerle `gfs_readiness` çalıştırılınca ölçülecek; eksik Ocak aralığı sis mevsimine denk geldiğinden bu kapı ayrıca önemlidir. 2021–2025 istekleri henüz gelmediği için eğitim kapısı geçilemez.

@@ -1,0 +1,104 @@
+{
+  "requests": {
+    "2021": {
+      "status": "not_downloaded"
+    },
+    "2022": {
+      "status": "not_downloaded"
+    },
+    "2023": {
+      "status": "not_downloaded"
+    },
+    "2024": {
+      "status": "not_downloaded"
+    },
+    "2025": {
+      "status": "not_downloaded"
+    },
+    "2026": {
+      "status": "validated",
+      "sources": [
+        {
+          "file": "d064a958-gfs.0p25.2026010100.f006-25.2026092012.f015.grib2.nc.tar",
+          "sha256": "0c7bc6b2aeb111405f004bc8145461326cf4328c5e55c053a8a7569237b896f3",
+          "bytes": 18933760
+        }
+      ],
+      "expected_cycles": 1051,
+      "complete_cycles": 1023,
+      "files": 4108,
+      "expected_files": 4204,
+      "missing_cycles": [
+        "2026011612",
+        "2026011618",
+        "2026011700",
+        "2026011706",
+        "2026011712",
+        "2026011718",
+        "2026011800",
+        "2026011806",
+        "2026011812",
+        "2026011818",
+        "2026011900",
+        "2026011906",
+        "2026011912",
+        "2026011918",
+        "2026012000",
+        "2026012006",
+        "2026012012",
+        "2026012018",
+        "2026012100",
+        "2026012106",
+        "2026012112",
+        "2026012118"
+      ],
+      "missing_leads_by_cycle": {
+        "2026022712": [
+          6
+        ],
+        "2026030118": [
+          6,
+          9
+        ],
+        "2026032518": [
+          12
+        ],
+        "2026040306": [
+          6
+        ],
+        "2026040518": [
+          6,
+          9
+        ],
+        "2026051812": [
+          6
+        ]
+      }
+    },
+    "2020_tail": {
+      "status": "validated",
+      "sources": [
+        {
+          "file": "57b7ed63-gfs.0p25.2020123118.f006-015.grib2.nc.tar",
+          "sha256": "054f02bf6829dd0e6622b4ec515ccb047839c3b2671f8bb68014a45a60a719bd",
+          "bytes": 20480
+        }
+      ],
+      "expected_cycles": 1,
+      "complete_cycles": 1,
+      "files": 4,
+      "expected_files": 4,
+      "missing_cycles": [],
+      "missing_leads_by_cycle": {}
+    }
+  },
+  "checks": [
+    "member names match request cycles and leads",
+    "reference/valid time and forecast hour",
+    "41N 29.25E single cell",
+    "925/850 mbar levels",
+    "five fields with expected units and product",
+    "no fill values, humidity within 0-100 %"
+  ],
+  "note": "Missing cycles are left missing. Archive time is not historical publication time."
+}

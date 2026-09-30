@@ -32,14 +32,36 @@ def at_origin(origin, records, delay_hours=6):
         **{f"gfs_{f}_change_3h": values[1][f]-values[0][f] for f in FIELDS})
 
 
-def main():
+def add(records, record, tolerance=1e-3):
+    """Register one forecast; the same cycle/lead from two transports must agree."""
+    key = (record["cycle"], record["lead_hours"])
+    old = records.get(key)
+    if old is not None and any(abs(old[f]-record[f]) > tolerance*max(1., abs(old[f])) for f in FIELDS):
+        raise ValueError(f"Conflicting GFS values for {key}")
+    records[key] = record
+
+
+def load_records():
     records = {}
     for path in Path("data/raw/gfs-grid").glob("*.validated.json"):
         saved = json.loads(path.read_text())
         raw = Path(str(path).replace(".validated.json", ".nc"))
         if hashlib.sha256(raw.read_bytes()).hexdigest() != saved["sha256"]:
             raise ValueError("Validated source changed")
-        r = saved["values"]; records[(r["cycle"], r["lead_hours"])] = r
+        add(records, saved["values"])
+    # Server-side subsets validated by ltfj.gdex_ingest.
+    for path in Path("data/raw/gdex-batch").glob("*/validated.json"):
+        saved = json.loads(path.read_text())
+        for source in saved["sources"]:
+            if hashlib.sha256((path.parent/source["file"]).read_bytes()).hexdigest() != source["sha256"]:
+                raise ValueError("Validated GDEX archive changed")
+        for record in saved["records"]:
+            add(records, record)
+    return records
+
+
+def main():
+    records = load_records()
     folder = Path("data/processed/research")
     with (folder/"features.csv").open(encoding="utf-8") as handle:
         times = [r["time"] for r in csv.DictReader(handle)]

@@ -35,6 +35,8 @@ Bu komut [kayıtlı katsayılarla](reports/model-parameters.json) yerel `feature
 
 ### Önceki veri incelemeleri
 
+**GDEX toplu çıktıları gelmeye başladı:** 2020 son koşusu ve 2026 arşivleri katı doğrulamadan geçti (4.112 dosya); 2026'da 22 koşu kaynakta yok. 2021–2025 bekleniyor. [Sonuçlar](reports/gdex-batch-plan.md#ilk-toplu-çıktılar-1-ekim-2026).
+
 **GFS toplu altküme yolu hazır:** Tek dosyalı arşiv aktarımı zaman aşımı/503 nedeniyle ölçeklenmedi. NCAR GDEX'in sunucu tarafı altküme API'si için yıllık istekler ve güvenli token akışı hazırlandı; ortamda `GDEX_TOKEN` bulunmadığı için istekler henüz gönderilmedi. [Plan ve kalan doğrulamalar](reports/gdex-batch-plan.md).
 
 **GFS aktarımı düzeltildi:** Tek hücrelik grid altkümesi beş değişkeni koruyor; 925/850 hPa seviyesi ve zaman kontrolleri eklendi. İlk kesintisiz dosyalar indirildi, eksik GFS'yi boş bırakan METAR eşleştirmesi hazırlandı. Tam indirme ve GFS ile model eğitimi henüz tamamlanmadı. [Aktarım sonucu ve çalıştırma komutları](reports/gfs-grid-transfer.md).
