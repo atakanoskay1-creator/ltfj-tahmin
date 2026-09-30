@@ -1,5 +1,6 @@
 """Resumable one-cell GFS grid acquisition with strict coordinate validation."""
 import argparse
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 import csv
 from datetime import timedelta
 import hashlib
@@ -95,11 +96,12 @@ def main():
     parser.add_argument("--max-seconds", type=float, default=300,
                         help="Soft batch duration; an in-flight request may finish afterwards")
     parser.add_argument("--timeout", type=float, default=30, help="Per-request socket timeout")
+    parser.add_argument("--workers", type=int, default=4, help="Concurrent requests; keep modest for the public archive")
     args = parser.parse_args()
     if args.limit < 0:
         parser.error("limit must be non-negative")
-    if args.max_seconds <= 0 or args.timeout <= 0:
-        parser.error("duration and timeout must be positive")
+    if args.max_seconds <= 0 or args.timeout <= 0 or not 1 <= args.workers <= 8:
+        parser.error("duration/timeout must be positive and workers must be between 1 and 8")
     if args.audit:
         plan = [(f"{year}{month:02d}1500", 6) for year in range(2021, 2027) for month in [1,4,7]]
     else:
@@ -118,6 +120,7 @@ def main():
             completed_this_run=completed, failures=failures, sources=provenance,
             scan_complete=final, elapsed_seconds=round(time.monotonic()-started, 2),
             note="Partial acquisition; scan_complete means cache scan finished, not full data acquired. Historical publication latency assumed."))
+    pending = []
     for cycle, lead in plan:
         path = root/f"{cycle}_f{lead:03d}.nc"
         output = path.with_suffix(".validated.json")
@@ -128,19 +131,41 @@ def main():
             results.append(saved["values"])
             provenance.append(json.loads(path.with_suffix(".nc.source.json").read_text()))
             continue
-        if attempts >= args.limit or time.monotonic()-started >= args.max_seconds:
-            continue
-        attempts += 1
+        pending.append((cycle, lead, path, output))
+
+    def acquire(item):
+        cycle, lead, path, output = item
         try:
             download(grid_url(cycle, lead), path, timeout=args.timeout, attempts=2)
             values = decode(path, cycle, lead)
             write_json(output, dict(sha256=hashlib.sha256(path.read_bytes()).hexdigest(), values=values))
-            results.append(values); completed.append(path.name)
-            provenance.append(json.loads(path.with_suffix(".nc.source.json").read_text()))
-            print("Validated", path.name, flush=True)
+            return values, json.loads(path.with_suffix(".nc.source.json").read_text()), path.name, None
         except Exception as exc:
-            failures.append(dict(cycle=cycle, lead=lead, error=str(exc)))
-        checkpoint()
+            return None, None, None, dict(cycle=cycle, lead=lead, error=str(exc))
+
+    # Submit only a small moving window so the duration limit stops new work promptly.
+    queue = iter(pending[:args.limit])
+    active = set()
+    with ThreadPoolExecutor(max_workers=args.workers, thread_name_prefix="gfs") as pool:
+        while len(active) < args.workers and time.monotonic()-started < args.max_seconds:
+            item = next(queue, None)
+            if item is None:
+                break
+            active.add(pool.submit(acquire, item)); attempts += 1
+        while active:
+            done, active = wait(active, return_when=FIRST_COMPLETED)
+            for future in done:
+                values, source, filename, failure = future.result()
+                if failure:
+                    failures.append(failure)
+                else:
+                    results.append(values); provenance.append(source); completed.append(filename)
+                    print("Validated", filename, flush=True)
+                checkpoint()
+                if attempts < args.limit and time.monotonic()-started < args.max_seconds:
+                    item = next(queue, None)
+                    if item is not None:
+                        active.add(pool.submit(acquire, item)); attempts += 1
     checkpoint(final=True)
     if results:
         write_csv(Path(f"data/processed/research/{name}.csv"), results)

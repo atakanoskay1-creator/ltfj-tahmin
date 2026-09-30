@@ -4,10 +4,18 @@ import unittest
 import numpy as np
 from scipy.io import netcdf_file
 from ltfj.archive_probe import VARIABLES
-from ltfj.gfs_download import decode, UNITS
+from ltfj.gfs_download import decode, grid_url, UNITS
 
 
 class GridTests(unittest.TestCase):
+    def test_grid_request_is_one_cell_and_all_variables(self):
+        url = grid_url("2024010100", 6)
+        self.assertIn("north=41.0", url)
+        self.assertIn("south=41.0", url)
+        self.assertIn("accept=netcdf", url)
+        for name in VARIABLES:
+            self.assertIn(name, url)
+
     def fixture(self, path, omit=None, wrong_time=False, fill=False):
         with netcdf_file(path, "w") as nc:
             for name, values, units in [
