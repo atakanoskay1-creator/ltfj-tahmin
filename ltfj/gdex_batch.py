@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
@@ -22,7 +23,7 @@ def control(start, end):
         datetime.strptime(value, "%Y%m%d%H%M")
     if start > end:
         raise ValueError("Start is after end")
-    return dict(dataset="ds084.1", date=f"{start}/to/{end}", datetype="init",
+    return dict(dataset="d084001", date=f"{start}/to/{end}", datetype="init",
         param=PARAMETERS, level="ISBL:925/850", oformat="netCDF",
         nlat="41", slat="41", wlon="29.25", elon="29.25",
         product=PRODUCTS, targetdir="/glade/scratch")
@@ -39,11 +40,24 @@ def api(method, endpoint, token, payload=None):
     url = API + endpoint.lstrip("/") + "?" + urlencode(dict(token=token))
     request = Request(url, data=body, method=method,
         headers={"Content-Type": "application/json", "User-Agent": "ltfj-tahmin/0.4 research"})
-    with urlopen(request, timeout=120) as response:
-        result = json.loads(response.read())
+    try:
+        with urlopen(request, timeout=120) as response:
+            result = json.loads(response.read())
+    except HTTPError as error:
+        # The URL carries the token, so only the status code and GDEX messages are reported.
+        try:
+            messages = json.loads(error.read()).get("messages")
+        except ValueError:
+            messages = None
+        raise RuntimeError(f"GDEX API HTTP {error.code} on {endpoint}: {messages}") from None
+    return unwrap(result)
+
+
+def unwrap(result):
+    """GDEX returns {"status", "messages", "result"}; errors are reported in messages."""
     if result.get("status") not in {"ok", None} or result.get("error_messages"):
-        raise RuntimeError(f"GDEX API error: {result.get('error_messages')}")
-    return result.get("data", result.get("result", result))
+        raise RuntimeError(f"GDEX API error: {result.get('messages') or result.get('error_messages')}")
+    return result.get("result", result.get("data", result))
 
 
 def token():
@@ -96,6 +110,12 @@ def fetch():
     secret = token(); state_path = ROOT/"requests.json"
     state = json.loads(state_path.read_text())
     for name, item in state.items():
+        current = api("GET", f"status/{item['request_id']}", secret)
+        item["status_response"] = current
+        if not isinstance(current, dict) or current.get("status") != "Completed":
+            print(f"{name}: not ready ({current.get('status') if isinstance(current, dict) else current})", flush=True)
+            write_json(state_path, state)
+            continue
         listing = api("GET", f"get_req_files/{item['request_id']}", secret)
         files = listing.get("web_files", []) if isinstance(listing, dict) else []
         item["files"] = []
@@ -106,6 +126,8 @@ def fetch():
                 raise ValueError("Unsafe empty GDEX filename")
             path = ROOT/name/filename
             download(url, path, timeout=180, attempts=3)
+            if entry.get("size") is not None and path.stat().st_size != int(entry["size"]):
+                raise ValueError(f"Size mismatch for {path}: expected {entry['size']} bytes")
             item["files"].append(dict(path=str(path), expected_bytes=entry.get("size")))
         write_json(state_path, state)
     return state

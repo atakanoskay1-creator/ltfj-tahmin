@@ -18,6 +18,8 @@ python -m ltfj.gdex_batch status
 python -m ltfj.gdex_batch fetch
 ```
 
+Resmî API belgesine göre istemci düzeltildi: kontrol dosyasında güncel veri kimliği `d084001` kullanılıyor; yanıtlar `result`, hatalar `messages` alanından okunuyor; HTTP hataları tokenlı URL yazılmadan raporlanıyor. `fetch` önce isteğin `Completed` olduğunu kontrol ediyor ve indirilen dosya boyutunu API'nin bildirdiği boyutla karşılaştırıyor. GDEX bir kullanıcıya aynı anda en fazla 8 açık istek tanıyor ve tamamlanan çıktıları varsayılan olarak 7 gün saklıyor; `fetch` bu süre içinde çalıştırılmalı.
+
 `submit` her isteğin kimliğini hemen yerel ve Git dışında kalan `data/raw/gdex-batch/requests.json` dosyasına kaydeder; tekrar çalıştırma aynı yılı yeniden göndermez. `status` işleme durumunu yeniler. `fetch` yalnızca sunucunun tamamladığı dosyaları indirir ve kaynak URL/özet bilgisini saklar.
 
 Toplu çıktı geldiğinde doğrudan eğitime alınmayacak. Değişken, birim, basınç seviyesi, koşu ve geçerlilik zamanı kontrolleri toplu dosya biçimine uyarlanacak; ardından [eğitim kapsam kapısı](gfs-training-readiness.json) tekrar çalıştırılacak. Şu an tek dosyalı önbellekte 33.424 gerekli dosyanın 32'si var ve 2021 uygun zaman kapsamı yaklaşık %0,20; diğer yıllar %0. Model eğitimi için hazır değil.

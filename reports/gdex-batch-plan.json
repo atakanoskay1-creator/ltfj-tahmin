@@ -3,7 +3,7 @@
   "requests": 7,
   "controls": {
     "2021": {
-      "dataset": "ds084.1",
+      "dataset": "d084001",
       "date": "202101010000/to/202112311800",
       "datetype": "init",
       "param": "TMP/R H/U GRD/V GRD/HGT",
@@ -17,7 +17,7 @@
       "targetdir": "/glade/scratch"
     },
     "2022": {
-      "dataset": "ds084.1",
+      "dataset": "d084001",
       "date": "202201010000/to/202212311800",
       "datetype": "init",
       "param": "TMP/R H/U GRD/V GRD/HGT",
@@ -31,7 +31,7 @@
       "targetdir": "/glade/scratch"
     },
     "2023": {
-      "dataset": "ds084.1",
+      "dataset": "d084001",
       "date": "202301010000/to/202312311800",
       "datetype": "init",
       "param": "TMP/R H/U GRD/V GRD/HGT",
@@ -45,7 +45,7 @@
       "targetdir": "/glade/scratch"
     },
     "2024": {
-      "dataset": "ds084.1",
+      "dataset": "d084001",
       "date": "202401010000/to/202412311800",
       "datetype": "init",
       "param": "TMP/R H/U GRD/V GRD/HGT",
@@ -59,7 +59,7 @@
       "targetdir": "/glade/scratch"
     },
     "2025": {
-      "dataset": "ds084.1",
+      "dataset": "d084001",
       "date": "202501010000/to/202512311800",
       "datetype": "init",
       "param": "TMP/R H/U GRD/V GRD/HGT",
@@ -73,7 +73,7 @@
       "targetdir": "/glade/scratch"
     },
     "2026": {
-      "dataset": "ds084.1",
+      "dataset": "d084001",
       "date": "202601010000/to/202609201200",
       "datetype": "init",
       "param": "TMP/R H/U GRD/V GRD/HGT",
@@ -87,7 +87,7 @@
       "targetdir": "/glade/scratch"
     },
     "2020_tail": {
-      "dataset": "ds084.1",
+      "dataset": "d084001",
       "date": "202012311800/to/202012311800",
       "datetype": "init",
       "param": "TMP/R H/U GRD/V GRD/HGT",
