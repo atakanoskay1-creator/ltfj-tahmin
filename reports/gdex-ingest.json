@@ -4,16 +4,89 @@
       "status": "not_downloaded"
     },
     "2022": {
-      "status": "not_downloaded"
+      "status": "validated",
+      "sources": [
+        {
+          "file": "2f9983ac-gfs.0p25.2022010100.f006-25.2022123118.f015.grib2.nc.tar",
+          "sha256": "28c90096257a5038e37eacd39523d0e70b2aa1b2c85ea71d2d68731ddd573f65",
+          "bytes": 26890240
+        }
+      ],
+      "expected_cycles": 1460,
+      "complete_cycles": 1458,
+      "files": 5834,
+      "expected_files": 5840,
+      "missing_cycles": [
+        "2022041718"
+      ],
+      "missing_leads_by_cycle": {
+        "2022071418": [
+          6,
+          9
+        ]
+      }
     },
     "2023": {
-      "status": "not_downloaded"
+      "status": "validated",
+      "sources": [
+        {
+          "file": "40517b0c-gfs.0p25.2023010100.f006-25.2023123118.f015.grib2.nc.tar",
+          "sha256": "1737dd17a7b9a08d91bf2f7190212126b41d39bab774bad88baf36fb36658244",
+          "bytes": 26900480
+        }
+      ],
+      "expected_cycles": 1460,
+      "complete_cycles": 1459,
+      "files": 5836,
+      "expected_files": 5840,
+      "missing_cycles": [
+        "2023122518"
+      ],
+      "missing_leads_by_cycle": {}
     },
     "2024": {
-      "status": "not_downloaded"
+      "status": "validated",
+      "sources": [
+        {
+          "file": "5229b70a-gfs.0p25.2024010100.f006-25.2024123118.f015.grib2.nc.tar",
+          "sha256": "943a9264ad8681c2770de8533053e3a3c82e896c7f5123fd51079c68aed5f687",
+          "bytes": 26931200
+        }
+      ],
+      "expected_cycles": 1464,
+      "complete_cycles": 1460,
+      "files": 5843,
+      "expected_files": 5856,
+      "missing_cycles": [
+        "2024051918",
+        "2024102112",
+        "2024110612"
+      ],
+      "missing_leads_by_cycle": {
+        "2024052806": [
+          15
+        ]
+      }
     },
     "2025": {
-      "status": "not_downloaded"
+      "status": "validated",
+      "sources": [
+        {
+          "file": "247db4c0-gfs.0p25.2025010100.f006-25.2025123118.f015.grib2.nc.tar",
+          "sha256": "351894c0eb0319e4688defee17bd6213357aafe16997bde4aa3cd4483cbdf865",
+          "bytes": 26910720
+        }
+      ],
+      "expected_cycles": 1460,
+      "complete_cycles": 1459,
+      "files": 5839,
+      "expected_files": 5840,
+      "missing_cycles": [],
+      "missing_leads_by_cycle": {
+        "2025082618": [
+          15
+        ]
+      }
     },
     "2026": {
       "status": "validated",

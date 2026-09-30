@@ -24,9 +24,9 @@ Resmî API belgesine göre istemci düzeltildi: kontrol dosyasında güncel veri
 
 Toplu çıktı geldiğinde doğrudan eğitime alınmayacak. Değişken, birim, basınç seviyesi, koşu ve geçerlilik zamanı kontrolleri toplu dosya biçimine uyarlanacak; ardından [eğitim kapsam kapısı](gfs-training-readiness.json) tekrar çalıştırılacak. Şu an tek dosyalı önbellekte 33.424 gerekli dosyanın 32'si var ve 2021 uygun zaman kapsamı yaklaşık %0,20; diğer yıllar %0. Model eğitimi için hazır değil.
 
-## İlk toplu çıktılar (1 Ekim 2026)
+## Toplu çıktılar (1 Ekim 2026)
 
-GDEX'ten `2020_tail` ve `2026` istekleri geldi. Arşivler `data/raw/gdex-batch/<istek>/` altına `.tar` olarak konur ve açılmadan okunur:
+GDEX'ten 2020 son koşusu ve 2022–2026 istekleri geldi; **2021 henüz yok**. Arşivler `data/raw/gdex-batch/<istek>/` altına `.tar` olarak konur ve açılmadan okunur:
 
 ```sh
 python -m ltfj.gdex_ingest
@@ -36,9 +36,14 @@ python -m ltfj.gfs_readiness
 
 Toplu dosya biçimi THREDDS'ten farklıdır (`TMP_L100`, `level0` mbar, `ref_date_time`, `forecast_hour`); [`gdex_ingest`](../ltfj/gdex_ingest.py) bunun için ayrı bir katı doğrulayıcıdır. Her dosyada değişken kümesi, koşu/geçerlilik zamanı, tahmin saati, ürün adı, 41°N 29,25°E hücresi, 925/850 mbar seviyeleri, birimler, eksik değer ve nem sınırları kontrol edilir; arşiv üyeleri istek aralığı dışındaysa veya tekrar ediyorsa işlem durur. Doğrulanan kayıtlar THREDDS alan adlarına çevrilir; aynı koşu/saat iki kaynakta varsa değerlerin uyuşması zorunludur. `gfs_features` arşiv SHA-256 özetini her çalıştırmada yeniden doğrular.
 
-| İstek | Beklenen koşu | Tam koşu | Dosya | Eksik |
+| İstek | Tam koşu | Dosya | Eksik | 00/30 tahmin anı kapsamı (6 sa gecikme) |
 |---|---|---|---|---|
-| 2020_tail | 1 | 1 | 4/4 | yok |
-| 2026 | 1.051 | 1.023 | 4.108/4.204 | 16 Ocak 12Z – 21 Ocak 18Z arası 22 koşu yok; 6 koşuda bazı tahmin saatleri yok |
+| 2020_tail | 1/1 | 4/4 | yok | — |
+| 2021 | — | — | **indirilmedi** | %0,07 (yalnızca 1 Ocak 2020 kuyruğu) |
+| 2022 | 1.458/1.460 | 5.834/5.840 | 2022041718; 2022071418 +6/+9 | %99,79 |
+| 2023 | 1.459/1.460 | 5.836/5.840 | 2023122518 | %99,93 |
+| 2024 | 1.460/1.464 | 5.843/5.856 | 2024051918, 2024102112, 2024110612; 2024052806 +15 | %99,77 |
+| 2025 | 1.459/1.460 | 5.839/5.840 | 2025082618 +15 | %99,97 |
+| 2026 | 1.023/1.051 | 4.108/4.204 | 16 Ocak 12Z – 21 Ocak 18Z arası 22 koşu; 6 koşuda bazı saatler | %97,49 |
 
-Ayrıntı: [gdex-ingest.json](gdex-ingest.json). Eksik koşular eksik bırakılır, doldurulmaz. 2026 için 00/30 tahmin anlarının 6 saat gecikme varsayımıyla %97,4'ü GFS ile eşleşiyor. Ancak istek yalnızca +6…+15 saat ürünlerini kapsadığından 9 ve 12 saatlik gecikme duyarlılık senaryoları sırasıyla %56,9 ve %8,1'de kalıyor; bu senaryolar için +18 ve +21 saat ürünleri de gerekir. Pozitif tahmin anlarının kapsamı etiketlerle `gfs_readiness` çalıştırılınca ölçülecek; eksik Ocak aralığı sis mevsimine denk geldiğinden bu kapı ayrıca önemlidir. 2021–2025 istekleri henüz gelmediği için eğitim kapısı geçilemez.
+Ayrıntı: [gdex-ingest.json](gdex-ingest.json). Kapsam sütunu etiketlerden bağımsız tüm 00/30 anlarını sayar; eğitim kapısı yalnızca etiketi 0/1 olan anlara ve pozitif anlara ayrıca bakar, bu yüzden `gfs_readiness` ile yeniden ölçülmelidir. Eksik koşular eksik bırakılır, doldurulmaz. İstek yalnızca +6…+15 saat ürünlerini kapsadığından 9 ve 12 saatlik gecikme duyarlılık senaryoları için +18 ve +21 saat ürünleri de gerekir (2026'da kapsam %56,9 ve %8,1). 2021 arşivi gelmeden eğitim kapısı geçilemez.
