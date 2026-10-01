@@ -1,0 +1,615 @@
+{
+  "feature_counts": {
+    "Mevcut LTFJ METAR": 11,
+    "METAR eğilimleri": 8,
+    "Zaman ve mevsim": 4,
+    "GFS mevcut tahmin": 10,
+    "GFS 3 saatlik değişim": 10
+  },
+  "total_features": 43,
+  "gfs_features": 20,
+  "permutation_importance_2024": [
+    {
+      "feature": "spread_c",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 0.001104409297957702,
+      "std_brier_increase": 0.00010016739243697696
+    },
+    {
+      "feature": "log_visibility",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 0.0005656732802912228,
+      "std_brier_increase": 4.02367937274585e-05
+    },
+    {
+      "feature": "hour_sin",
+      "group": "Zaman ve mevsim",
+      "mean_brier_increase": 0.00043527987458862744,
+      "std_brier_increase": 5.770056886433686e-05
+    },
+    {
+      "feature": "gfs_Temperature_isobaric_850_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": 0.0002416110535198638,
+      "std_brier_increase": 3.311659670907683e-05
+    },
+    {
+      "feature": "gfs_Temperature_isobaric_925_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": 0.00011136695058021166,
+      "std_brier_increase": 2.5754311023230257e-05
+    },
+    {
+      "feature": "year_sin",
+      "group": "Zaman ve mevsim",
+      "mean_brier_increase": 8.877696475086821e-05,
+      "std_brier_increase": 3.398123437337017e-05
+    },
+    {
+      "feature": "rain",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 8.646157153069656e-05,
+      "std_brier_increase": 4.047993929328156e-05
+    },
+    {
+      "feature": "gfs_Relative_humidity_isobaric_925_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": 8.455603369195847e-05,
+      "std_brier_increase": 2.7417238879745085e-05
+    },
+    {
+      "feature": "temperature_c",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 7.126867331652982e-05,
+      "std_brier_increase": 1.9090835246576572e-05
+    },
+    {
+      "feature": "gfs_Temperature_isobaric_925_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": 6.499340976775584e-05,
+      "std_brier_increase": 4.425918654250936e-05
+    },
+    {
+      "feature": "hour_cos",
+      "group": "Zaman ve mevsim",
+      "mean_brier_increase": 4.852799160490091e-05,
+      "std_brier_increase": 3.992176751799996e-05
+    },
+    {
+      "feature": "wind_v",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 4.7131860091352563e-05,
+      "std_brier_increase": 1.2233973650080441e-05
+    },
+    {
+      "feature": "gfs_u-component_of_wind_isobaric_850_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": 3.1080723076394245e-05,
+      "std_brier_increase": 1.6237229807525234e-05
+    },
+    {
+      "feature": "fog_mist",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 2.8023501817040462e-05,
+      "std_brier_increase": 3.7215828504613385e-06
+    },
+    {
+      "feature": "spread_change_3h",
+      "group": "METAR eğilimleri",
+      "mean_brier_increase": 1.7696774215437103e-05,
+      "std_brier_increase": 1.6665432799536638e-05
+    },
+    {
+      "feature": "gfs_v-component_of_wind_isobaric_850_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": 1.7371489924548034e-05,
+      "std_brier_increase": 5.5578165402735085e-06
+    },
+    {
+      "feature": "gfs_Geopotential_height_isobaric_850_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": 1.695210788901294e-05,
+      "std_brier_increase": 7.70147405564844e-06
+    },
+    {
+      "feature": "year_cos",
+      "group": "Zaman ve mevsim",
+      "mean_brier_increase": 1.2122848399197424e-05,
+      "std_brier_increase": 1.4974983030001792e-05
+    },
+    {
+      "feature": "gfs_Relative_humidity_isobaric_925_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": 9.15113000175792e-06,
+      "std_brier_increase": 9.77614096966167e-06
+    },
+    {
+      "feature": "gfs_v-component_of_wind_isobaric_850_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": 8.767804891276695e-06,
+      "std_brier_increase": 1.1506610540052457e-05
+    },
+    {
+      "feature": "qnh_hpa",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 6.947802160808467e-06,
+      "std_brier_increase": 5.936664444764012e-06
+    },
+    {
+      "feature": "visibility_change_3h",
+      "group": "METAR eğilimleri",
+      "mean_brier_increase": 5.935474565831392e-06,
+      "std_brier_increase": 7.226970276796153e-07
+    },
+    {
+      "feature": "gfs_Geopotential_height_isobaric_925_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": 5.542121469177819e-06,
+      "std_brier_increase": 1.6878058045561926e-06
+    },
+    {
+      "feature": "gfs_Geopotential_height_isobaric_850_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": 2.614225828516045e-06,
+      "std_brier_increase": 2.2343725930724384e-06
+    },
+    {
+      "feature": "wind_speed_kt",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 2.530275330959314e-06,
+      "std_brier_increase": 4.7579971407615084e-07
+    },
+    {
+      "feature": "pressure_change_3h",
+      "group": "METAR eğilimleri",
+      "mean_brier_increase": 2.4240357987708945e-06,
+      "std_brier_increase": 4.737582588527398e-06
+    },
+    {
+      "feature": "gfs_Geopotential_height_isobaric_925_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": 2.3534037811311777e-06,
+      "std_brier_increase": 8.30661559523374e-06
+    },
+    {
+      "feature": "no_ceiling",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": 0.0,
+      "std_brier_increase": 0.0
+    },
+    {
+      "feature": "ceiling_change_1h_ft",
+      "group": "METAR eğilimleri",
+      "mean_brier_increase": 0.0,
+      "std_brier_increase": 0.0
+    },
+    {
+      "feature": "pressure_change_1h",
+      "group": "METAR eğilimleri",
+      "mean_brier_increase": 0.0,
+      "std_brier_increase": 0.0
+    },
+    {
+      "feature": "spread_change_1h",
+      "group": "METAR eğilimleri",
+      "mean_brier_increase": 0.0,
+      "std_brier_increase": 0.0
+    },
+    {
+      "feature": "visibility_change_1h",
+      "group": "METAR eğilimleri",
+      "mean_brier_increase": 0.0,
+      "std_brier_increase": 0.0
+    },
+    {
+      "feature": "recent_low_fraction",
+      "group": "METAR eğilimleri",
+      "mean_brier_increase": 0.0,
+      "std_brier_increase": 0.0
+    },
+    {
+      "feature": "gfs_v-component_of_wind_isobaric_925_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": 0.0,
+      "std_brier_increase": 0.0
+    },
+    {
+      "feature": "gfs_u-component_of_wind_isobaric_925_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": -5.0124616134258546e-06,
+      "std_brier_increase": 1.4659677916435784e-05
+    },
+    {
+      "feature": "gfs_v-component_of_wind_isobaric_925_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": -6.066368892435753e-06,
+      "std_brier_increase": 1.5411038638225786e-05
+    },
+    {
+      "feature": "gfs_u-component_of_wind_isobaric_850_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": -1.2417359661647324e-05,
+      "std_brier_increase": 1.609937950262087e-06
+    },
+    {
+      "feature": "gfs_Relative_humidity_isobaric_850_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": -1.7400897563538477e-05,
+      "std_brier_increase": 1.4271902424135035e-05
+    },
+    {
+      "feature": "gfs_Relative_humidity_isobaric_850_current",
+      "group": "GFS mevcut tahmin",
+      "mean_brier_increase": -2.0595198960854724e-05,
+      "std_brier_increase": 3.119022147512432e-06
+    },
+    {
+      "feature": "log_ceiling",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": -2.5893466100354416e-05,
+      "std_brier_increase": 1.2848111485529443e-05
+    },
+    {
+      "feature": "wind_u",
+      "group": "Mevcut LTFJ METAR",
+      "mean_brier_increase": -3.8572708255094935e-05,
+      "std_brier_increase": 9.33503947626496e-06
+    },
+    {
+      "feature": "gfs_u-component_of_wind_isobaric_925_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": -4.067233958714601e-05,
+      "std_brier_increase": 1.2664706858886129e-05
+    },
+    {
+      "feature": "gfs_Temperature_isobaric_850_change_3h",
+      "group": "GFS 3 saatlik değişim",
+      "mean_brier_increase": -4.496889971893469e-05,
+      "std_brier_increase": 3.0544430720089624e-05
+    }
+  ],
+  "importance_note": "2024 geliştirme döneminde tek değişken permütasyonu; nedensel etki değildir ve ilişkili girdiler önemi paylaşabilir.",
+  "performance": {
+    "calibration_2024": {
+      "matched_local": {
+        "n": 17192,
+        "positives": 155,
+        "prevalence": 0.009015821312238251,
+        "brier": 0.007979572326115153,
+        "log_loss": 0.03463035711740331,
+        "average_precision": 0.1885790722029747,
+        "roc_auc": 0.9390997203430105,
+        "mean_probability": 0.009015821312238244,
+        "threshold": 0.02645200202003583,
+        "tp": 109,
+        "fp": 976,
+        "fn": 46,
+        "tn": 16061,
+        "recall": 0.7032258064516129,
+        "precision": 0.10046082949308756,
+        "false_alarm_ratio": 0.8995391705069125,
+        "false_positive_rate": 0.05728708105887187,
+        "alarm_origin_fraction": 0.06311074918566775
+      },
+      "matched_local_gfs": {
+        "n": 17192,
+        "positives": 155,
+        "prevalence": 0.009015821312238251,
+        "brier": 0.00773569934083077,
+        "log_loss": 0.03390684133306241,
+        "average_precision": 0.2390317779279171,
+        "roc_auc": 0.9458726453051897,
+        "mean_probability": 0.009015821312238253,
+        "threshold": 0.025948858269893703,
+        "tp": 111,
+        "fp": 1059,
+        "fn": 44,
+        "tn": 15978,
+        "recall": 0.7161290322580646,
+        "precision": 0.09487179487179487,
+        "false_alarm_ratio": 0.9051282051282051,
+        "false_positive_rate": 0.06215883078006691,
+        "alarm_origin_fraction": 0.06805490926012099
+      },
+      "all_origin_frozen_v2": {
+        "n": 17233,
+        "positives": 155,
+        "prevalence": 0.008994371264434515,
+        "brier": 0.007927141964041715,
+        "log_loss": 0.03444696421394873,
+        "average_precision": 0.19100815954375655,
+        "roc_auc": 0.9386076786206741,
+        "mean_probability": 0.008994371264434505,
+        "threshold": 0.02728559414841884,
+        "tp": 110,
+        "fp": 967,
+        "fn": 45,
+        "tn": 16111,
+        "recall": 0.7096774193548387,
+        "precision": 0.1021355617455896,
+        "false_alarm_ratio": 0.8978644382544104,
+        "false_positive_rate": 0.05662255533434828,
+        "alarm_origin_fraction": 0.06249637323739337
+      },
+      "paired_uncertainty_gfs_vs_local": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 53,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.03265870355694384,
+            0.08198324412353057
+          ],
+          "average_precision": [
+            0.09638854573366573,
+            0.3894426546021729
+          ],
+          "recall": [
+            0.598140857392826,
+            0.8115770509977827
+          ],
+          "precision": [
+            0.05118016641195449,
+            0.1504542607274952
+          ]
+        }
+      },
+      "events_local": {
+        "observed_low_runs": 28,
+        "runs_with_eligible_origin": 28,
+        "detected_runs": 27,
+        "recall": 0.9642857142857143,
+        "median_first_alarm_lead_minutes": 140.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      },
+      "events_gfs": {
+        "observed_low_runs": 28,
+        "runs_with_eligible_origin": 28,
+        "detected_runs": 27,
+        "recall": 0.9642857142857143,
+        "median_first_alarm_lead_minutes": 159.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    },
+    "replay_2025": {
+      "matched_local": {
+        "n": 17321,
+        "positives": 171,
+        "prevalence": 0.0098724092142486,
+        "brier": 0.00935809194464193,
+        "log_loss": 0.04284316594383135,
+        "average_precision": 0.12188548830113788,
+        "roc_auc": 0.8990934820043306,
+        "mean_probability": 0.009450734029847974,
+        "threshold": 0.02645200202003583,
+        "tp": 93,
+        "fp": 916,
+        "fn": 78,
+        "tn": 16234,
+        "recall": 0.543859649122807,
+        "precision": 0.09217046580773043,
+        "false_alarm_ratio": 0.9078295341922695,
+        "false_positive_rate": 0.05341107871720117,
+        "alarm_origin_fraction": 0.05825298770278852
+      },
+      "matched_local_gfs": {
+        "n": 17321,
+        "positives": 171,
+        "prevalence": 0.0098724092142486,
+        "brier": 0.0093537857068361,
+        "log_loss": 0.04304681079380906,
+        "average_precision": 0.12782237110800815,
+        "roc_auc": 0.9059135935075784,
+        "mean_probability": 0.009687418462558101,
+        "threshold": 0.025948858269893703,
+        "tp": 85,
+        "fp": 1044,
+        "fn": 86,
+        "tn": 16106,
+        "recall": 0.49707602339181284,
+        "precision": 0.07528786536758193,
+        "false_alarm_ratio": 0.9247121346324181,
+        "false_positive_rate": 0.06087463556851312,
+        "alarm_origin_fraction": 0.06518099416892789
+      },
+      "all_origin_frozen_v2": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00929103285350171,
+        "log_loss": 0.042693780558233856,
+        "average_precision": 0.12581281956969326,
+        "roc_auc": 0.8972602739726028,
+        "mean_probability": 0.009239053597467534,
+        "threshold": 0.02728559414841884,
+        "tp": 93,
+        "fp": 905,
+        "fn": 78,
+        "tn": 16250,
+        "recall": 0.543859649122807,
+        "precision": 0.09318637274549098,
+        "false_alarm_ratio": 0.906813627254509,
+        "false_positive_rate": 0.05275429903818129,
+        "alarm_origin_fraction": 0.057601292854669285
+      },
+      "paired_uncertainty_gfs_vs_local": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 53,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.055628440043058024,
+            0.08013426201904843
+          ],
+          "average_precision": [
+            0.06416431472132546,
+            0.24146546776792552
+          ],
+          "recall": [
+            0.35889517345399696,
+            0.618720633393762
+          ],
+          "precision": [
+            0.040258806613946804,
+            0.11978858481262326
+          ]
+        }
+      },
+      "events_local": {
+        "observed_low_runs": 36,
+        "runs_with_eligible_origin": 36,
+        "detected_runs": 30,
+        "recall": 0.8333333333333334,
+        "median_first_alarm_lead_minutes": 161.5,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      },
+      "events_gfs": {
+        "observed_low_runs": 36,
+        "runs_with_eligible_origin": 36,
+        "detected_runs": 30,
+        "recall": 0.8333333333333334,
+        "median_first_alarm_lead_minutes": 149.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    },
+    "replay_2026": {
+      "matched_local": {
+        "n": 11997,
+        "positives": 211,
+        "prevalence": 0.01758773026589981,
+        "brier": 0.014828683643930723,
+        "log_loss": 0.05816656659218827,
+        "average_precision": 0.3140034315669983,
+        "roc_auc": 0.9496577190545775,
+        "mean_probability": 0.009704498400663675,
+        "threshold": 0.02645200202003583,
+        "tp": 155,
+        "fp": 681,
+        "fn": 56,
+        "tn": 11105,
+        "recall": 0.7345971563981043,
+        "precision": 0.1854066985645933,
+        "false_alarm_ratio": 0.8145933014354066,
+        "false_positive_rate": 0.05778041744442559,
+        "alarm_origin_fraction": 0.06968408768858882
+      },
+      "matched_local_gfs": {
+        "n": 11997,
+        "positives": 211,
+        "prevalence": 0.01758773026589981,
+        "brier": 0.0145191536930545,
+        "log_loss": 0.05627197435437901,
+        "average_precision": 0.34363020666495053,
+        "roc_auc": 0.9549690652336332,
+        "mean_probability": 0.010164072969064578,
+        "threshold": 0.025948858269893703,
+        "tp": 166,
+        "fp": 758,
+        "fn": 45,
+        "tn": 11028,
+        "recall": 0.7867298578199052,
+        "precision": 0.17965367965367965,
+        "false_alarm_ratio": 0.8203463203463204,
+        "false_positive_rate": 0.06431359239776005,
+        "alarm_origin_fraction": 0.07701925481370342
+      },
+      "all_origin_frozen_v2": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.014716398181648046,
+        "log_loss": 0.05752757759665737,
+        "average_precision": 0.26324050439742336,
+        "roc_auc": 0.9459888719768277,
+        "mean_probability": 0.010696282739871601,
+        "threshold": 0.02728559414841884,
+        "tp": 155,
+        "fp": 774,
+        "fn": 56,
+        "tn": 11329,
+        "recall": 0.7345971563981043,
+        "precision": 0.1668460710441335,
+        "false_alarm_ratio": 0.8331539289558665,
+        "false_positive_rate": 0.06395108650747748,
+        "alarm_origin_fraction": 0.07544258567484165
+      },
+      "paired_uncertainty_gfs_vs_local": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 38,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.02530195688918218,
+            0.054599241447274204
+          ],
+          "average_precision": [
+            0.22222947590258532,
+            0.4609416133458862
+          ],
+          "recall": [
+            0.6688741721854304,
+            0.8809523809523809
+          ],
+          "precision": [
+            0.11232688370959126,
+            0.25462019123137686
+          ]
+        }
+      },
+      "events_local": {
+        "observed_low_runs": 39,
+        "runs_with_eligible_origin": 39,
+        "detected_runs": 37,
+        "recall": 0.9487179487179487,
+        "median_first_alarm_lead_minutes": 170.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      },
+      "events_gfs": {
+        "observed_low_runs": 39,
+        "runs_with_eligible_origin": 39,
+        "detected_runs": 38,
+        "recall": 0.9743589743589743,
+        "median_first_alarm_lead_minutes": 170.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    }
+  },
+  "thresholds": {
+    "matched_local": 0.02645200202003583,
+    "matched_local_gfs": 0.025948858269893703
+  },
+  "latest_live_prediction": {
+    "entry_hash": "94c1d948bc662d4dcb0351b50c3d6122b2d0db2b860ca47ec537d8f6976d0d4e",
+    "gfs_alarm": false,
+    "gfs_cycle": "2026-10-01T00:00:00Z",
+    "gfs_probability": 0.0012673443206104853,
+    "gfs_sources": [
+      {
+        "path": "data\\raw\\live\\gfs\\2026100100_f009.grib2",
+        "sha256": "dcafd16e3a39d1bc850f7dd1bbb7ce68ebb3bd0c2830a851839a5e28d8466c74",
+        "url": "https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t00z.pgrb2.0p25.f009&lev_850_mb=on&lev_925_mb=on&var_HGT=on&var_RH=on&var_TMP=on&var_UGRD=on&var_VGRD=on&subregion=&leftlon=29.25&rightlon=29.25&toplat=41&bottomlat=41&dir=%2Fgfs.20261001%2F00%2Fatmos"
+      },
+      {
+        "path": "data\\raw\\live\\gfs\\2026100100_f012.grib2",
+        "sha256": "af1a8bb289c02408757782a8c563d62279482151eb214f750b4b3ac260f49b6e",
+        "url": "https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t00z.pgrb2.0p25.f012&lev_850_mb=on&lev_925_mb=on&var_HGT=on&var_RH=on&var_TMP=on&var_UGRD=on&var_VGRD=on&subregion=&leftlon=29.25&rightlon=29.25&toplat=41&bottomlat=41&dir=%2Fgfs.20261001%2F00%2Fatmos"
+      },
+      {
+        "path": "data\\raw\\live\\gfs\\2026100100_f015.grib2",
+        "sha256": "db48a506e959219ac07aee4254ee3c5e3eb6ac74c346a5c71c46efcc23beb621",
+        "url": "https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?file=gfs.t00z.pgrb2.0p25.f015&lev_850_mb=on&lev_925_mb=on&var_HGT=on&var_RH=on&var_TMP=on&var_UGRD=on&var_VGRD=on&subregion=&leftlon=29.25&rightlon=29.25&toplat=41&bottomlat=41&dir=%2Fgfs.20261001%2F00%2Fatmos"
+      }
+    ],
+    "kind": "prediction",
+    "local_alarm": false,
+    "local_probability": 0.0015282901687862487,
+    "metar_sha256": "fc13faa12e4d76c1f22978b9d4895ad5ade6b1d378b11ba064365a4fc189b9b4",
+    "metar_url": "https://aviationweather.gov/api/data/metar?ids=LTFJ%2CLTBA%2CLTFM%2CLTBQ%2CLTBR&format=json&hours=5",
+    "model_sha256": "8dbb4435dd753d5521b6543865dea68c67b0e8e5540ab5895446aaaa4baa2af8",
+    "observation_time": "2026-10-01T10:20:00Z",
+    "prediction_time": "2026-10-01T10:30:00Z",
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "recorded_at": "2026-10-01T10:39:42.051678Z",
+    "status": "research_estimate"
+  }
+}
