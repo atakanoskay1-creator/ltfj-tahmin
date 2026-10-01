@@ -35,6 +35,14 @@ python -m ltfj.predict --at 2026-09-20T12:00:00Z
 
 Bu komut [kayıtlı katsayılarla](reports/model-parameters.json) yerel `features.csv` satırını değerlendirir; canlı hava tahmini indirmez. Güncel gözlem yoksa veya tavan zaten eşik altındaysa ayrı durum döndürür. Model eğitimi, özellik hazırlığı ve analiz kodu ile sonuçlar Git'te; büyük ham/türetilmiş veri dosyaları yereldedir.
 
+Hazırlanmış bir zamanda dondurulmuş yerel ve GFS modellerini birlikte değerlendirmek için:
+
+```sh
+python -m ltfj.predict_gfs --at 2026-09-20T12:00:00Z
+```
+
+Bu da tarihsel araştırma komutudur; canlı veri indirmez. İleriye dönük sınama kuralları test sonuçlarına bakılmadan [ayrı protokolde](forward-evaluation-protocol.json) donduruldu.
+
 ### Önceki veri incelemeleri
 
 **GFS toplu altküme aktarımı sürüyor:** NCAR GDEX sunucu tarafı istekleri gönderildi. İlk 2020 sınır paketi indirildi; dört tahmin dosyasının zaman, konum, seviye, birim ve değişken içeriği doğrulandı. Hata veren yıllık istekleri çeyreklere bölen yeniden deneme ile tamamlanan paketleri güvenli biçimde açıp doğrulayan aktarım kodu eklendi. Büyük ham dosyalar yerelde tutulur. [Plan ve kalan doğrulamalar](reports/gdex-batch-plan.md).

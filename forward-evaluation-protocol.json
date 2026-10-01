@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "frozen_after_commit": "984b931",
+  "purpose": "Prospective comparison of the frozen local and local-plus-GFS models without retrospective tuning",
+  "target": "Observed LTFJ ceiling strictly below 500 ft AGL within (t,t+3h], currently not below threshold",
+  "prediction_schedule": "UTC :00 and :30 when a current LTFJ observation is no more than 35 minutes old",
+  "models": ["matched_local", "matched_local_gfs"],
+  "gfs_availability_rule": "Use only a forecast cycle treated as available at least 6 hours after initialization; record actual retrieval time prospectively",
+  "outcome_delay_hours": 3,
+  "primary_metric": "Paired Brier score difference on all prospectively eligible matched origins",
+  "secondary_metrics": ["log loss", "average precision", "calibration", "alarm recall", "alarm precision", "event recall", "first alarm lead time"],
+  "uncertainty": "Paired non-overlapping 7-day block bootstrap with 95 percent intervals",
+  "minimum_followup": {
+    "calendar_months": 12,
+    "observed_low_ceiling_runs": 50
+  },
+  "decision_rule": "Do not replace the current model unless GFS has positive Brier skill with a 95 percent interval excluding zero and does not materially worsen the pre-frozen alarm tradeoff",
+  "guardrails": [
+    "Store prediction, retrieval time, source cycle, model hashes and input hashes before the outcome window ends.",
+    "Append outcomes later; never rewrite a recorded probability.",
+    "Do not tune features, calibration or alarm thresholds during the evaluation window.",
+    "Report missing predictions and source outages rather than filling them from future data.",
+    "A safety or operational decision requires domain review beyond this research protocol."
+  ]
+}
