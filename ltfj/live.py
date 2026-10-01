@@ -152,20 +152,20 @@ def predict(row, gfs, artifact):
 
 def append_prediction(path, entry):
     path.parent.mkdir(parents=True, exist_ok=True)
-    previous, seen = "0" * 64, set()
+    previous, saved_by_time = "0" * 64, {}
     if path.exists():
         for line in path.read_text(encoding="utf-8").splitlines():
             saved = json.loads(line)
             previous = saved["entry_hash"]
-            seen.add(saved["prediction_time"])
-    if entry["prediction_time"] in seen:
-        raise ValueError("Prediction time already recorded")
+            saved_by_time[saved["prediction_time"]] = saved
+    if entry["prediction_time"] in saved_by_time:
+        return saved_by_time[entry["prediction_time"]], False
     entry["previous_hash"] = previous
     canonical = json.dumps(entry, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
     entry["entry_hash"] = hashlib.sha256(canonical).hexdigest()
     with path.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(entry, sort_keys=True, ensure_ascii=False) + "\n")
-    return entry
+    return entry, True
 
 
 def main():
@@ -190,8 +190,8 @@ def main():
              "metar_url": metar_url, "metar_sha256": hashlib.sha256(metar_payload).hexdigest(),
              "gfs_sources": gfs_provenance,
              "model_sha256": hashlib.sha256(args.model.read_bytes()).hexdigest()}
-    append_prediction(args.ledger, entry)
-    print(json.dumps(entry, indent=2))
+    saved, created = append_prediction(args.ledger, entry)
+    print(json.dumps({"record_status": "created" if created else "already_recorded", **saved}, indent=2))
 
 
 if __name__ == "__main__":

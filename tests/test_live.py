@@ -24,13 +24,17 @@ class LiveTests(unittest.TestCase):
     def test_prediction_ledger_is_chained_and_idempotent(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "ledger.jsonl"
-            first = append_prediction(path, {"prediction_time": "2026-10-01T10:30:00Z", "p": .1})
-            second = append_prediction(path, {"prediction_time": "2026-10-01T11:00:00Z", "p": .2})
+            first, created = append_prediction(path, {"prediction_time": "2026-10-01T10:30:00Z", "p": .1})
+            self.assertTrue(created)
+            second, created = append_prediction(path, {"prediction_time": "2026-10-01T11:00:00Z", "p": .2})
+            self.assertTrue(created)
             self.assertEqual(second["previous_hash"], first["entry_hash"])
             saved = [json.loads(line) for line in path.read_text().splitlines()]
             self.assertEqual(len(saved), 2)
-            with self.assertRaises(ValueError):
-                append_prediction(path, {"prediction_time": "2026-10-01T11:00:00Z", "p": .3})
+            existing, created = append_prediction(path, {"prediction_time": "2026-10-01T11:00:00Z", "p": .3})
+            self.assertFalse(created)
+            self.assertEqual(existing["p"], .2)
+            self.assertEqual(len(path.read_text().splitlines()), 2)
 
 
 if __name__ == "__main__":
