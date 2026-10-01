@@ -6,7 +6,7 @@ NCAR'ın resmî GDEX API'si `d084001` için sunucu tarafında altküme üretimin
 
 `python -m ltfj.gdex_batch prepare` yedi kontrol isteği üretir: 2020 son koşusu ve 2021–2026 için yıllık parçalar. Her istek yalnızca 41°N, 29,25°E hücresini, gerekli iki seviyeyi, beş alanı ve dört tahmin saatini ister. Böylece on binlerce istemci tarafı sorgu yerine NCAR'ın sunucuda hazırladığı birkaç küçük çıktı hedeflenir. [Makine tarafından okunabilir plan](gdex-batch-plan.json).
 
-Yedi kimlik doğrulamalı istek 30 Eylül 2026'da gönderildi. 2020 sınır isteği tamamlandı ve dört NetCDF dosyası içerik doğrulamasını geçti. 2021 yıllık isteği açıklamasız hata verdi; mevcut istek kimliğini koruyarak dört çeyreklik isteğe bölünecek. Son durum yenilemesinde 2022–2026 istekleri sıradaydı.
+Yedi kimlik doğrulamalı istek 30 Eylül 2026'da gönderildi. 2021 yıllık isteği açıklamasız hata verdi ve dört çeyreklik istek olarak başarıyla yeniden alındı. 2020 sınırı, 2021 çeyrekleri ve 2022–2026 paketleri indirildi. Beklenen 33.424 tekil tahmin dosyasının 33.304'ü (%99,64) paketlerde bulundu ve içerik doğrulamasını geçti. Eksik 120 dosya açık biçimde raporlandı; her yıl uygun ve pozitif METAR zamanı kapsamı önceden belirlenen %95 eğitim kapısını geçti.
 
 ## Kimlik doğrulama sınırı
 
@@ -24,4 +24,4 @@ python -m ltfj.gdex_ingest
 
 `submit` her isteğin kimliğini hemen yerel ve Git dışında kalan `data/raw/gdex-batch/requests.json` dosyasına kaydeder; tekrar çalıştırma aynı yılı yeniden göndermez. `status` işleme durumunu yeniler. `fetch` yalnızca sunucunun tamamladığı dosyaları indirir ve kaynak URL/özet bilgisini saklar.
 
-Toplu çıktı doğrudan eğitime alınmaz. `gdex_ingest` arşivi güvenli biçimde açar; değişken, birim, basınç seviyesi, koordinat, koşu ve geçerlilik zamanını doğrular. Ardından [eğitim kapsam kapısı](gfs-training-readiness.json) tekrar çalıştırılır. İlk sınır paketi dört dosya ve tek koşu içeriyor; yıllık veri henüz model eğitimi için hazır değil.
+Toplu çıktı doğrudan eğitime alınmaz. `gdex_ingest` arşivi güvenli biçimde açar; değişken, birim, basınç seviyesi, koordinat, koşu ve geçerlilik zamanını doğrular. [Eğitim kapsam kapısı](gfs-training-readiness.json) bütün yıllar için geçti ve sabit GFS ek veri deneyi çalıştırıldı. Sonuçlar [GFS model kartında](model-gfs-card.md) raporlandı.

@@ -6,6 +6,8 @@ LTFJ (İstanbul Sabiha Gökçen) için METAR/SPECI ve ek meteorolojik veriler ku
 
 **İlk istatistiksel araştırma modeli eğitildi ve zaman sıralı testlerle değerlendirildi.** 2021–2026 LTFJ METAR/SPECI arşivleri ve dört çevre istasyon kullanılır. Model üç saat içinde 500 ft AGL altı tavan olasılığını üretir. Yanlış alarm yükü yüksek olduğu için otomatik operasyonel alarm olarak kullanıma hazır sayılmaz. [Model sonuçları ve sınırları](reports/model-card.md).
 
+**GFS ek veri deneyi tamamlandı:** 33.304 tarihsel tahmin dosyası doğrulandı ve her yıl önceden belirlenen kapsam kapısını geçti. GFS modeli olasılık sıralamasını iyileştirdi, fakat alarm düzeyindeki kazanım dönemler arasında kararlı değildi ve yanlış alarm yükü arttı. Bu nedenle araştırma adayı olarak saklandı; mevcut model otomatik değiştirilmedi. [GFS model kartı](reports/model-gfs-card.md).
+
 ### Modeli çalıştırma
 
 **İkinci deney tamamlandı:** Altı aday, 2022–2023 ileri tarihli doğrulamasıyla karşılaştırıldı. Küçük ağaç modeli bazı ölçütleri iyileştirdi ancak kesin üstünlük göstermedi; ilk model korunuyor. [Karşılaştırma, yanlış alarm yükü ve karar](reports/model-v2-card.md). İlk eğitimden sonra `python -m ltfj.model_v2` ile yeniden üretilebilir.

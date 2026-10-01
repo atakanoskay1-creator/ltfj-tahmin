@@ -1,0 +1,506 @@
+{
+  "protocol": {
+    "version": 1,
+    "status": "planned; not trained",
+    "target": "Observed LTFJ ceiling strictly below 500 ft AGL within (t,t+3h], currently not below threshold",
+    "development_train": [
+      "2021-01-01",
+      "2024-01-01"
+    ],
+    "calibration": [
+      "2024-01-01",
+      "2025-01-01"
+    ],
+    "reused_replay": [
+      [
+        "2025-01-01",
+        "2026-01-01"
+      ],
+      [
+        "2026-01-01",
+        "2026-09-21"
+      ]
+    ],
+    "minimum_yearly_eligible_origin_coverage": 0.95,
+    "minimum_yearly_positive_origin_coverage": 0.95,
+    "coverage_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "assumed_publication_delay_hours": 6,
+    "latency_sensitivity_hours": [
+      9,
+      12
+    ],
+    "comparison": "Fixed v2 local boosting configuration fitted separately with LOCAL and LOCAL+20 GFS inputs, same matched origins; no new hyperparameter search",
+    "calibration_rule": "2024 intercept-only log-odds adjustment; highest precision threshold with at least 70 percent positive-origin recall",
+    "evaluation": "Brier, log loss, average precision, calibration, false alarms, positive-origin recall, event recall; paired 7-day block intervals",
+    "guardrails": [
+      "Coverage gate is an engineering requirement, not evidence of unbiased missingness.",
+      "Report all-origin baseline alongside matched-origin comparison.",
+      "Do not train while coverage gate fails; do not lower the gate merely to obtain results.",
+      "Publication delay remains assumed, not historically verified.",
+      "2025 and 2026 are reused retrospective periods, never label them new independent validation.",
+      "Keep v1 and v2 unchanged and preserve raw archive provenance."
+    ]
+  },
+  "coverage_gate": {
+    "ready": true,
+    "years": {
+      "2021": {
+        "eligible": 17266,
+        "available": 17266,
+        "positives": 171,
+        "available_positives": 171,
+        "coverage": 1.0,
+        "positive_coverage": 1.0,
+        "passes": true
+      },
+      "2022": {
+        "eligible": 17334,
+        "available": 17319,
+        "positives": 170,
+        "available_positives": 167,
+        "coverage": 0.9991346486673589,
+        "positive_coverage": 0.9823529411764705,
+        "passes": true
+      },
+      "2023": {
+        "eligible": 17308,
+        "available": 17296,
+        "positives": 174,
+        "available_positives": 174,
+        "coverage": 0.9993066789923735,
+        "positive_coverage": 1.0,
+        "passes": true
+      },
+      "2024": {
+        "eligible": 17287,
+        "available": 17246,
+        "positives": 155,
+        "available_positives": 155,
+        "coverage": 0.9976282755828079,
+        "positive_coverage": 1.0,
+        "passes": true
+      },
+      "2025": {
+        "eligible": 17332,
+        "available": 17327,
+        "positives": 171,
+        "available_positives": 171,
+        "coverage": 0.9997115162704824,
+        "positive_coverage": 1.0,
+        "passes": true
+      },
+      "2026": {
+        "eligible": 12314,
+        "available": 11997,
+        "positives": 211,
+        "available_positives": 211,
+        "coverage": 0.9742569433165502,
+        "positive_coverage": 1.0,
+        "passes": true
+      }
+    },
+    "invalid_available_origins": [],
+    "note": "Coverage prerequisite only, not proof of forecast skill or historical availability."
+  },
+  "matched_rows": 98451,
+  "all_eligible_rows": 98841,
+  "frozen": {
+    "matched_local": {
+      "columns": [
+        "log_ceiling",
+        "no_ceiling",
+        "spread_c",
+        "temperature_c",
+        "log_visibility",
+        "wind_u",
+        "wind_v",
+        "wind_speed_kt",
+        "qnh_hpa",
+        "fog_mist",
+        "rain",
+        "hour_sin",
+        "hour_cos",
+        "year_sin",
+        "year_cos",
+        "ceiling_change_1h_ft",
+        "pressure_change_1h",
+        "pressure_change_3h",
+        "spread_change_1h",
+        "spread_change_3h",
+        "visibility_change_1h",
+        "visibility_change_3h",
+        "recent_low_fraction"
+      ],
+      "offset": 0.8424690804158957,
+      "threshold": 0.02645200202003583
+    },
+    "matched_local_gfs": {
+      "columns": [
+        "log_ceiling",
+        "no_ceiling",
+        "spread_c",
+        "temperature_c",
+        "log_visibility",
+        "wind_u",
+        "wind_v",
+        "wind_speed_kt",
+        "qnh_hpa",
+        "fog_mist",
+        "rain",
+        "hour_sin",
+        "hour_cos",
+        "year_sin",
+        "year_cos",
+        "ceiling_change_1h_ft",
+        "pressure_change_1h",
+        "pressure_change_3h",
+        "spread_change_1h",
+        "spread_change_3h",
+        "visibility_change_1h",
+        "visibility_change_3h",
+        "recent_low_fraction",
+        "gfs_Temperature_isobaric_925_current",
+        "gfs_Temperature_isobaric_850_current",
+        "gfs_Relative_humidity_isobaric_925_current",
+        "gfs_Relative_humidity_isobaric_850_current",
+        "gfs_u-component_of_wind_isobaric_925_current",
+        "gfs_u-component_of_wind_isobaric_850_current",
+        "gfs_v-component_of_wind_isobaric_925_current",
+        "gfs_v-component_of_wind_isobaric_850_current",
+        "gfs_Geopotential_height_isobaric_925_current",
+        "gfs_Geopotential_height_isobaric_850_current",
+        "gfs_Temperature_isobaric_925_change_3h",
+        "gfs_Temperature_isobaric_850_change_3h",
+        "gfs_Relative_humidity_isobaric_925_change_3h",
+        "gfs_Relative_humidity_isobaric_850_change_3h",
+        "gfs_u-component_of_wind_isobaric_925_change_3h",
+        "gfs_u-component_of_wind_isobaric_850_change_3h",
+        "gfs_v-component_of_wind_isobaric_925_change_3h",
+        "gfs_v-component_of_wind_isobaric_850_change_3h",
+        "gfs_Geopotential_height_isobaric_925_change_3h",
+        "gfs_Geopotential_height_isobaric_850_change_3h"
+      ],
+      "offset": 0.8015338334275866,
+      "threshold": 0.025948858269893703
+    }
+  },
+  "input_hashes": {
+    "gfs-experiment-protocol.json": "8bfb94d2077c9d912d2ee0d41015700b7f6d2ce3827f7e6353fcc17670fab8d4",
+    "data\\processed\\research\\features.csv": "0398f48525c2ae6fe0c06202a49a9d15eee7f45c29e554a56d7402dd2abcbcae",
+    "data\\processed\\research\\labels.csv": "b682d4500213be7b339489bf071d2ce5bca1b28f56f6b4f8ae6e7f9b0e537d3e",
+    "data\\processed\\research\\gfs-features.csv": "1d13555c777bf424e37fc0813b5b878600be51928c4c7e27194d1546ef1b9f0c"
+  },
+  "results": {
+    "calibration_2024": {
+      "matched_local": {
+        "n": 17192,
+        "positives": 155,
+        "prevalence": 0.009015821312238251,
+        "brier": 0.007979572326115153,
+        "log_loss": 0.03463035711740331,
+        "average_precision": 0.1885790722029747,
+        "roc_auc": 0.9390997203430105,
+        "mean_probability": 0.009015821312238244,
+        "threshold": 0.02645200202003583,
+        "tp": 109,
+        "fp": 976,
+        "fn": 46,
+        "tn": 16061,
+        "recall": 0.7032258064516129,
+        "precision": 0.10046082949308756,
+        "false_alarm_ratio": 0.8995391705069125,
+        "false_positive_rate": 0.05728708105887187,
+        "alarm_origin_fraction": 0.06311074918566775
+      },
+      "matched_local_gfs": {
+        "n": 17192,
+        "positives": 155,
+        "prevalence": 0.009015821312238251,
+        "brier": 0.00773569934083077,
+        "log_loss": 0.03390684133306241,
+        "average_precision": 0.2390317779279171,
+        "roc_auc": 0.9458726453051897,
+        "mean_probability": 0.009015821312238253,
+        "threshold": 0.025948858269893703,
+        "tp": 111,
+        "fp": 1059,
+        "fn": 44,
+        "tn": 15978,
+        "recall": 0.7161290322580646,
+        "precision": 0.09487179487179487,
+        "false_alarm_ratio": 0.9051282051282051,
+        "false_positive_rate": 0.06215883078006691,
+        "alarm_origin_fraction": 0.06805490926012099
+      },
+      "all_origin_frozen_v2": {
+        "n": 17233,
+        "positives": 155,
+        "prevalence": 0.008994371264434515,
+        "brier": 0.007927141964041715,
+        "log_loss": 0.03444696421394873,
+        "average_precision": 0.19100815954375655,
+        "roc_auc": 0.9386076786206741,
+        "mean_probability": 0.008994371264434505,
+        "threshold": 0.02728559414841884,
+        "tp": 110,
+        "fp": 967,
+        "fn": 45,
+        "tn": 16111,
+        "recall": 0.7096774193548387,
+        "precision": 0.1021355617455896,
+        "false_alarm_ratio": 0.8978644382544104,
+        "false_positive_rate": 0.05662255533434828,
+        "alarm_origin_fraction": 0.06249637323739337
+      },
+      "paired_uncertainty_gfs_vs_local": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 53,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.03265870355694384,
+            0.08198324412353057
+          ],
+          "average_precision": [
+            0.09638854573366573,
+            0.3894426546021729
+          ],
+          "recall": [
+            0.598140857392826,
+            0.8115770509977827
+          ],
+          "precision": [
+            0.05118016641195449,
+            0.1504542607274952
+          ]
+        }
+      },
+      "events_local": {
+        "observed_low_runs": 28,
+        "runs_with_eligible_origin": 28,
+        "detected_runs": 27,
+        "recall": 0.9642857142857143,
+        "median_first_alarm_lead_minutes": 140.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      },
+      "events_gfs": {
+        "observed_low_runs": 28,
+        "runs_with_eligible_origin": 28,
+        "detected_runs": 27,
+        "recall": 0.9642857142857143,
+        "median_first_alarm_lead_minutes": 159.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    },
+    "replay_2025": {
+      "matched_local": {
+        "n": 17321,
+        "positives": 171,
+        "prevalence": 0.0098724092142486,
+        "brier": 0.00935809194464193,
+        "log_loss": 0.04284316594383135,
+        "average_precision": 0.12188548830113788,
+        "roc_auc": 0.8990934820043306,
+        "mean_probability": 0.009450734029847974,
+        "threshold": 0.02645200202003583,
+        "tp": 93,
+        "fp": 916,
+        "fn": 78,
+        "tn": 16234,
+        "recall": 0.543859649122807,
+        "precision": 0.09217046580773043,
+        "false_alarm_ratio": 0.9078295341922695,
+        "false_positive_rate": 0.05341107871720117,
+        "alarm_origin_fraction": 0.05825298770278852
+      },
+      "matched_local_gfs": {
+        "n": 17321,
+        "positives": 171,
+        "prevalence": 0.0098724092142486,
+        "brier": 0.0093537857068361,
+        "log_loss": 0.04304681079380906,
+        "average_precision": 0.12782237110800815,
+        "roc_auc": 0.9059135935075784,
+        "mean_probability": 0.009687418462558101,
+        "threshold": 0.025948858269893703,
+        "tp": 85,
+        "fp": 1044,
+        "fn": 86,
+        "tn": 16106,
+        "recall": 0.49707602339181284,
+        "precision": 0.07528786536758193,
+        "false_alarm_ratio": 0.9247121346324181,
+        "false_positive_rate": 0.06087463556851312,
+        "alarm_origin_fraction": 0.06518099416892789
+      },
+      "all_origin_frozen_v2": {
+        "n": 17326,
+        "positives": 171,
+        "prevalence": 0.009869560198545539,
+        "brier": 0.00929103285350171,
+        "log_loss": 0.042693780558233856,
+        "average_precision": 0.12581281956969326,
+        "roc_auc": 0.8972602739726028,
+        "mean_probability": 0.009239053597467534,
+        "threshold": 0.02728559414841884,
+        "tp": 93,
+        "fp": 905,
+        "fn": 78,
+        "tn": 16250,
+        "recall": 0.543859649122807,
+        "precision": 0.09318637274549098,
+        "false_alarm_ratio": 0.906813627254509,
+        "false_positive_rate": 0.05275429903818129,
+        "alarm_origin_fraction": 0.057601292854669285
+      },
+      "paired_uncertainty_gfs_vs_local": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 53,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.055628440043058024,
+            0.08013426201904843
+          ],
+          "average_precision": [
+            0.06416431472132546,
+            0.24146546776792552
+          ],
+          "recall": [
+            0.35889517345399696,
+            0.618720633393762
+          ],
+          "precision": [
+            0.040258806613946804,
+            0.11978858481262326
+          ]
+        }
+      },
+      "events_local": {
+        "observed_low_runs": 36,
+        "runs_with_eligible_origin": 36,
+        "detected_runs": 30,
+        "recall": 0.8333333333333334,
+        "median_first_alarm_lead_minutes": 161.5,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      },
+      "events_gfs": {
+        "observed_low_runs": 36,
+        "runs_with_eligible_origin": 36,
+        "detected_runs": 30,
+        "recall": 0.8333333333333334,
+        "median_first_alarm_lead_minutes": 149.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    },
+    "replay_2026": {
+      "matched_local": {
+        "n": 11997,
+        "positives": 211,
+        "prevalence": 0.01758773026589981,
+        "brier": 0.014828683643930723,
+        "log_loss": 0.05816656659218827,
+        "average_precision": 0.3140034315669983,
+        "roc_auc": 0.9496577190545775,
+        "mean_probability": 0.009704498400663675,
+        "threshold": 0.02645200202003583,
+        "tp": 155,
+        "fp": 681,
+        "fn": 56,
+        "tn": 11105,
+        "recall": 0.7345971563981043,
+        "precision": 0.1854066985645933,
+        "false_alarm_ratio": 0.8145933014354066,
+        "false_positive_rate": 0.05778041744442559,
+        "alarm_origin_fraction": 0.06968408768858882
+      },
+      "matched_local_gfs": {
+        "n": 11997,
+        "positives": 211,
+        "prevalence": 0.01758773026589981,
+        "brier": 0.0145191536930545,
+        "log_loss": 0.05627197435437901,
+        "average_precision": 0.34363020666495053,
+        "roc_auc": 0.9549690652336332,
+        "mean_probability": 0.010164072969064578,
+        "threshold": 0.025948858269893703,
+        "tp": 166,
+        "fp": 758,
+        "fn": 45,
+        "tn": 11028,
+        "recall": 0.7867298578199052,
+        "precision": 0.17965367965367965,
+        "false_alarm_ratio": 0.8203463203463204,
+        "false_positive_rate": 0.06431359239776005,
+        "alarm_origin_fraction": 0.07701925481370342
+      },
+      "all_origin_frozen_v2": {
+        "n": 12314,
+        "positives": 211,
+        "prevalence": 0.017134968328731525,
+        "brier": 0.014716398181648046,
+        "log_loss": 0.05752757759665737,
+        "average_precision": 0.26324050439742336,
+        "roc_auc": 0.9459888719768277,
+        "mean_probability": 0.010696282739871601,
+        "threshold": 0.02728559414841884,
+        "tp": 155,
+        "fp": 774,
+        "fn": 56,
+        "tn": 11329,
+        "recall": 0.7345971563981043,
+        "precision": 0.1668460710441335,
+        "false_alarm_ratio": 0.8331539289558665,
+        "false_positive_rate": 0.06395108650747748,
+        "alarm_origin_fraction": 0.07544258567484165
+      },
+      "paired_uncertainty_gfs_vs_local": {
+        "method": "paired non-overlapping 7-day blocks; percentile 95% intervals",
+        "blocks": 38,
+        "resamples": 500,
+        "intervals": {
+          "brier_skill": [
+            -0.02530195688918218,
+            0.054599241447274204
+          ],
+          "average_precision": [
+            0.22222947590258532,
+            0.4609416133458862
+          ],
+          "recall": [
+            0.6688741721854304,
+            0.8809523809523809
+          ],
+          "precision": [
+            0.11232688370959126,
+            0.25462019123137686
+          ]
+        }
+      },
+      "events_local": {
+        "observed_low_runs": 39,
+        "runs_with_eligible_origin": 39,
+        "detected_runs": 37,
+        "recall": 0.9487179487179487,
+        "median_first_alarm_lead_minutes": 170.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      },
+      "events_gfs": {
+        "observed_low_runs": 39,
+        "runs_with_eligible_origin": 39,
+        "detected_runs": 38,
+        "recall": 0.9743589743589743,
+        "median_first_alarm_lead_minutes": 170.0,
+        "note": "Runs are not independent weather events; lead time is to first observed low report."
+      }
+    }
+  },
+  "interpretation_limit": "2025 and 2026 are reused retrospective periods; historical GFS publication delay is assumed."
+}

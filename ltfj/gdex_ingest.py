@@ -91,7 +91,20 @@ def ingest(root=Path("data/raw/gdex-batch")):
         sidecar = path.with_suffix(path.suffix + ".validated.json")
         write_json(sidecar, {"sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "values": values})
         records.append(values)
-    report = {"validated_files": len(records), "cycles": len({r["cycle"] for r in records}),
+    present = {(r["cycle"], r["lead_hours"]) for r in records}
+    expected = set()
+    cycle = datetime(2020, 12, 31, 18, tzinfo=timezone.utc)
+    end = datetime(2026, 9, 20, 12, tzinfo=timezone.utc)
+    while cycle <= end:
+        if cycle.year >= 2021 or cycle == datetime(2020, 12, 31, 18, tzinfo=timezone.utc):
+            expected.update((iso(cycle), lead) for lead in [6, 9, 12, 15])
+        cycle += timedelta(hours=6)
+    missing = [{"cycle": key[0], "lead_hours": key[1]} for key in sorted(expected - present)]
+    unexpected = [{"cycle": key[0], "lead_hours": key[1]} for key in sorted(present - expected)]
+    report = {"validated_files": len(records), "expected_files": len(expected),
+              "coverage": len(present & expected) / len(expected), "missing_count": len(missing),
+              "missing": missing, "unexpected": unexpected,
+              "cycles": len({r["cycle"] for r in records}),
               "first_cycle": records[0]["cycle"] if records else None,
               "last_cycle": records[-1]["cycle"] if records else None}
     write_json(Path("reports/gdex-ingest.json"), report)

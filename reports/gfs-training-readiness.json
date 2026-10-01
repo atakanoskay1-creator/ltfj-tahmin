@@ -1,59 +1,59 @@
 {
-  "ready": false,
+  "ready": true,
   "years": {
     "2021": {
       "eligible": 17266,
-      "available": 35,
+      "available": 17266,
       "positives": 171,
-      "available_positives": 0,
-      "coverage": 0.002027105293640681,
-      "positive_coverage": 0.0,
-      "passes": false
+      "available_positives": 171,
+      "coverage": 1.0,
+      "positive_coverage": 1.0,
+      "passes": true
     },
     "2022": {
       "eligible": 17334,
-      "available": 0,
+      "available": 17319,
       "positives": 170,
-      "available_positives": 0,
-      "coverage": 0.0,
-      "positive_coverage": 0.0,
-      "passes": false
+      "available_positives": 167,
+      "coverage": 0.9991346486673589,
+      "positive_coverage": 0.9823529411764705,
+      "passes": true
     },
     "2023": {
       "eligible": 17308,
-      "available": 0,
+      "available": 17296,
       "positives": 174,
-      "available_positives": 0,
-      "coverage": 0.0,
-      "positive_coverage": 0.0,
-      "passes": false
+      "available_positives": 174,
+      "coverage": 0.9993066789923735,
+      "positive_coverage": 1.0,
+      "passes": true
     },
     "2024": {
       "eligible": 17287,
-      "available": 0,
+      "available": 17246,
       "positives": 155,
-      "available_positives": 0,
-      "coverage": 0.0,
-      "positive_coverage": 0.0,
-      "passes": false
+      "available_positives": 155,
+      "coverage": 0.9976282755828079,
+      "positive_coverage": 1.0,
+      "passes": true
     },
     "2025": {
       "eligible": 17332,
-      "available": 0,
+      "available": 17327,
       "positives": 171,
-      "available_positives": 0,
-      "coverage": 0.0,
-      "positive_coverage": 0.0,
-      "passes": false
+      "available_positives": 171,
+      "coverage": 0.9997115162704824,
+      "positive_coverage": 1.0,
+      "passes": true
     },
     "2026": {
       "eligible": 12314,
-      "available": 0,
+      "available": 11997,
       "positives": 211,
-      "available_positives": 0,
-      "coverage": 0.0,
-      "positive_coverage": 0.0,
-      "passes": false
+      "available_positives": 211,
+      "coverage": 0.9742569433165502,
+      "positive_coverage": 1.0,
+      "passes": true
     }
   },
   "invalid_available_origins": [],

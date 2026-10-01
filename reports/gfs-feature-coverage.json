@@ -1,17 +1,17 @@
 {
-  "validated_forecast_files": 32,
+  "validated_forecast_files": 33305,
   "coverage_by_assumed_delay_hours": {
     "6": {
       "origins": 100272,
-      "available": 36
+      "available": 99873
     },
     "9": {
       "origins": 100272,
-      "available": 21
+      "available": 58265
     },
     "12": {
       "origins": 100272,
-      "available": 3
+      "available": 8325
     }
   },
   "note": "Partial acquisition. Missing forecasts stay missing; no performance estimate. Linear interpolation is of forecasts from one cycle only."
